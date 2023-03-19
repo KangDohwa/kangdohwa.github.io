@@ -21,6 +21,10 @@ body {
   &-Body {
     display: flex;
   }
+
+  &-Nav {
+    height: 100vh; // viewport height
+  }
 }
 
 .Header {

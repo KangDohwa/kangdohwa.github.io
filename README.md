@@ -4,17 +4,22 @@ This is Project URL : [Here!](https://KangDohwa.github.io/fftools).
 
 # Progress
 
+Removed MUI cuz it's so difficult to customize for me.
+
 ## Todo
 
 ### Header
 
 User Avatar Page
+Design - pretty important & difficult cuz bad at this
 
 ### Body
 
 Stretch Height of NavBar
 Load Component beside NavBar
 Fix Style through .scss (pretty difficult for now)
+Collapsible NavBar
+NavBar Collapse Split - has return OMG
 
 ### Component
 
@@ -33,8 +38,12 @@ Component Clock
 ### Body
 
 NavBar (Parts)
-NavBar Collapse Split
 Load Component via NavBar
+
+### ETC
+
+turn private previous repo
+
 
 <!-- # Getting Started with Create React App
 

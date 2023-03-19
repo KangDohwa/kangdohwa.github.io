@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Collapse } from "react-collapse";
 
 import { MdHome } from "react-icons/md";
 
@@ -21,24 +20,20 @@ function Nav(props) {
   return (
     <>
       <div className = "Nav">
-        <ul 
-        onSelect = {selectedIndex === "Home"} 
-        onClick = {(event) => { 
-          handleListItemClick(event, "Home");
-          handleClick(0);
-        }}>
+        <ul>
+          <li className = "Nav-Cat1">
+            <MdHome /> 일반
+          </li>
           <Link to = "/home">
             <li className = "Nav-Home">
               <MdHome /> Home 
             </li>
           </Link>
-          <Collapse isOpened = {true || false}>
-            <Link to = "/clock">
-              <li className = "Nav-Clock">
-                <MdHome /> <span>Clock</span>
-              </li>
-            </Link>
-          </Collapse>
+          <Link to = "/clock">
+            <li className = "Nav-Clock">
+              <MdHome /> <span>Clock</span>
+            </li>
+          </Link>
         </ul>
       </div>
     </>
