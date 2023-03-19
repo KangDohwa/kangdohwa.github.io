@@ -29,7 +29,7 @@ function Nav(props) {
         }}>
           <Link to = "/home">
             <li className = "Nav-Home">
-              <MdHome /> Home
+              <MdHome /> Home 
             </li>
           </Link>
           <Collapse isOpened = {true || false}>
