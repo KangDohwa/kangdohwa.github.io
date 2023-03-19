@@ -1,6 +1,6 @@
 {
-  "homepage": "https://KangDohwa.github.io/ffxivtools",
-  "name": "ffxivtools",
+  "homepage": "https://KangDohwa.github.io/fftools",
+  "name": "fftools",
   "version": "0.2.0-alpha",
   "private": true,
   "dependencies": {
