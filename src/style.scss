@@ -1,0 +1,62 @@
+$Header-Height: 80px;
+$color-bg: #0065b2;
+$color-base: #33a7ff;
+$color-contrast: #ffffff;
+
+body {
+  margin: 0;
+  font-family: D2Coding;
+  background-color: $color-bg;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+.App {
+  &-Header {
+    position: sticky;
+    top: 0;
+  }
+
+  &-Body {
+    display: flex;
+  }
+}
+
+.Header {
+  display: flex;
+  font-size: 0.875rem;
+  padding-left: 8px;
+  align-items: center;
+  justify-content: center;
+
+  &-Logo {
+    padding: 8px;
+  }
+
+  &-Spacer {
+    margin: auto;
+  }
+}
+
+.Nav {
+  padding-left: 8px;
+  width: 150px;
+  max-width: 150px;
+
+  ul {
+    list-style-type: none;
+    line-height: 2.4;
+    padding-left: 8px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+
+    a {
+      text-decoration: none;
+      li {
+        color: #ffffff;
+
+      }
+    }
+  }
+}

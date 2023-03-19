@@ -1,4 +1,42 @@
-# Getting Started with Create React App
+# Let's Join My Page!
+
+This is Project URL : [Here!](https://KangDohwa.github.io/ffxivtools).
+
+# Progress
+
+## Todo
+
+### Header
+
+User Avatar Page
+
+### Body
+
+Stretch Height of NavBar
+Load Component beside NavBar
+Fix Style through .scss (pretty difficult for now)
+
+### Component
+
+let's think about functions that we need...
+
+## Completed
+
+### Header
+
+Using flex, positioning contents below
+
+Logo
+Version Load via props
+Component Clock
+
+### Body
+
+NavBar (Parts)
+NavBar Collapse Split
+Load Component via NavBar
+
+<!-- # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -67,4 +105,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 ### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify) -->
