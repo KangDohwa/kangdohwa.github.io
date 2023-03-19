@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/fftools/static/css/main.55d9e76f.css",
+    "main.js": "/fftools/static/js/main.fcddde0f.js",
+    "static/js/787.0308ed63.chunk.js": "/fftools/static/js/787.0308ed63.chunk.js",
+    "static/media/dohwa.png": "/fftools/static/media/dohwa.32dbbf93e263f11931b8.png",
+    "index.html": "/fftools/index.html",
+    "main.55d9e76f.css.map": "/fftools/static/css/main.55d9e76f.css.map",
+    "main.fcddde0f.js.map": "/fftools/static/js/main.fcddde0f.js.map",
+    "787.0308ed63.chunk.js.map": "/fftools/static/js/787.0308ed63.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.55d9e76f.css",
+    "static/js/main.fcddde0f.js"
+  ]
+}
