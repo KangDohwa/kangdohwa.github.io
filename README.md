@@ -1,6 +1,6 @@
 # Let's Join My Page!
 
-This is Project URL : [Here!](https://KangDohwa.github.io/ffxivtools).
+This is Project URL : [Here!](https://KangDohwa.github.io/fftools).
 
 # Progress
 
