@@ -39,6 +39,11 @@ function Nav(props) {
               <MdHome /> <span>Minesweeper</span>
             </li>
           </Link>
+          <Link to = "/tictactoe">
+            <li className = "Nav-TicTacToe">
+              <MdHome /> <span>TicTacToe</span>
+            </li>
+          </Link>
         </ul>
       </div>
     </>

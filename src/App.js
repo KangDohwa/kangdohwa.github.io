@@ -9,6 +9,7 @@ import Nav from "./pages/Nav";
 import Home from "./pages/Home";
 import Clock from "./component/Clock";
 import Minesweeper from "./component/Minesweeper/Minesweeper";
+import TicTacToe from "./component/TicTacToe/Board";
 
 function App(props) {
   return (
@@ -25,6 +26,7 @@ function App(props) {
             <Route path = "/home" element = {<Home />} />
             <Route path = "/clock" element = {<Clock />} />
             <Route path = "/mine" element = {<Minesweeper />} />
+            <Route path = "/tictactoe" element = {<TicTacToe />} />
           </Routes>
         </div>
       </div>

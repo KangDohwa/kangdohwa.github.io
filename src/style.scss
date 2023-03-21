@@ -80,7 +80,27 @@ body {
 
 .Mine-Board {
   // display: flex;
+}
 
-  tr {
+
+.board-row {
+  height: 50px;
+  :after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+}
+
+.square {
+  border: 1px solid;
+  width: 50px;
+  height: 50px;
+  float: left;
+  margin-left: -1px;
+  margin-top: -1px;
+  padding: 0;
+  :focus {
+    outline: none;
   }
 }
