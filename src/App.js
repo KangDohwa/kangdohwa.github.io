@@ -8,14 +8,15 @@ import Nav from "./pages/Nav";
 
 import Home from "./pages/Home";
 import Clock from "./component/Clock";
+import Minesweeper from "./component/Minesweeper/Minesweeper";
 
 function App(props) {
   return (
     <div className = "App">
-      <header className = "App-Header">
+      <div className = "App-Header">
         <Header version = {Info.version}/>
-      </header>
-      <body className = "App-Body">
+      </div>
+      <div className = "App-Body">
         <div className = "App-Nav">
           <Nav />
         </div>
@@ -23,9 +24,10 @@ function App(props) {
           <Routes>
             <Route path = "/home" element = {<Home />} />
             <Route path = "/clock" element = {<Clock />} />
+            <Route path = "/mine" element = {<Minesweeper />} />
           </Routes>
         </div>
-      </body>
+      </div>
     </div>
   );
 }

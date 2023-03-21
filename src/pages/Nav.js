@@ -34,6 +34,11 @@ function Nav(props) {
               <MdHome /> <span>Clock</span>
             </li>
           </Link>
+          <Link to = "/mine">
+            <li className = "Nav-Mine">
+              <MdHome /> <span>Minesweeper</span>
+            </li>
+          </Link>
         </ul>
       </div>
     </>

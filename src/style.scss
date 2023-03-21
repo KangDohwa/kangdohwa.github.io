@@ -23,7 +23,7 @@ body {
   }
 
   &-Nav {
-    height: 100vh; // viewport height
+    height: 100%;
   }
 }
 
@@ -62,5 +62,25 @@ body {
 
       }
     }
+  }
+}
+
+.Minesweeper {
+  // display: flex;
+
+  input {
+    flex-direction: row;
+    width: 100px;
+  }
+
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 10px auto 0 auto;
+}
+
+.Mine-Board {
+  // display: flex;
+
+  tr {
   }
 }
