@@ -28,7 +28,7 @@ import Board from "./Board";
 // };
 
 export default function Minesweeper(props) {
-  const [row, col, num] = [5, 4, 4];
+  const [row, col, num] = [10, 8, 4];
 
   // const testArr = [10, 8, 20];
 
@@ -52,18 +52,8 @@ export default function Minesweeper(props) {
   // .sort(() => Math.random() - 0.5) // array randomize
 
   return (
-    <>
-      <div className = "Minesweeper">
-        <div className = "Mine-Config">
-          {/* <input type = "number" className = "row" placeholder = "가로" />
-          <input type = "number" className = "col" placeholder = "세로" />
-          <input type = "number" className = "num" placeholder = "지뢰 개수" /> */}
-          <button className = "btnStart">게임 시작</button>
-        </div>
-        <div className = "Mine-Board">
-          <Board row = {row} col = {col} num = {num}/>
-        </div>
-      </div>
-    </>
+    <div className = "mine-board">
+      <Board row = {row} col = {col}/>
+    </div>
   )
 }

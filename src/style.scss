@@ -65,26 +65,7 @@ body {
   }
 }
 
-.Minesweeper {
-  // display: flex;
-
-  input {
-    flex-direction: row;
-    width: 100px;
-  }
-
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 10px auto 0 auto;
-}
-
-.Mine-Board {
-  // display: flex;
-}
-
-
-.board-row {
-  height: 50px;
+.ttt-board-row {
   :after {
     clear: both;
     content: "";
@@ -104,3 +85,4 @@ body {
     outline: none;
   }
 }
+

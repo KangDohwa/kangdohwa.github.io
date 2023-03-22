@@ -4,45 +4,53 @@ This is Project URL : [Here!](https://KangDohwa.github.io/fftools).
 
 # Progress
 
-Removed MUI cuz it's so difficult to customize for me.
+* Removed MUI cuz it's so difficult to customize for me.
 
 ## Todo
 
 ### Header
 
-User Avatar Page
-Design - pretty important & difficult cuz bad at this
+* User Avatar Page
+* Design - pretty important & difficult cuz bad at this
 
 ### Body
 
-Stretch Height of NavBar
-Load Component beside NavBar
-Fix Style through .scss (pretty difficult for now)
-Collapsible NavBar
-NavBar Collapse Split - has return OMG
+* Stretch Height of NavBar
+* Fix Style through .scss (pretty difficult for now)
+* Collapsible NavBar
+* NavBar Collapse Split - has return OMG
 
 ### Component
 
 let's think about functions that we need...
 
+> Minesweeper
+
+> ### Progress
+
+> * 
+> * 
+
+
 ## Completed
 
 ### Header
 
-Using flex, positioning contents below
++ Using flex, positioning contents below
 
-Logo
-Version Load via props
-Component Clock
++ Logo
++ Version Load via props
++ Component Clock
 
 ### Body
 
-NavBar (Parts)
-Load Component via NavBar
++ NavBar (Parts)
++ Load Component via NavBar
++ Load Component beside NavBar
 
 ### ETC
 
-turn private previous repo
++ turn private previous repo
 
 
 <!-- # Getting Started with Create React App
