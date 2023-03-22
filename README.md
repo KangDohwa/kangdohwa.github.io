@@ -20,17 +20,34 @@ This is Project URL : [Here!](https://KangDohwa.github.io/fftools).
 * Collapsible NavBar
 * NavBar Collapse Split - has return OMG
 
+* * *
+
 ### Component
 
-let's think about functions that we need...
+###### let's think about functions that we need...
+
+* * *
 
 > Minesweeper
-
+>
 > ### Progress
+>
+> * Done - Making Board via props.row, props.col
+> * Todo - Separate every button with buttons' {key}
+> * Todo - Make bomb array, then attach with buttons' key
 
-> * 
-> * 
+* * *
 
+> FF14 Image Desiner
+>
+> ### Concept
+>
+> If user upload an image(e.ff14 screenshot), put it to frame
+> Hook inputs(infos - lv, desc, server, etc...) to frame
+> Export when click button "export" as .png
+> Similar "sheet generator"
+
+* * *
 
 ## Completed
 
@@ -39,14 +56,14 @@ let's think about functions that we need...
 + Using flex, positioning contents below
 
 + Logo
-+ Version Load via props
++ Version Load from src/Info.json
 + Component Clock
 
 ### Body
 
-+ NavBar (Parts)
-+ Load Component via NavBar
-+ Load Component beside NavBar
++ Make NavBar (Parts)
++ Load Component via NavBar (Router, Link)
++ Load Component beside NavBar (.scss)
 
 ### ETC
 
