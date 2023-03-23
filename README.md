@@ -2,23 +2,38 @@
 
 This is Project URL : [Here!](https://KangDohwa.github.io/fftools).
 
+* * *
+
 # Progress
 
-* Removed MUI cuz it's so difficult to customize for me.
+* * *
+
++ Removed MUI cuz it's so difficult to customize for me.
 
 ## Todo
 
+* * *
+
 ### Header
 
-* User Avatar Page
-* Design - pretty important & difficult cuz bad at this
++ [x] Using flex, positioning contents below
++ [x] Logo
++ [x] Version Load from src/Info.json
++ [x] Component Clock
++ [ ] User Avatar Page
++ [ ] Design - pretty important & difficult cuz bad at this
+
+* * *
 
 ### Body
 
-* Stretch Height of NavBar
-* Fix Style through .scss (pretty difficult for now)
-* Collapsible NavBar
-* NavBar Collapse Split - has return OMG
++ [x] Make NavBar (Parts)
++ [x] Load Component via NavBar (Router, Link)
++ [x] Load Component beside NavBar (.scss)
++ [ ] Stretch Height of NavBar
++ [ ] Fix Style through .scss (pretty difficult for now)
++ [ ] Collapsible NavBar
++ [ ] NavBar Collapse Split - has return OMG
 
 * * *
 
@@ -60,22 +75,6 @@ This is Project URL : [Here!](https://KangDohwa.github.io/fftools).
 > ```
 
 * * *
-
-## Completed
-
-### Header
-
-+ [x] Using flex, positioning contents below
-
-+ [x] Logo
-+ [x] Version Load from src/Info.json
-+ [x] Component Clock
-
-### Body
-
-+ [x] Make NavBar (Parts)
-+ [x] Load Component via NavBar (Router, Link)
-+ [x] Load Component beside NavBar (.scss)
 
 ### ETC
 
