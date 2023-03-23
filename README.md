@@ -32,9 +32,9 @@ This is Project URL : [Here!](https://KangDohwa.github.io/fftools).
 >
 > ### Progress
 >
-> * Done - Making Board via props.row, props.col
-> * Todo - Separate every button with buttons' {key}
-> * Todo - Make bomb array, then attach with buttons' key
+> [x] Done - Making Board via props.row, props.col
+> [ ] Todo - Separate every button with buttons' {key}
+> [ ] Todo - Make bomb array, then attach with buttons' key
 
 * * *
 
@@ -49,12 +49,14 @@ This is Project URL : [Here!](https://KangDohwa.github.io/fftools).
 >
 > ### Progress
 > ```diff
+>
 > - Red is Todo
-> + Green is Done
 > ! Yellow is Need to fix
+> + Green is Done
 >
 > + Image Upload
 > ! Image Download
+>
 > ```
 
 * * *
@@ -63,7 +65,7 @@ This is Project URL : [Here!](https://KangDohwa.github.io/fftools).
 
 ### Header
 
-+ Using flex, positioning contents below
++ [x] Using flex, positioning contents below
 
 + Logo
 + Version Load from src/Info.json
