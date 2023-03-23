@@ -4,12 +4,14 @@ This is Project URL : [Here!](https://KangDohwa.github.io/fftools).
 
 * * *
 
-# Progress
+### Progress
+
 * * *
 
 + Removed MUI cuz it's so difficult to customize for me.
 
-## Todo
+### Todo
+
 * * *
 
 ### Header
@@ -61,6 +63,7 @@ This is Project URL : [Here!](https://KangDohwa.github.io/fftools).
 > Similar "sheet generator"
 >
 > ### Progress
+>
 > ```diff
 >
 > - Red is Todo
@@ -68,7 +71,8 @@ This is Project URL : [Here!](https://KangDohwa.github.io/fftools).
 > + Green is Done
 >
 > + Image Upload
-> ! Image Download
+> ! Image Download - download image size issue
+> - Input Fields for user's lv, desc, etc...
 >
 > ```
 
