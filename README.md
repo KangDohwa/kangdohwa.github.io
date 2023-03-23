@@ -32,9 +32,9 @@ This is Project URL : [Here!](https://KangDohwa.github.io/fftools).
 >
 > ### Progress
 >
-[x] Done - Making Board via props.row, props.col
-[ ] Todo - Separate every button with buttons' {key}
-[ ] Todo - Make bomb array, then attach with buttons' key
+> + [x] Making Board via props.row, props.col
+> + [ ] Separate every button with buttons' {key}
+> + [ ] Make bomb array, then attach with buttons' key
 
 * * *
 
@@ -67,19 +67,19 @@ This is Project URL : [Here!](https://KangDohwa.github.io/fftools).
 
 + [x] Using flex, positioning contents below
 
-+ Logo
-+ Version Load from src/Info.json
-+ Component Clock
++ [x] Logo
++ [x] Version Load from src/Info.json
++ [x] Component Clock
 
 ### Body
 
-+ Make NavBar (Parts)
-+ Load Component via NavBar (Router, Link)
-+ Load Component beside NavBar (.scss)
++ [x] Make NavBar (Parts)
++ [x] Load Component via NavBar (Router, Link)
++ [x] Load Component beside NavBar (.scss)
 
 ### ETC
 
-+ turn private previous repo
++ [x] turn private previous repo
 
 
 <!-- # Getting Started with Create React App
