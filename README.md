@@ -32,9 +32,9 @@ This is Project URL : [Here!](https://KangDohwa.github.io/fftools).
 >
 > ### Progress
 >
-> [x] Done - Making Board via props.row, props.col
-> [ ] Todo - Separate every button with buttons' {key}
-> [ ] Todo - Make bomb array, then attach with buttons' key
+[x] Done - Making Board via props.row, props.col
+[ ] Todo - Separate every button with buttons' {key}
+[ ] Todo - Make bomb array, then attach with buttons' key
 
 * * *
 
