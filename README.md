@@ -51,10 +51,10 @@ This is Project URL : [Here!](https://KangDohwa.github.io/fftools).
 > ```diff
 > - Red is Todo
 > + Green is Done
-> @@ Purple is Need to fix @@
+> ! Yellow is Need to fix
 >
 > + Image Upload
-> @@ Image Download @@
+> ! Image Download
 > ```
 
 * * *
