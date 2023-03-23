@@ -38,6 +38,7 @@ This is Project URL : [Here!](https://KangDohwa.github.io/fftools).
 
 * * *
 
+```diff
 > FF14 Image Desiner
 >
 > ### Concept
@@ -49,9 +50,13 @@ This is Project URL : [Here!](https://KangDohwa.github.io/fftools).
 >
 > ### Progress
 >
-<span style = "color: #f03c15">Red is Todo</span>, <span style = "color: #c5f015">Yellow is Need to fix</span>, <span style = "color: #00ff80">Green is Done</span>.
-> Image Upload
-> Image Download
+> - Red is Todo
+> + Green is Done
+> @@ Purple is Need to fix @@
+>
+> + Image Upload
+> @@ Image Download @@
+```
 
 * * *
 
