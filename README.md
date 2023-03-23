@@ -49,7 +49,7 @@ This is Project URL : [Here!](https://KangDohwa.github.io/fftools).
 >
 > ### Progress
 >
-> <span style = "color: red">Red is Todo</span>, <span style = "color: yellow">Yellow is Need to fix</span>, <span style = "color: green">Green is Done</span>.
+<span style = "color: red">Red is Todo</span>, <span style = "color: yellow">Yellow is Need to fix</span>, <span style = "color: green">Green is Done</span>.
 > Image Upload
 > Image Download
 
