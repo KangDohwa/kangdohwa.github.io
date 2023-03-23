@@ -5,13 +5,11 @@ This is Project URL : [Here!](https://KangDohwa.github.io/fftools).
 * * *
 
 # Progress
-
 * * *
 
 + Removed MUI cuz it's so difficult to customize for me.
 
 ## Todo
-
 * * *
 
 ### Header
