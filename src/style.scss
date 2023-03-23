@@ -6,7 +6,7 @@ $color-contrast: #ffffff;
 body {
   margin: 0;
   font-family: D2Coding;
-  background-color: $color-bg;
+  background-color: $color-base;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -14,6 +14,8 @@ body {
 
 .App {
   &-Header {
+    z-index: 9999;
+    background-color: $color-bg;
     position: sticky;
     top: 0;
   }
@@ -23,6 +25,8 @@ body {
   }
 
   &-Nav {
+    z-index: 9998;
+    background-color: $color-bg;
     height: 100%;
   }
 }

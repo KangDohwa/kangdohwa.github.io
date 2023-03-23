@@ -1,0 +1,43 @@
+.container {
+  // margin-left: 100px;
+}
+
+.box {
+  background-color: gray;
+  // position: relative;
+  // max-width: 1350px;
+  height: 1080px;
+  zoom: 50%;
+}
+
+// .preview {
+//   position: relative;
+// }
+
+.img-preview-pre {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+}
+
+.img-preview {
+  z-index: 1;
+  position: relative;
+  width: 1920px;
+  left: -550px;
+}
+
+.img-Background {
+  z-index: 10;
+  top: 0;
+  position: absolute;
+}
+
+.preview-final {
+  z-index: 100;
+  position: relative;
+  overflow: hidden;
+  // margin-left: -550px;
+  width: 1350px;
+  height: 1080px;
+}

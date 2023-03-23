@@ -46,6 +46,12 @@ This is Project URL : [Here!](https://KangDohwa.github.io/fftools).
 > Hook inputs(infos - lv, desc, server, etc...) to frame
 > Export when click button "export" as .png
 > Similar "sheet generator"
+>
+> ### Progress
+>
+> <span style = "color: red">Red is Todo</span>, <span style = "color: yellow">Yellow is Need to fix</span>, <span style = "color: green">Green is Done</span>.
+> Image Upload
+> Image Download
 
 * * *
 

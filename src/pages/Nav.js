@@ -44,6 +44,11 @@ function Nav(props) {
               <MdHome /> <span>TicTacToe</span>
             </li>
           </Link>
+          <Link to = "/sheetgenerator">
+            <li className = "Nav-SheetGenerator">
+              <MdHome /> <span>SheetGenerator</span>
+            </li>
+          </Link>
         </ul>
       </div>
     </>

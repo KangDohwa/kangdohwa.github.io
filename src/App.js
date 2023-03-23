@@ -10,6 +10,7 @@ import Home from "./pages/Home";
 import Clock from "./component/Clock";
 import Minesweeper from "./component/Minesweeper/Minesweeper";
 import TicTacToe from "./component/TicTacToe/Board";
+import SheetGenerator from "./component/SheetGenerator/Core";
 
 function App(props) {
   return (
@@ -27,6 +28,7 @@ function App(props) {
             <Route path = "/clock" element = {<Clock />} />
             <Route path = "/mine" element = {<Minesweeper />} />
             <Route path = "/tictactoe" element = {<TicTacToe />} />
+            <Route path = "/sheetgenerator" element = {<SheetGenerator />} />
           </Routes>
         </div>
       </div>
