@@ -55,6 +55,8 @@ import { ReactComponent as MIN } from "./images/job/7.DOL/MIN.svg";      // 광�
 import { ReactComponent as BTN } from "./images/job/7.DOL/BTN.svg";      // 원예가
 import { ReactComponent as FSH } from "./images/job/7.DOL/FSH.svg";      // 어부
 
+import { Type_1, Type_2 } from "./Type.js";
+
 // export const JobList = [
 //   // Tank
 //   GLA: GLA, PLD: PLD, MRD: MRD, WAR: WAR, DRK: DRK, GNB: GNB,
@@ -77,6 +79,8 @@ import { ReactComponent as FSH } from "./images/job/7.DOL/FSH.svg";      // 어�
 //   // Disciples of the Land
 //   MIN: MIN, BTN: BTN, FSH: FSH,
 // ];
+
+
 
 export default function Jobs({ children, ...props }) {
   const [jobColor] = useState({ // Job Color
@@ -113,28 +117,75 @@ export default function Jobs({ children, ...props }) {
   
     // Disciples of the Land
     MIN, BTN, FSH,
-  }
+  };
 
   const StyledLevel = styled.div`
-    z-index: 150;
-    position: absolute;
-    left: 50px;
-    top: 300px;
-    fill: ${(props) => jobColor[props.j] || jobColor[None]}
 
-    ${(props) =>
-      props.lv === 0 &&
-      css`
-      fill: ${jobColor[None]};
-    `};
+  svg {
+    width: 32px;
+  }
+
+  left: 100px;
+  top: 200px;
+  z-index: 150;
+  
+  fill: ${(props) => jobColor[props.j]}
+
+  ${(props) =>
+    (props.lv == 0) &&
+    css`
+    fill: ${jobColor[None]};
+    span {
+      display: none;
+    }
+  `};
+
+  ${(props) =>
+    (props.i == 0) && (props.j == "Tank") &&
+    css`
+    left: 150px;
+  `};
+
+  ${(props) =>
+    (props.i == 0) &&
+    css`
+    span {
+      font-size: 2.2rem;
+    };
+    
+    svg {
+      width: 48px;
+    }
+
+    ${Type_1}
+
+  `};
+  
+  ${(props) =>
+    (props.i == 1) &&
+    css`
+    span {
+      font-size: 2.2rem;
+    };
+    
+    svg {
+      width: 48px;
+    }
+
+    ${Type_2}
+
+  `};
+  
   `;
 
   const Jobs = J[props.job];
-  return <>
-    <StyledLevel {...props}>{children}
-      <Jobs width = {props.w} /><span>{props.lv}</span>
+  return <div>
+    <StyledLevel {...props}>
+      <div id = {props.job}>{children}
+        <Jobs className = {props.job} /><span>{props.lv}</span>
+      </div>
     </StyledLevel>
-  </>;
+  </div>;
 }
 
 // export default function Jobs(props) {

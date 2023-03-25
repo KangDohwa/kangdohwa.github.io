@@ -131,8 +131,6 @@ function MyPage() {
 
   const [urlImage, setUrlImage] = useState("");
 
-  const jobIconWidth = "32px";
-
   const createImageURL = (fileBlob) => { // createObjectURL
     if (urlImage) URL.revokeObjectURL(urlImage); // revoke for rem
 
@@ -235,7 +233,7 @@ function MyPage() {
               value = "0"
               checked = {index === "0"}
               onChange = {selectIndex}
-            /> <span>No.1</span>
+            /> <span>Ind.0</span>
           </label>
           <label>
             <input 
@@ -244,7 +242,7 @@ function MyPage() {
               value = "1"
               checked = {index === "1"}
               onChange = {selectIndex}
-            /> <span>No.2</span>
+            /> <span>Ind.1</span>
           </label>
           <label>
             <input 
@@ -253,7 +251,7 @@ function MyPage() {
               value = "2"
               checked = {index === "2"}
               onChange = {selectIndex}
-            /> <span>No.3</span>
+            /> <span>Ind.2</span>
           </label>
         </fieldset>
         <div className = "input-desc">
@@ -325,23 +323,23 @@ function MyPage() {
           <img className = "img-Background" src = {imgBackground} alt = "BG" />
           <div className = "preview-icon">
             <div className = "Tank">
-              <IconLoader job = "PLD" w = {jobIconWidth} i = {index} lv = {lvPLD} />
-              <IconLoader job = "WAR" w = {jobIconWidth} i = {index} lv = {lvWAR} />
-              <IconLoader job = "DRK" w = {jobIconWidth} i = {index} lv = {lvDRK} />
-              <IconLoader job = "GNB" w = {jobIconWidth} i = {index} lv = {lvGNB} />
+              <IconLoader job = "PLD" i = {index} lv = {lvPLD} />
+              <IconLoader job = "WAR" i = {index} lv = {lvWAR} />
+              <IconLoader job = "DRK" i = {index} lv = {lvDRK} />
+              <IconLoaderSC job = "GNB" i = {index} j = "Tank" lv = {lvGNB} />
             </div>
             <div className = "Healer">
-              <IconLoader job = "WHM" w = {jobIconWidth} i = {index} lv = {lvWHM} />
-              <IconLoader job = "SCH" w = {jobIconWidth} i = {index} lv = {lvSCH} />
-              <IconLoader job = "AST" w = {jobIconWidth} i = {index} lv = {lvAST} />
-              <IconLoader job = "SGE" w = {jobIconWidth} i = {index} lv = {lvSGE} />
+              <IconLoader job = "WHM" i = {index} lv = {lvWHM} />
+              <IconLoader job = "SCH" i = {index} lv = {lvSCH} />
+              <IconLoader job = "AST" i = {index} lv = {lvAST} />
+              <IconLoaderSC job = "SGE" i = {index} j = "Healer" lv = {lvSGE} />
             </div>
             <div className = "DpsM">
-              <IconLoaderSC job = "DRG" w = {jobIconWidth} j = "None" lv = {lvDRG} />
-              <IconLoaderSC job = "MNK" w = {jobIconWidth} j = "Tank" lv = {lvMNK} />
-              <IconLoaderSC job = "NIN" w = {jobIconWidth} j = "Healer" lv = {lvNIN ? lvNIN : ""} />
-              <IconLoaderSC job = "RPR" w = {jobIconWidth} j = "Dps" lv = {lvRPR} />
-              <IconLoaderSC job = "SAM" w = {jobIconWidth} j = "DOH" lv = {lvSAM} />
+              <IconLoader job = "DRG" j = "None" lv = {lvDRG} />
+              <IconLoader job = "MNK" j = "Tank" lv = {lvMNK} />
+              <IconLoader job = "NIN" j = "Healer" lv = {lvNIN} />
+              <IconLoader job = "RPR" j = "Dps" lv = {lvRPR} />
+              <IconLoaderSC job = "SAM" i = {index} j = "Dps" lv = {lvSAM} />
             </div>
           </div>
         </div>

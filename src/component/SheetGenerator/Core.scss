@@ -101,43 +101,44 @@ $selected: #bb9b51;
 
 .preview-icon {
   z-index: 150;
-  position: absolute;
-  left: 50px;
-  top: 300px;
+  position: fixed;
+  // display: flex;
+  // left: 50px;
+  // top: 300px;
   fill: $job-color-unset; // svg use fill to color
 
   span {
-    position: relative;
+    // position: relative;
     font-size: 1.9rem;
     font-weight: 700;
     // top: -0.25rem;
-    left: 0.5rem;
-    padding-right: 3.25rem;
+    // left: 0.5rem;
+    // padding-right: 3.25rem;
     width: 50px;
     color: $text-color;
   }
 
-  .Tank {
-    display: flex;
-    position: absolute;
-    // left: 1rem;
-    top: 100px;
-    fill: $job-color-tank; // svg use fill to color
-  }
+  // .Tank {
+  //   display: flex;
+  //   position: absolute;
+  //   // left: 1rem;
+  //   top: 100px;
+  //   // fill: $job-color-tank; // svg use fill to color
+  // }
   
-  .Healer {
-    display: flex;
-    position: absolute;
-    // left: 1rem;
-    top: 300px;
-    fill: $job-color-healer; // svg use fill to color
-  }
+  // .Healer {
+  //   display: flex;
+  //   position: absolute;
+  //   // left: 1rem;
+  //   top: 300px;
+  //   // fill: $job-color-healer; // svg use fill to color
+  // }
 
-  .DpsM {
-    display: flex;
-    position: absolute;
-    // left: 1rem;
-    top: 400px;
-    fill: $job-color-dps; // svg use fill to color
-  }
+  // .DpsM {
+  //   display: flex;
+  //   position: absolute;
+  //   // left: 1rem;
+  //   top: 400px;
+  //   // fill: $job-color-dps; // svg use fill to color
+  // }
 }
