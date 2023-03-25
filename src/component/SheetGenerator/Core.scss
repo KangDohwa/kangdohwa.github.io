@@ -1,43 +1,143 @@
+$text-color: #f0f0f0;
+$text-color-test: #ff0000;
+
+$job-color-unset: #b0b0b0;
+$job-color-tank: #2d3a80;
+$job-color-healer: #346624;
+$job-color-dps: #732828;
+$job-color-doh: #5f4592;
+$job-color-dol: #bb9b51;
+
+$selected: #bb9b51;
+
 .container {
-  // margin-left: 100px;
+  zoom: 50%;
+}
+
+.custom-box {
+  zoom: 200%;
 }
 
 .box {
-  background-color: gray;
-  // position: relative;
+  // width: max-content;
+  background-color: white;
+  // position: absolute;
   // max-width: 1350px;
   height: 1080px;
-  zoom: 50%;
 }
 
 // .preview {
 //   position: relative;
 // }
 
+.type-select {
+  font-size: 24px;
+
+  input {
+    width: 2rem;
+  }
+
+  span {
+    vertical-align: middle;
+  }
+
+  [type = "radio"] {
+    vertical-align: middle;
+  }
+}
+
+.input-desc {
+
+  input {
+    text-align: left;
+    height: 24px;
+  }
+}
+
+.input-level {
+  
+  input {
+    font-size: 1.25rem;
+    text-align: center;
+    width: 3rem;
+    height: 2rem;
+  }
+}
+
 .img-preview-pre {
   z-index: 1;
   position: absolute;
+  width: 1350px;
+  height: 1080px;
   top: 0;
 }
 
 .img-preview {
   z-index: 1;
-  position: relative;
-  width: 1920px;
-  left: -550px;
+  position: absolute;
+  height: 1080px;
+  // left: -570px;
+  // margin-left: -570px;
+  // margin-right: -570px;
+  // clip: rect(0px, 1350px, 1080px, 0px);
+  // overflow: hidden;
 }
 
 .img-Background {
   z-index: 10;
   top: 0;
+  // left: 570px;
   position: absolute;
 }
 
 .preview-final {
   z-index: 100;
   position: relative;
-  overflow: hidden;
-  // margin-left: -550px;
   width: 1350px;
   height: 1080px;
+  // right: -570px;
+  overflow: hidden;
+}
+
+.preview-icon {
+  z-index: 150;
+  position: absolute;
+  left: 50px;
+  top: 300px;
+  fill: $job-color-unset; // svg use fill to color
+
+  span {
+    position: relative;
+    font-size: 1.9rem;
+    font-weight: 700;
+    // top: -0.25rem;
+    left: 0.5rem;
+    padding-right: 3.25rem;
+    width: 50px;
+    color: $text-color;
+  }
+
+  .Tank {
+    display: flex;
+    position: absolute;
+    // left: 1rem;
+    top: 100px;
+    fill: $job-color-tank; // svg use fill to color
+  }
+  
+  .Healer {
+    display: flex;
+    position: absolute;
+    // left: 1rem;
+    top: 300px;
+    fill: $job-color-healer; // svg use fill to color
+  }
+
+  .DpsM {
+    display: flex;
+    position: absolute;
+    // left: 1rem;
+    top: 400px;
+    fill: $job-color-dps; // svg use fill to color
+  }
 }
