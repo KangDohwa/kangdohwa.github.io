@@ -7,7 +7,7 @@ $job-color-healer: #548644;
 $job-color-dps: #934848;
 $job-color-doh: #5f4592;
 $job-color-dol: #bb9b51;
-$job-color-special: #505050;
+$job-color-special: #808080;
 
 // $job-color-unset: #b0b0b0;
 // $job-color-tank: #2d3a80;
@@ -19,6 +19,9 @@ $job-color-special: #505050;
 $selected: #bb9b51;
 
 .container {
+  background-color: #505050;
+  font-family: sans-serif;
+  margin: auto;
   zoom: 50%;
 }
 
@@ -28,10 +31,12 @@ $selected: #bb9b51;
 }
 
 .box {
+  width: 1350px;
+  left: auto;
   margin: auto;
-  align-content: center;
+  // align-content: center;
   // width: max-content;
-  background-color: white;
+  // background-color: white;
   // position: absolute;
   // max-width: 1350px;
   height: 1080px;
@@ -64,6 +69,7 @@ $selected: #bb9b51;
     width: 5rem;
     height: 1.8rem;
     border: 0;
+    border-bottom: #707070 0.125rem solid;
   }
 }
 
@@ -73,7 +79,7 @@ $selected: #bb9b51;
 
 .input-level {
   position: sticky;
-  font-size: 0.75rem;
+  font-size: 0.5rem;
   color: $text-color;
   display: block;
   flex-direction: row;
@@ -124,7 +130,7 @@ $selected: #bb9b51;
 
     input {
       background: transparent;
-      font-size: 1.125rem;
+      font-size: 1.25rem;
       text-align: center;
       width: 2.5rem;
       height: 2rem;
@@ -142,7 +148,6 @@ $selected: #bb9b51;
   position: absolute;
   width: 1350px;
   height: 1080px;
-  top: 100px;
 }
 
 .img-preview {

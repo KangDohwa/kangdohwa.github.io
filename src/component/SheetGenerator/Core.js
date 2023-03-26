@@ -319,38 +319,8 @@ function MyPage() {
     <div className = "container">
       <div className = "custom-box">
         <div className = "preview"> {/* image upload/download button div */}
-          <FileInput label = "사진 업로드" onChange = {onImageChange} comment = "Only support 16:9 image"/>
-          <button onClick = {downloadDivAsPng}>다운로드 dap</button>
+          <FileInput label = "사진 업로드" onChange = {onImageChange} comment = "현재 16:9 비율의 사진만 지원합니다."/>
         </div>
-        <fieldset className = "type-select"> {/* type selecting radio buttons */}
-          <label>
-            <input 
-              className = "type1"
-              type = "radio"
-              value = "0"
-              checked = {index === "0"}
-              onChange = {selectIndex}
-            /> <span>Ind.0</span>
-          </label>
-          <label>
-            <input 
-              className = "type2"
-              type = "radio"
-              value = "1"
-              checked = {index === "1"}
-              onChange = {selectIndex}
-            /> <span>Ind.1</span>
-          </label>
-          <label>
-            <input 
-              className = "type3"
-              type = "radio"
-              value = "2"
-              checked = {index === "2"}
-              onChange = {selectIndex}
-            /> <span>Ind.2</span>
-          </label>
-        </fieldset>
         <div className = "input-desc">
           <MakeTextInput name = "Name" t = {Name} fc = {changeText} PH = "닉네임" />
           <MakeTextInput name = "Title" t = {Title} fc = {changeText} PH = "칭호" />
@@ -417,6 +387,36 @@ function MyPage() {
             <MakeJobInput job = "lvRES" value = {lvRES} fc = {changeLv} type = "SPC" />
           </div>
         </div>
+        <fieldset className = "type-select"> {/* type selecting radio buttons */}
+          <label>
+            <input 
+              className = "type1"
+              type = "radio"
+              value = "0"
+              checked = {index === "0"}
+              onChange = {selectIndex}
+            /> <span>Ind.0</span>
+          </label>
+          <label>
+            <input 
+              className = "type2"
+              type = "radio"
+              value = "1"
+              checked = {index === "1"}
+              onChange = {selectIndex}
+            /> <span>Ind.1</span>
+          </label>
+          <label>
+            <input 
+              className = "type3"
+              type = "radio"
+              value = "2"
+              checked = {index === "2"}
+              onChange = {selectIndex}
+            /> <span>Ind.2</span>
+          </label>
+        </fieldset>
+        <button onClick = {downloadDivAsPng}>다운로드</button>
       </div>
       <div className = "box">
         <div className = "preview-final">
