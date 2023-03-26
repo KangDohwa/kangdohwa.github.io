@@ -55,7 +55,7 @@ import { ReactComponent as MIN } from "./images/job/7.DOL/MIN.svg";      // 광�
 import { ReactComponent as BTN } from "./images/job/7.DOL/BTN.svg";      // 원예가
 import { ReactComponent as FSH } from "./images/job/7.DOL/FSH.svg";      // 어부
 
-import { Type_1, Type_2 } from "./Type.js";
+import { Type_1, Type_2 } from "./Type";
 
 // export const JobList = [
 //   // Tank
@@ -80,9 +80,7 @@ import { Type_1, Type_2 } from "./Type.js";
 //   MIN: MIN, BTN: BTN, FSH: FSH,
 // ];
 
-
-
-export default function Jobs({ children, ...props }) {
+export default function Jobs(props) {
   const [jobColor] = useState({ // Job Color
     None: "#b0b0b0",
     Tank: "#2d3a80",
@@ -93,6 +91,7 @@ export default function Jobs({ children, ...props }) {
   })
   
   const {
+    // eslint-disable-next-line no-unused-vars
     None, Tank, Healer, Dps, DOH, DOL
   } = jobColor;
 
@@ -130,7 +129,7 @@ export default function Jobs({ children, ...props }) {
   z-index: 150;
   
   fill: ${(props) => jobColor[props.j]}
-
+  
   ${(props) =>
     (props.lv == 0) &&
     css`
@@ -141,20 +140,14 @@ export default function Jobs({ children, ...props }) {
   `};
 
   ${(props) =>
-    (props.i == 0) && (props.j == "Tank") &&
-    css`
-    left: 150px;
-  `};
-
-  ${(props) =>
     (props.i == 0) &&
     css`
     span {
-      font-size: 2.2rem;
+      font-size: 1.6rem;
     };
     
     svg {
-      width: 48px;
+      width: 1.8rem;
     }
 
     ${Type_1}
@@ -181,7 +174,7 @@ export default function Jobs({ children, ...props }) {
   const Jobs = J[props.job];
   return <div>
     <StyledLevel {...props}>
-      <div id = {props.job}>{children}
+      <div id = {props.job}>
         <Jobs className = {props.job} /><span>{props.lv}</span>
       </div>
     </StyledLevel>

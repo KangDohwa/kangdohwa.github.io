@@ -67,8 +67,9 @@ import FileSaver from "file-saver"; // actually using
 // }
 
 import FileInput from "./FileInput";
-import IconLoader from "./IconLoader";
+// import IconLoader from "./IconLoader";
 import IconLoaderSC from "./IconLoaderSC";
+import StatusLoaderSC from "./StatusLoaderSC";
 
 import "./Core.scss";
 
@@ -107,6 +108,18 @@ function MakeJobInput(props) { // function make input field
       onChange = {props.fc}
       min = "0"
       max = "90"
+    />
+  )
+}
+
+function MakeStatusBox(props) {
+  return (
+    <input 
+      className = {props.stat}
+      type = "checkbox"
+      name = {props.stat}
+      checked = {props.value}
+      onChange = {props.fc}
     />
   )
 }
@@ -176,6 +189,8 @@ function MyPage() {
     lvMIN: "", lvBTN: "", lvFSH: "",
   })
 
+  const [isCheck, setIsCheck] = useState(false); // status check
+
   const { // jobs array define
     // Tank
     lvGLA, lvPLD, lvMRD, lvWAR, lvDRK, lvGNB,
@@ -199,6 +214,10 @@ function MyPage() {
     lvMIN, lvBTN, lvFSH,
   } = lv;
 
+  const {
+    New, RNew, MPVE, MPRP, MPVP,
+  } = isCheck;
+
   const saveUserId = event => {
     setId(event.target.value);
   };
@@ -217,6 +236,11 @@ function MyPage() {
       [event.target.name]: event.target.value
     });
   };
+
+  const statusCheck = event => {
+    setIsCheck(!isCheck);
+    console.log(isCheck);
+  }
 
   return (
     <div className = "container">
@@ -270,29 +294,15 @@ function MyPage() {
             onChange = {saveUserPw}
           />
         </div>
+        <div className = "check_status">
+          <MakeStatusBox stat = "New" value = {New} fc = {statusCheck} />
+          <MakeStatusBox stat = "RNew" value = {RNew} fc = {statusCheck} />
+          <MakeStatusBox stat = "MPVE" value = {MPVE} fc = {statusCheck} />
+          <MakeStatusBox stat = "MPRP" value = {MPRP} fc = {statusCheck} />
+          <MakeStatusBox stat = "MPVP" value = {MPVP} fc = {statusCheck} />
+        </div>
         <div className = "input-level">
           <div className = "input-tank">
-          {/* <input 
-            className = "lv_PLD"
-            type = "number"
-            name = "lvPLD"
-            value = {lvPLD}
-            onChange = {changeLv}
-          />
-          <input 
-            className = "lv_DRK"
-            type = "number"
-            name = "lvDRK"
-            value = {lvDRK}
-            onChange = {changeLv}
-          />
-          <input 
-            className = "lv_WAR"
-            type = "number"
-            name = "lvWAR"
-            value = {lvWAR}
-            onChange = {changeLv}
-          /> */}
             <MakeJobInput job = "lvPLD" value = {lvPLD} fc = {changeLv} />
             <MakeJobInput job = "lvWAR" value = {lvWAR} fc = {changeLv} />
             <MakeJobInput job = "lvDRK" value = {lvDRK} fc = {changeLv} />
@@ -322,23 +332,26 @@ function MyPage() {
           )}
           <img className = "img-Background" src = {imgBackground} alt = "BG" />
           <div className = "preview-icon">
+            <div className = "PlayerStatus">
+              {/* <StatusLoaderSC stat = "New" i = {index} c = {isCheck[New]} /> */}
+            </div>
             <div className = "Tank">
-              <IconLoader job = "PLD" i = {index} lv = {lvPLD} />
-              <IconLoader job = "WAR" i = {index} lv = {lvWAR} />
-              <IconLoader job = "DRK" i = {index} lv = {lvDRK} />
+              <IconLoaderSC job = "PLD" i = {index} j = "Tank" lv = {lvPLD} />
+              <IconLoaderSC job = "WAR" i = {index} j = "Tank" lv = {lvWAR} />
+              <IconLoaderSC job = "DRK" i = {index} j = "Tank" lv = {lvDRK} />
               <IconLoaderSC job = "GNB" i = {index} j = "Tank" lv = {lvGNB} />
             </div>
             <div className = "Healer">
-              <IconLoader job = "WHM" i = {index} lv = {lvWHM} />
-              <IconLoader job = "SCH" i = {index} lv = {lvSCH} />
-              <IconLoader job = "AST" i = {index} lv = {lvAST} />
+              <IconLoaderSC job = "WHM" i = {index} j = "Healer" lv = {lvWHM} />
+              <IconLoaderSC job = "SCH" i = {index} j = "Healer" lv = {lvSCH} />
+              <IconLoaderSC job = "AST" i = {index} j = "Healer" lv = {lvAST} />
               <IconLoaderSC job = "SGE" i = {index} j = "Healer" lv = {lvSGE} />
             </div>
             <div className = "DpsM">
-              <IconLoader job = "DRG" j = "None" lv = {lvDRG} />
-              <IconLoader job = "MNK" j = "Tank" lv = {lvMNK} />
-              <IconLoader job = "NIN" j = "Healer" lv = {lvNIN} />
-              <IconLoader job = "RPR" j = "Dps" lv = {lvRPR} />
+              <IconLoaderSC job = "DRG" i = {index} j = "Dps" lv = {lvDRG} />
+              <IconLoaderSC job = "MNK" i = {index} j = "Dps" lv = {lvMNK} />
+              <IconLoaderSC job = "NIN" i = {index} j = "Dps" lv = {lvNIN} />
+              <IconLoaderSC job = "RPR" i = {index} j = "Dps" lv = {lvRPR} />
               <IconLoaderSC job = "SAM" i = {index} j = "Dps" lv = {lvSAM} />
             </div>
           </div>
