@@ -67,11 +67,12 @@ This is Project URL : [Here!](https://KangDohwa.github.io/fftools).
 > + [x] Image Upload
 > + [x] Image Download
 > + [x] Image Crop when downloading
-> + [ ] Inputs for user's lv, desc, etc...
-> + [ ] Apply every change from inputs' data
+> + [x] Inputs for user's lv, desc, etc...
+> + [x] Apply every change from inputs' data
 > + [ ] Set at least 2 types of sheet
 > + [ ] Make base sheet image
-> + [ ] Change styles when type selected
+> + [x] Change styles when type selected
+> + [ ] Make awesome designed page
 
 * * *
 

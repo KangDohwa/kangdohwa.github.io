@@ -1,39 +1,32 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable eqeqeq */
 import React, { useState } from "react";
 import styled, { css } from "styled-components";
 
-import New from "./images/status/Newbie.png";
-import RNew from "./images/status/Return.png";
-import MPVE from "./images/status/MPVE.png";
-import MPRP from "./images/status/MPRP.png";
-import MPVP from "./images/status/MPVP.png";
-
 import { Type_1, Type_2 } from "./Type";
 
-export default function Status({ children, ...props }) {
-
-  // const [UserStatus] = useState({
-  //   New: false,
-  //   RNew: false,
-  //   MPVE: false,
-  //   MPRP: false,
-  //   MPVP: false,
-  // })
-
-  const UserStatus = {
-    New, RNew, MPVE, MPRP, MPVP,
-  };
-
-  const StyledLevel = styled.div`
-
-  color: gray;
-  left: 100px;
-  top: 200px;
-  z-index: 150;
+const StyledLevel = styled.div`
+  
+  position: absolute;
 
   ${(props) =>
-    (props.c == true) &&
+    (props.c == false) &&
     css`
-    color: none;
+    .New {
+      filter: grayscale(100%);
+    }
+    .RNew {
+      filter: grayscale(100%);
+    }
+    .MPVE {
+      filter: grayscale(100%);
+    }
+    .MPRP {
+      filter: grayscale(100%);
+    }
+    .MPVP {
+      filter: grayscale(100%);
+    }
   `};
 
   ${(props) =>
@@ -41,14 +34,39 @@ export default function Status({ children, ...props }) {
     css`${Type_1}`
   };
 
-  `;
+  ${(props) =>
+    (props.i == 1) &&
+    css`${Type_2}`
+  };
 
-  const Status = UserStatus[props.stat];
-  return <div>
-    <StyledLevel {...props}>
-      <div id = {props.stat}>{children}
-        <Status className = {props.stat} />
-      </div>
-    </StyledLevel>
-  </div>;
+`;
+
+export default function Status(props) {
+
+  // const [UserStatus] = useState({
+  //   New: "New",
+  //   RNew: "RNew",
+  //   MPVE: "MPVE",
+  //   MPRP: "MPRP",
+  //   MPVP: "MPVP",
+  // })
+
+  // const {
+  //   New, RNew, MPVE, MPRP, MPVP
+  // } = UserStatus;
+
+  // const S = {
+  //   New, RNew, MPVE, MPRP, MPVP,
+  // };
+
+  // const UserStatus = {
+  //   New, RNew, MPVE, MPRP, MPVP,
+  // };
+
+  // const Status = S[props.stat];
+  return <StyledLevel {...props}>
+    <div id = {props.stat}>
+      <img className = {props.stat} src = {props.src} alt = {props.stat}/>
+    </div>
+  </StyledLevel>
 }

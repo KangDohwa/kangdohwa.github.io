@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable eqeqeq */
 import React, { useState } from "react";
 import styled, { css } from "styled-components";
 
@@ -38,7 +40,6 @@ import { ReactComponent as BLM } from "./images/job/5.DPS_RM/BLM.svg";   // 흑�
 import { ReactComponent as ACN } from "./images/job/5.DPS_RM/ACN.svg";   // 비술사
 import { ReactComponent as SMN } from "./images/job/5.DPS_RM/SMN.svg";   // 소환사
 import { ReactComponent as RDM } from "./images/job/5.DPS_RM/RDM.svg";   // 적마도사
-import { ReactComponent as BLU } from "./images/job/5.DPS_RM/BLU.svg";   // 청마도사
 
 // Disciples of the Hand
 import { ReactComponent as CRP } from "./images/job/6.DOH/CRP.svg";      // 목수
@@ -54,6 +55,11 @@ import { ReactComponent as CUL } from "./images/job/6.DOH/CUL.svg";      // 요�
 import { ReactComponent as MIN } from "./images/job/7.DOL/MIN.svg";      // 광부
 import { ReactComponent as BTN } from "./images/job/7.DOL/BTN.svg";      // 원예가
 import { ReactComponent as FSH } from "./images/job/7.DOL/FSH.svg";      // 어부
+
+// Something Special
+import { ReactComponent as BLU } from "./images/job/8.Special/BLU.svg";   // 청마도사
+import { ReactComponent as ELE } from "./images/job/8.Special/ELE.svg";   // 청마도사
+import { ReactComponent as RES } from "./images/job/8.Special/RES.svg";   // 청마도사
 
 import { Type_1, Type_2 } from "./Type";
 
@@ -80,60 +86,146 @@ import { Type_1, Type_2 } from "./Type";
 //   MIN: MIN, BTN: BTN, FSH: FSH,
 // ];
 
-export default function Jobs(props) {
-  const [jobColor] = useState({ // Job Color
-    None: "#b0b0b0",
-    Tank: "#2d3a80",
-    Healer: "#346624",
-    Dps: "#732828",
-    DOH: "#5f4592",
-    DOL: "#bb9b51",
-  })
+// export default function Jobs(props) {
+//   const [jobColor] = useState({ // Job Color
+//     None: "#b0b0b0",
+//     Tank: "#2d3a80",
+//     Healer: "#346624",
+//     Dps: "#732828",
+//     DOH: "#5f4592",
+//     DOL: "#bb9b51",
+//   })
   
-  const {
-    // eslint-disable-next-line no-unused-vars
-    None, Tank, Healer, Dps, DOH, DOL
-  } = jobColor;
+//   // const {
+//   //   None, Tank, Healer, Dps, DOH, DOL
+//   // } = jobColor;
 
-  const J = { // Job List
-    // Tank
-    GLA, PLD, MRD, WAR, DRK, GNB,
+//   const J = { // Job List
+//     // Tank
+//     GLA, PLD, MRD, WAR, DRK, GNB,
   
-    // Healer
-    CNJ, WHM, SCH, AST, SGE,
+//     // Healer
+//     CNJ, WHM, SCH, AST, SGE,
   
-    // DPS Melee
-    PGL, MNK, LNC, DRG, ROG, NIN, SAM, RPR,
+//     // DPS Melee
+//     PGL, MNK, LNC, DRG, ROG, NIN, SAM, RPR,
   
-    // DPS Ranged Physical
-    ARC, BRD, MCH, DNC,
+//     // DPS Ranged Physical
+//     ARC, BRD, MCH, DNC,
   
-    // DPS Ranged Magical
-    THM, BLM, ACN, SMN, RDM, BLU,
+//     // DPS Ranged Magical
+//     THM, BLM, ACN, SMN, RDM, BLU,
   
-    // Disciples of the Hand
-    CRP, BSM, ARM, GSM, LTW, WVR, ALC, CUL,
+//     // Disciples of the Hand
+//     CRP, BSM, ARM, GSM, LTW, WVR, ALC, CUL,
   
-    // Disciples of the Land
-    MIN, BTN, FSH,
-  };
+//     // Disciples of the Land
+//     MIN, BTN, FSH,
+//   };
 
-  const StyledLevel = styled.div`
+//   const StyledLevel = styled.div`
 
-  svg {
-    width: 32px;
-  }
+//   z-index: 150;
+//   font-weight: 700;
+  
+//   fill: ${(props) => jobColor[props.j]}
+  
+//   ${(props) =>
+//     (props.lv == 0) &&
+//     css`
+//     fill: ${jobColor[0]};
+//     span {
+//       display: none;
+//     }
+//   `};
 
-  left: 100px;
-  top: 200px;
+//   ${(props) =>
+//     (props.i == 0) &&
+//     css`
+//     span {
+//       font-size: 1.6rem;
+//     };
+    
+//     svg {
+//       width: 1.8rem;
+//     }
+
+//     ${Type_1}
+
+//   `};
+  
+//   ${(props) =>
+//     (props.i == 1) &&
+//     css`
+//     span {
+//       font-size: 2.2rem;
+//     };
+    
+//     svg {
+//       width: 48px;
+//     }
+
+//     ${Type_2}
+
+//   `};
+  
+//   `;
+
+//   const Jobs = J[props.job];
+//   return <StyledLevel {...props}>
+//     <div id = {props.job}>
+//       <Jobs className = {props.job} /><span>{props.lv}</span>
+//     </div>
+//   </StyledLevel>
+// }
+
+const jobColor = { // Job Color
+  None: "#b0b0b0",
+  Tank: "#4d5aa0",
+  Healer: "#548644",
+  Dps: "#934848",
+  DOH: "#5f4592",
+  DOL: "#bb9b51",
+  Special: "#303030",
+}
+
+const J = { // Job List
+  // Tank
+  GLA, PLD, MRD, WAR, DRK, GNB,
+
+  // Healer
+  CNJ, WHM, SCH, AST, SGE,
+
+  // DPS Melee
+  PGL, MNK, LNC, DRG, ROG, NIN, SAM, RPR,
+
+  // DPS Ranged Physical
+  ARC, BRD, MCH, DNC,
+
+  // DPS Ranged Magical
+  THM, BLM, ACN, SMN, RDM,
+
+  // Disciples of the Hand
+  CRP, BSM, ARM, GSM, LTW, WVR, ALC, CUL,
+
+  // Disciples of the Land
+  MIN, BTN, FSH,
+
+  // Something Special
+  BLU, ELE, RES,
+};
+
+const StyledLevel = styled.div`
+
   z-index: 150;
+  font-weight: 700;
   
   fill: ${(props) => jobColor[props.j]}
   
   ${(props) =>
     (props.lv == 0) &&
     css`
-    fill: ${jobColor[None]};
+    fill: ${jobColor[0]};
     span {
       display: none;
     }
@@ -169,17 +261,20 @@ export default function Jobs(props) {
 
   `};
   
-  `;
+`;
 
+export default function Jobs(props) {
   const Jobs = J[props.job];
-  return <div>
-    <StyledLevel {...props}>
-      <div id = {props.job}>
-        <Jobs className = {props.job} /><span>{props.lv}</span>
-      </div>
-    </StyledLevel>
-  </div>;
+  return <StyledLevel {...props}>
+    <div id = {props.job}>
+      <Jobs className = {props.job} /><span>{props.lv}</span>
+    </div>
+  </StyledLevel>
 }
+
+// function LoadJob({ children, ...props }) {
+//   return <StyledLevel {...props}>{children}</StyledLevel>;
+// }
 
 // export default function Jobs(props) {
 //   const Jobs = jobs[props.job];

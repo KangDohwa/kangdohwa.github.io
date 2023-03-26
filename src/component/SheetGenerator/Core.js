@@ -70,8 +70,44 @@ import FileInput from "./FileInput";
 // import IconLoader from "./IconLoader";
 import IconLoaderSC from "./IconLoaderSC";
 import StatusLoaderSC from "./StatusLoaderSC";
+import TextLoaderSC from "./TextLoaderSC";
+
+import INew from "./images/status/Newbie.png";
+import IRNew from "./images/status/Return.png";
+import IMPVE from "./images/status/MPVE.png";
+import IMPRP from "./images/status/MPRP.png";
+import IMPVP from "./images/status/MPVP.png";
 
 import "./Core.scss";
+
+const Jname = { // jobs define
+  // Tank
+  lvGLA: "검투사", lvPLD: "나이트", lvMRD: "도끼술사", lvWAR: "전사", 
+  lvDRK: "암흑기사", lvGNB: "건브레이커",
+
+  // Healer
+  lvCNJ: "환술사", lvWHM: "백마도사", lvSCH: "학자", lvAST: "점성술사", lvSGE: "현자",
+
+  // DPS Melee
+  lvPGL: "격투사", lvMNK: "몽크", lvLNC: "창술사", lvDRG: "용기사", 
+  lvROG: "쌍검사", lvNIN: "닌자", lvSAM: "사무라이", lvRPR: "리퍼",
+
+  // DPS Ranged Physical
+  lvARC: "궁술사", lvBRD: "음유시인", lvMCH: "기공사", lvDNC: "무도가",
+
+  // DPS Ranged Magical
+  lvTHM: "주술사", lvBLM: "흑마도사", lvACN: "비술사", lvSMN: "소환사", lvRDM: "적마도사",
+
+  // Disciples of the Hand
+  lvCRP: "목수", lvBSM: "대장장이", lvARM: "갑주제작사", lvGSM: "보석공예가", 
+  lvLTW: "가죽공예가", lvWVR: "재봉사", lvALC: "연금술사", lvCUL: "요리사",
+
+  // Disciples of the Land
+  lvMIN: "광부", lvBTN: "원예가", lvFSH: "어부",
+
+  // Something Special
+  lvBLU: "청마도사", lvELE: "엘리멘탈", lvRES: "레지스탕스",
+};
 
 function downloadDivAsPng() { // save image
   domtoimage.toBlob(document.getElementsByClassName("box")[0])
@@ -96,21 +132,38 @@ function downloadDivAsPng() { // save image
     // .catch(function (error) {
     //   console.error("Error while generating PNG : ", error);
     // });
-}
+};
+
+function MakeTextInput(props) {
+  return (
+    <input 
+      className = {props.name}
+      type = "text"
+      name = {props.name}
+      placeholder = {props.PH}
+      value = {props.t}
+      onChange = {props.fc}
+    />
+  )
+};
 
 function MakeJobInput(props) { // function make input field
   return (
-    <input 
-      className = {props.job}
-      type = "number"
-      name = {props.job}
-      value = {props.value}
-      onChange = {props.fc}
-      min = "0"
-      max = "90"
-    />
+    <>
+      <div className = {props.type}>{Jname[props.job]}
+      <input 
+        className = {props.job}
+        type = "number"
+        name = {props.job}
+        value = {props.value}
+        onChange = {props.fc}
+        min = "0"
+        max = "90"
+      />
+      </div>
+    </>
   )
-}
+};
 
 function MakeStatusBox(props) {
   return (
@@ -122,7 +175,7 @@ function MakeStatusBox(props) {
       onChange = {props.fc}
     />
   )
-}
+};
 
 function MyPage() {
   // const [imageSrc, setImageSrc] = useState("");
@@ -163,10 +216,12 @@ function MyPage() {
 
   const [index, setIndex] = useState([]); // style selector state
   
-  const [idValue, setId] = useState("");
-  const [pwValue, setPw] = useState("");
+  const [text, setText] = useState({
+    Name: "", Title: "", FC: "", FCs: "",
+    Style: "", Like: "", Dislike: "", Desc: "",
+  });
 
-  const [lv,setLv] = useState({ // jobs define
+  const [lv, setLv] = useState({ // jobs define
     // Tank
     lvGLA: "", lvPLD: "", lvMRD: "", lvWAR: "", lvDRK: "", lvGNB: "",
   
@@ -180,16 +235,29 @@ function MyPage() {
     lvARC: "", lvBRD: "", lvMCH: "", lvDNC: "",
   
     // DPS Ranged Magical
-    lvTHM: "", lvBLM: "", lvACN: "", lvSMN: "", lvRDM: "", lvBLU: "",
+    lvTHM: "", lvBLM: "", lvACN: "", lvSMN: "", lvRDM: "",
   
     // Disciples of the Hand
     lvCRP: "", lvBSM: "", lvARM: "", lvGSM: "", lvLTW: "", lvWVR: "", lvALC: "", lvCUL: "",
   
     // Disciples of the Land
     lvMIN: "", lvBTN: "", lvFSH: "",
+
+    // Something Special
+    lvBLU: "", lvELE: "", lvRES: "",
   })
 
-  const [isCheck, setIsCheck] = useState(false); // status check
+  // const [isCheck, setIsCheck] = useState(false); // status check
+  const [isCheck, setIsCheck] = useState({
+    New: false, RNew: false, MPVE: false, MPRP: false, MPVP: false,
+  })
+
+  
+
+  const {
+    Name, Title, FC, FCs,
+    Style, Like, Dislike, Desc,
+  } = text;
 
   const { // jobs array define
     // Tank
@@ -205,25 +273,27 @@ function MyPage() {
     lvARC, lvBRD, lvMCH, lvDNC,
   
     // DPS Ranged Magical
-    lvTHM, lvBLM, lvACN, lvSMN, lvRDM, lvBLU,
+    lvTHM, lvBLM, lvACN, lvSMN, lvRDM,
   
     // Disciples of the Hand
     lvCRP, lvBSM, lvARM, lvGSM, lvLTW, lvWVR, lvALC, lvCUL,
   
     // Disciples of the Land
     lvMIN, lvBTN, lvFSH,
+
+    // Something Special
+    lvBLU, lvELE, lvRES
   } = lv;
 
   const {
     New, RNew, MPVE, MPRP, MPVP,
   } = isCheck;
 
-  const saveUserId = event => {
-    setId(event.target.value);
-  };
-
-  const saveUserPw = event => {
-    setPw(event.target.value);
+  const changeText = event => {
+    setText({
+      ...text,
+      [event.target.name]: event.target.value
+    });
   };
 
   const selectIndex = event => { // style selector function
@@ -238,9 +308,12 @@ function MyPage() {
   };
 
   const statusCheck = event => {
-    setIsCheck(!isCheck);
-    console.log(isCheck);
-  }
+    // setIsCheck(!isCheck);
+    setIsCheck({
+      ...isCheck,
+      [event.target.name]: event.target.checked,
+    });
+  };
 
   return (
     <div className = "container">
@@ -279,47 +352,69 @@ function MyPage() {
           </label>
         </fieldset>
         <div className = "input-desc">
-          <input 
-            className = "id"
-            type = "text"
-            placeholder = "Nickname"
-            value = {idValue}
-            onChange = {saveUserId}
-          />
-          <input 
-            className = "pw"
-            type = "text"
-            placeholder = "password"
-            value = {pwValue}
-            onChange = {saveUserPw}
-          />
+          <MakeTextInput name = "Name" t = {Name} fc = {changeText} PH = "닉네임" />
+          <MakeTextInput name = "Title" t = {Title} fc = {changeText} PH = "칭호" />
+          <MakeTextInput name = "FC" t = {FC} fc = {changeText} PH = "자유부대" />
+          <MakeTextInput name = "FCs" t = {FCs} fc = {changeText} PH = "약칭" />
         </div>
-        <div className = "check_status">
-          <MakeStatusBox stat = "New" value = {New} fc = {statusCheck} />
-          <MakeStatusBox stat = "RNew" value = {RNew} fc = {statusCheck} />
-          <MakeStatusBox stat = "MPVE" value = {MPVE} fc = {statusCheck} />
-          <MakeStatusBox stat = "MPRP" value = {MPRP} fc = {statusCheck} />
-          <MakeStatusBox stat = "MPVP" value = {MPVP} fc = {statusCheck} />
+        <div className = "check-status">
+          <MakeStatusBox stat = "New" value = {New} fc = {statusCheck} />새싹
+          <MakeStatusBox stat = "RNew" value = {RNew} fc = {statusCheck} />복귀
+          <MakeStatusBox stat = "MPVE" value = {MPVE} fc = {statusCheck} />전투 멘토
+          <MakeStatusBox stat = "MPRP" value = {MPRP} fc = {statusCheck} />제작/채집 멘토
+          <MakeStatusBox stat = "MPVP" value = {MPVP} fc = {statusCheck} />PVP 멘토
         </div>
         <div className = "input-level">
-          <div className = "input-tank">
-            <MakeJobInput job = "lvPLD" value = {lvPLD} fc = {changeLv} />
-            <MakeJobInput job = "lvWAR" value = {lvWAR} fc = {changeLv} />
-            <MakeJobInput job = "lvDRK" value = {lvDRK} fc = {changeLv} />
-            <MakeJobInput job = "lvGNB" value = {lvGNB} fc = {changeLv} />
+          <div className = "tank">
+            <MakeJobInput job = "lvPLD" value = {lvPLD} fc = {changeLv} type = "Tank" />
+            <MakeJobInput job = "lvWAR" value = {lvWAR} fc = {changeLv} type = "Tank" />
+            <MakeJobInput job = "lvDRK" value = {lvDRK} fc = {changeLv} type = "Tank" />
+            <MakeJobInput job = "lvGNB" value = {lvGNB} fc = {changeLv} type = "Tank" />
           </div>
-          <div className = "input-healer">
-            <MakeJobInput job = "lvWHM" value = {lvWHM} fc = {changeLv} />
-            <MakeJobInput job = "lvSCH" value = {lvSCH} fc = {changeLv} />
-            <MakeJobInput job = "lvAST" value = {lvAST} fc = {changeLv} />
-            <MakeJobInput job = "lvSGE" value = {lvSGE} fc = {changeLv} />
+          <div className = "healer">
+            <MakeJobInput job = "lvWHM" value = {lvWHM} fc = {changeLv} type = "Healer" />
+            <MakeJobInput job = "lvSCH" value = {lvSCH} fc = {changeLv} type = "Healer" />
+            <MakeJobInput job = "lvAST" value = {lvAST} fc = {changeLv} type = "Healer" />
+            <MakeJobInput job = "lvSGE" value = {lvSGE} fc = {changeLv} type = "Healer" />
           </div>
-          <div className = "input-dps-melee">
-            <MakeJobInput job = "lvDRG" value = {lvDRG} fc = {changeLv} />
-            <MakeJobInput job = "lvMNK" value = {lvMNK} fc = {changeLv} />
-            <MakeJobInput job = "lvNIN" value = {lvNIN} fc = {changeLv} />
-            <MakeJobInput job = "lvRPR" value = {lvRPR} fc = {changeLv} />
-            <MakeJobInput job = "lvSAM" value = {lvSAM} fc = {changeLv} />
+          <div className = "dps-m">
+            <MakeJobInput job = "lvDRG" value = {lvDRG} fc = {changeLv} type = "DPS" />
+            <MakeJobInput job = "lvMNK" value = {lvMNK} fc = {changeLv} type = "DPS" />
+            <MakeJobInput job = "lvNIN" value = {lvNIN} fc = {changeLv} type = "DPS" />
+            <MakeJobInput job = "lvRPR" value = {lvRPR} fc = {changeLv} type = "DPS" />
+            <MakeJobInput job = "lvSAM" value = {lvSAM} fc = {changeLv} type = "DPS" />
+          </div>
+          <div className = "dps-rp">
+            <MakeJobInput job = "lvBRD" value = {lvBRD} fc = {changeLv} type = "DPS" />
+            <MakeJobInput job = "lvMCH" value = {lvMCH} fc = {changeLv} type = "DPS" />
+            <MakeJobInput job = "lvDNC" value = {lvDNC} fc = {changeLv} type = "DPS" />
+          </div>
+          <div className = "dps-rm">
+            <MakeJobInput job = "lvBLM" value = {lvBLM} fc = {changeLv} type = "DPS" />
+            <MakeJobInput job = "lvSMN" value = {lvSMN} fc = {changeLv} type = "DPS" />
+            <MakeJobInput job = "lvRDM" value = {lvRDM} fc = {changeLv} type = "DPS" />
+          </div>
+          <div className = "doh1">
+            <MakeJobInput job = "lvCRP" value = {lvCRP} fc = {changeLv} type = "DOH" />
+            <MakeJobInput job = "lvBSM" value = {lvBSM} fc = {changeLv} type = "DOH" />
+            <MakeJobInput job = "lvARM" value = {lvARM} fc = {changeLv} type = "DOH" />
+            <MakeJobInput job = "lvGSM" value = {lvGSM} fc = {changeLv} type = "DOH" />
+          </div>
+          <div className = "doh2">
+            <MakeJobInput job = "lvLTW" value = {lvLTW} fc = {changeLv} type = "DOH" />
+            <MakeJobInput job = "lvWVR" value = {lvWVR} fc = {changeLv} type = "DOH" />
+            <MakeJobInput job = "lvALC" value = {lvALC} fc = {changeLv} type = "DOH" />
+            <MakeJobInput job = "lvCUL" value = {lvCUL} fc = {changeLv} type = "DOH" />
+          </div>
+          <div className = "dol">
+            <MakeJobInput job = "lvMIN" value = {lvMIN} fc = {changeLv} type = "DOL" />
+            <MakeJobInput job = "lvBTN" value = {lvBTN} fc = {changeLv} type = "DOL" />
+            <MakeJobInput job = "lvFSH" value = {lvFSH} fc = {changeLv} type = "DOL" />
+          </div>
+          <div className = "special">
+            <MakeJobInput job = "lvBLU" value = {lvBLU} fc = {changeLv} type = "SPC" />
+            <MakeJobInput job = "lvELE" value = {lvELE} fc = {changeLv} type = "SPC" />
+            <MakeJobInput job = "lvRES" value = {lvRES} fc = {changeLv} type = "SPC" />
           </div>
         </div>
       </div>
@@ -332,8 +427,18 @@ function MyPage() {
           )}
           <img className = "img-Background" src = {imgBackground} alt = "BG" />
           <div className = "preview-icon">
+            <div className = "PlayerInfo">
+              <TextLoaderSC name = "Name" i = {index} t = {Name} />
+              <TextLoaderSC name = "Title" i = {index} t = {Title} />
+              <TextLoaderSC name = "FC" i = {index} t = {FC} />
+              <TextLoaderSC name = "FCs" i = {index} t = {FCs} />
+            </div>
             <div className = "PlayerStatus">
-              {/* <StatusLoaderSC stat = "New" i = {index} c = {isCheck[New]} /> */}
+              <StatusLoaderSC stat = "New" i = {index} src = {INew} c = {New} />
+              <StatusLoaderSC stat = "RNew" i = {index} src = {IRNew} c = {RNew} />
+              <StatusLoaderSC stat = "MPVE" i = {index} src = {IMPVE} c = {MPVE} />
+              <StatusLoaderSC stat = "MPRP" i = {index} src = {IMPRP} c = {MPRP} />
+              <StatusLoaderSC stat = "MPVP" i = {index} src = {IMPVP} c = {MPVP} />
             </div>
             <div className = "Tank">
               <IconLoaderSC job = "PLD" i = {index} j = "Tank" lv = {lvPLD} />
@@ -353,6 +458,36 @@ function MyPage() {
               <IconLoaderSC job = "NIN" i = {index} j = "Dps" lv = {lvNIN} />
               <IconLoaderSC job = "RPR" i = {index} j = "Dps" lv = {lvRPR} />
               <IconLoaderSC job = "SAM" i = {index} j = "Dps" lv = {lvSAM} />
+            </div>
+            <div className = "DpsRP">
+              <IconLoaderSC job = "BRD" i = {index} j = "Dps" lv = {lvBRD} />
+              <IconLoaderSC job = "MCH" i = {index} j = "Dps" lv = {lvMCH} />
+              <IconLoaderSC job = "DNC" i = {index} j = "Dps" lv = {lvDNC} />
+            </div>
+            <div className = "DpsRM">
+              <IconLoaderSC job = "BLM" i = {index} j = "Dps" lv = {lvBLM} />
+              <IconLoaderSC job = "SMN" i = {index} j = "Dps" lv = {lvSMN} />
+              <IconLoaderSC job = "RDM" i = {index} j = "Dps" lv = {lvRDM} />
+            </div>
+            <div className = "DOH">
+              <IconLoaderSC job = "CRP" i = {index} j = "DOH" lv = {lvCRP} />
+              <IconLoaderSC job = "BSM" i = {index} j = "DOH" lv = {lvBSM} />
+              <IconLoaderSC job = "ARM" i = {index} j = "DOH" lv = {lvARM} />
+              <IconLoaderSC job = "GSM" i = {index} j = "DOH" lv = {lvGSM} />
+              <IconLoaderSC job = "LTW" i = {index} j = "DOH" lv = {lvLTW} />
+              <IconLoaderSC job = "WVR" i = {index} j = "DOH" lv = {lvWVR} />
+              <IconLoaderSC job = "ALC" i = {index} j = "DOH" lv = {lvALC} />
+              <IconLoaderSC job = "CUL" i = {index} j = "DOH" lv = {lvCUL} />
+            </div>
+            <div className = "DOL">
+              <IconLoaderSC job = "MIN" i = {index} j = "DOL" lv = {lvMIN} />
+              <IconLoaderSC job = "BTN" i = {index} j = "DOL" lv = {lvBTN} />
+              <IconLoaderSC job = "FSH" i = {index} j = "DOL" lv = {lvFSH} />
+            </div>
+            <div className = "Special">
+              <IconLoaderSC job = "BLU" i = {index} j = "Special" lv = {lvBLU} />
+              <IconLoaderSC job = "ELE" i = {index} j = "Special" lv = {lvELE} />
+              <IconLoaderSC job = "RES" i = {index} j = "Special" lv = {lvRES} />
             </div>
           </div>
         </div>

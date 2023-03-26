@@ -29,6 +29,11 @@ body {
     background-color: $color-bg;
     height: 100%;
   }
+
+  &-Section {
+    position: relative;
+    margin: auto;
+  }
 }
 
 .Header {
