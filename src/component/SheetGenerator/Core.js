@@ -339,6 +339,7 @@ function MyPage() {
           <p>버그 제보나 기능 제안, 문의사항 등은 <a
             href = "https://www.twitter.com/Jjae_ff14" target = "_blank" rel="noreferrer">트위터 @Jjae_ff14</a>
             로 멘션해주시거나 DM 보내주세요! </p>
+          <p>예쁘거나 멋진 디자인을 보내주시면, 구현해보도록 하겠습니다!</p>
         </div>
         <div className = "preview"> {/* image upload/download button div */}
           <FileInput label = "사진 업로드" onChange = {onImageChange} comment = "현재 16:9 비율의 사진만 지원합니다."/>
