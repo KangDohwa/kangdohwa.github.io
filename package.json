@@ -1,5 +1,5 @@
 {
-  "homepage": "https://KangDohwa.github.io/fftools",
+  "homepage": "https://jjae.xyz",
   "name": "fftools",
   "version": "0.2.0-alpha",
   "private": true,
@@ -27,7 +27,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "npm run build && cp CNAME ./build",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
