@@ -1,36 +1,36 @@
 import React from 'react';
 
-const HomeStyle = {
-  width: '50%',
-  margin: 'auto',
-  transform: 'translateY(60px)',
-  textAlign: 'justify',
-};
+// import "./Home.scss";
 
-const HeaderStyle = {
-  textAlign: 'center',
-  margin: '0px',
-  color: '#f5913e',
-};
+// const HomeStyle = {
+//   width: '80%',
+//   margin: 'auto',
+//   transform: 'translateY(60px)',
+//   // textAlign: 'justify',
+//   color: '#f0f0f0',
+// };
 
-const Home = () => (
+// const HeaderStyle = {
+//   textAlign: 'center',
+//   margin: '0px',
+//   color: '#33a7ff',
+// };
+
+function Home() {
+
+  return (
   <>
-    <div class="component"style={HomeStyle}>
-      <header style={HeaderStyle}>
-        <h2>Welcome to Our Page </h2>
+    <div className = "MainHome">
+      <header>
+        쩨의 개인 페이지에 오신 것을 환영합니다!
       </header>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        Vitae consectetur amet beatae. Porro, dignissimos,
-        facere consequatur commodi autem laborum quibusdam aliquid
-        officia consectetur nemo voluptates illo, pariatur necessitatibus
-        veniam illum sapiente. Quibusdam velit cupiditate sit molestias,
-        aliquid doloribus tenetur beatae, dicta a animi praesentium impedit
-        excepturi aliquam? Dolor adipisci perspiciatis nobis voluptas
-        praesentium magni rem nulla ipsa accusantium omnis velit illum
-        nam qui reiciendis possimus, cupiditate officia illo vero! Provident.
+        아직은 개발 및 테스트중입니다.<br />
+        문의는 twitter : <a href="https://www.twitter.com/Jjae_ff14">@Jjae_ff14</a>로 해주세요.
       </p>
     </div>
   </>
-);
+  );
+};
+
 export default Home;

@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import RouteChangeTracker from "./RouteChangeTracker";
 
 import Info from "../package.json";
 
@@ -11,14 +12,13 @@ import Clock from "./component/Clock";
 import Minesweeper from "./component/Minesweeper/Minesweeper";
 import TicTacToe from "./component/TicTacToe/Board";
 import SheetGenerator from "./component/SheetGenerator/Core";
-import RouteChangeTracker from "./RouteChangeTracker";
 
 function App(props) {
   return (
     <div className = "App">
-      <div className = "App-Header">
+      {/* <div className = "App-Header">
         <Header version = {Info.version}/>
-      </div>
+      </div> */}
       <div className = "App-Body">
         <div className = "App-Nav">
           <Nav />

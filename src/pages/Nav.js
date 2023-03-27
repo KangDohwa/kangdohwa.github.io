@@ -21,15 +21,15 @@ function Nav(props) {
     <>
       <div className = "Nav">
         <ul>
-          <li className = "Nav-Cat1">
+          {/* <li className = "Nav-Cat1">
             <MdHome /> 일반
-          </li>
+          </li> */}
           <Link to = "/home">
             <li className = "Nav-Home">
-              <MdHome /> Home 
+              <MdHome /> 메인 
             </li>
           </Link>
-          <Link to = "/clock">
+          {/* <Link to = "/clock">
             <li className = "Nav-Clock">
               <MdHome /> <span>Clock</span>
             </li>
@@ -43,10 +43,10 @@ function Nav(props) {
             <li className = "Nav-TicTacToe">
               <MdHome /> <span>TicTacToe</span>
             </li>
-          </Link>
+          </Link> */}
           <Link to = "/sheetgenerator">
             <li className = "Nav-SheetGenerator">
-              <MdHome /> <span>SheetGenerator</span>
+              <MdHome /> <span>트친소 시트</span>
             </li>
           </Link>
         </ul>
