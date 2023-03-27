@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import Info from "../package.json";
 
@@ -11,6 +11,7 @@ import Clock from "./component/Clock";
 import Minesweeper from "./component/Minesweeper/Minesweeper";
 import TicTacToe from "./component/TicTacToe/Board";
 import SheetGenerator from "./component/SheetGenerator/Core";
+import RouteChangeTracker from "./RouteChangeTracker";
 
 function App(props) {
   return (
@@ -23,13 +24,16 @@ function App(props) {
           <Nav />
         </div>
         <div className = "App-Section">
-          <Routes>
-            <Route path = "/home" element = {<Home />} />
-            <Route path = "/clock" element = {<Clock />} />
-            <Route path = "/mine" element = {<Minesweeper />} />
-            <Route path = "/tictactoe" element = {<TicTacToe />} />
-            <Route path = "/sheetgenerator" element = {<SheetGenerator />} />
-          </Routes>
+          {/* <BrowserRouter> */}
+          <RouteChangeTracker />
+            <Routes>
+              <Route path = "/home" element = {<Home />} />
+              <Route path = "/clock" element = {<Clock />} />
+              <Route path = "/mine" element = {<Minesweeper />} />
+              <Route path = "/tictactoe" element = {<TicTacToe />} />
+              <Route path = "/sheetgenerator" element = {<SheetGenerator />} />
+            </Routes>
+          {/* </BrowserRouter> */}
         </div>
       </div>
     </div>

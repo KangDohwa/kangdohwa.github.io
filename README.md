@@ -1,6 +1,6 @@
 # Let's Join My Page!
 
-This is Project URL : [Here!](https://KangDohwa.github.io/fftools).
+This is Project URL : [Here!](https://jjae.xyz).
 
 * * *
 
@@ -79,6 +79,7 @@ This is Project URL : [Here!](https://KangDohwa.github.io/fftools).
 ### ETC
 
 + [x] turn private previous repo
++ [x] custom domain setting
 
 
 <!-- # Getting Started with Create React App
