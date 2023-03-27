@@ -70,9 +70,10 @@ This is Project URL : [Here!](https://jjae.xyz).
 > + [x] Inputs for user's lv, desc, etc...
 > + [x] Apply every change from inputs' data
 > + [ ] Set at least 2 types of sheet
-> + [ ] Make base sheet image
+> + [x] Make base sheet image
 > + [x] Change styles when type selected
-> + [ ] Make awesome designed page
+> + [ ] Make awesome designed page - WIP
+> + [x] Prototype Deploy
 
 * * *
 
