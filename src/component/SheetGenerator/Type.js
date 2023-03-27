@@ -149,12 +149,12 @@ export const Type_1 = `
 
   // DPS M //
 
-  #DRG {
+  #MNK {
     left: 100px;
     top: 320px;
   }
 
-  #MNK {
+  #DRG {
     left: 190px;
     top: 320px;
   }
@@ -164,12 +164,12 @@ export const Type_1 = `
     top: 320px;
   }
 
-  #RPR {
+  #SAM {
     left: 370px;
     top: 320px;
   }
 
-  #SAM {
+  #RPR {
     left: 460px;
     top: 320px;
   }
