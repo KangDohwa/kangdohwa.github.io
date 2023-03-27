@@ -10,12 +10,9 @@ const StyledLevel = styled.div`
   position: absolute;
   width: 500px;
 
-  ${(props) =>
-    (props.name == "FCs") &&
-    `
-    font-align: right;
-    `
-  };
+  // font-family: "Gamja Flower";
+  // font-family: "KorailRoundGothicBold";
+  font-family: "LINESeedKR-Bd";
 
   ${(props) =>
     (props.i == 0) &&

@@ -10,7 +10,6 @@ export const Type_1 = `
   #MIN, #BTN, #FSH,
   #BLU, #ELE, #RES, 
   #New, #RNew, #MPVE, #MPRP, #MPVP {
-    font-family: 'Gothic';
     position: absolute;
     img {
       width: 32px;

@@ -164,6 +164,10 @@ const StyledLevel = styled.div`
   z-index: 150;
   font-weight: 700;
   
+  // font-family: "Gamja Flower";
+  // font-family: "KorailRoundGothicBold";
+  font-family: "LINESeedKR-Bd";
+  
   fill: ${(props) => jobColor[props.j]}
   
   ${(props) =>

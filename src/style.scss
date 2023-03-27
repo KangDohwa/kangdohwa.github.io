@@ -1,7 +1,28 @@
-$Header-Height: 80px;
+@font-face {
+  font-family: "Gamja Flower";
+  src: url(./component/fonts/GamjaFlower-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'KorailRoundGothicBold';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2212@1.0/KorailRoundGothicBold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'LINESeedKR-Bd';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Bd.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+// $Header-Height: 80px;
+
+
 
 $color-bg: #272727;
-$color-base: #404040;
+$color-base: #505050;
 $color-contrast: #ffffff;
 
 // $color-bg: #0065b2;
@@ -14,6 +35,11 @@ body {
   background-color: $color-base;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.Fonts-desc {
+  width: 90%;
+  margin: auto;
 }
 
 .MainHome {
@@ -55,9 +81,10 @@ body {
   }
 
   &-Section {
+    color: #ffffff;
     position: relative;
     padding: auto;
-    width: 100%;
+    width: 90%;
   }
 
   &-Footer {
