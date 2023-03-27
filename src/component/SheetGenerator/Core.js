@@ -332,6 +332,8 @@ function MyPage() {
     <div className = "container">
       <div className = "custom-box">
         <div className = "Admin-Desc">
+          <p>!!새로고침 버튼을 누를 시 작성한 데이터가 전부 사라집니다! 주의해주세요!!</p>
+          <br />
           <p>안녕하세요! 사이트를 만든 쩨 입니다!</p>
           <p>트친소 생성기를 직접 만들어보고 싶어서 열심히 만들어봤습니다 :D</p>
           <p>테스트를 충분히 거치지 않았으며, 데스크톱 크롬 환경에서만 확인해봤습니다.</p>
