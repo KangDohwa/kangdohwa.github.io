@@ -18,6 +18,17 @@ $job-color-special: #808080;
 
 $selected: #bb9b51;
 
+.Admin-Desc {
+  font-size: 24px;
+  text-align: center;
+  padding-bottom: 5rem;
+
+  a {
+    text-decoration: none;
+    color: #33a7ff;
+  }
+}
+
 .container {
   background-color: #505050;
   font-family: sans-serif;

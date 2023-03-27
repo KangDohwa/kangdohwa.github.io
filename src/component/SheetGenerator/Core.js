@@ -331,6 +331,12 @@ function MyPage() {
   return (
     <div className = "container">
       <div className = "custom-box">
+        <div className = "Admin-Desc">
+          <p>안녕하세요! 사이트를 만든 쩨 입니다!</p>
+          <p>트친소 생성기를 직접 만들어보고 싶어서 열심히 만들어봤습니다 :D</p>
+          <p>취미삼아 만들어본지라 버그가 있을수도 있으며, 테스트는 데스크톱 크롬에서만 진행했습니다!</p>
+          <p>버그 제보나 기능 제안, 문의사항 등은 <a href = "https://www.twitter.com/Jjae_ff14">트위터 @Jjae_ff14</a>로 멘션해주시거나 DM 보내주세요! </p>
+        </div>
         <div className = "preview"> {/* image upload/download button div */}
           <FileInput label = "사진 업로드" onChange = {onImageChange} comment = "현재 16:9 비율의 사진만 지원합니다."/>
         </div>

@@ -22,7 +22,7 @@ function App(props) {
       </div> */}
       <div className = "App-Body">
         <div className = "App-Nav">
-          <Nav />
+          {/* <Nav /> */}
         </div>
         <div className = "App-Section">
           {/* <BrowserRouter> */}
@@ -38,7 +38,7 @@ function App(props) {
         </div>
       </div>
       <div className = "App-Footer">
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </div>
   );
