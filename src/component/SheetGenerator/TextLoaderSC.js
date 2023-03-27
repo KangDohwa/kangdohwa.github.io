@@ -11,8 +11,18 @@ const StyledLevel = styled.div`
   width: 500px;
 
   ${(props) =>
+    (props.name == "FCs") &&
+    `
+    font-align: right;
+    `
+  };
+
+  ${(props) =>
     (props.i == 0) &&
-    css`${Type_1}`
+    css`
+    
+    ${Type_1}`
+    
   };
 
   `;
@@ -30,9 +40,32 @@ export default function Texts(props) {
   // const T = {
   //   textName,
   // };
+
+  const prefix = "<<";
+  const suffix = ">>";
   return <StyledLevel {...props}>
+    {props.name == "FCs" ? (props.t == "" ? (
+      <div id = {props.name}>
+        <p className = {props.name}>{props.t}</p>
+      </div>) : (
+      <div id = {props.name}>
+        <p className = {props.name}>{prefix}{props.t}{suffix}</p>
+      </div>)) : (props.name == "Style" ? (
+        <div id = {props.name}>
+          <p className = {props.name}>성향 : {props.t}</p>
+        </div>) : (props.name == "Like" ? (
+          <div id = {props.name}>
+            <p className = {props.name}>좋아요 : {props.t}</p>
+          </div>) : (props.name == "Dislike" ? (
+          <div id = {props.name}>
+            <p className = {props.name}>싫어요 : {props.t}</p>
+          </div>) : (props.name == "Desc" ? (
+          <div id = {props.name}>
+            <p className = {props.name}>한마디 : {props.t}</p>
+          </div>) : (
     <div id = {props.name}>
       <p className = {props.name}>{props.t}</p>
-    </div>
+    </div>)))))
+  }
   </StyledLevel>
 }

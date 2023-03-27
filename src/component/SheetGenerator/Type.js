@@ -1,5 +1,6 @@
 export const Type_1 = `
-  #Name, #Title, #FC, #FCs,
+  #Name, #Title, #FC, #FCs, #Server, 
+  #Style, #Like, #Dislike, #Desc, 
   #GLA, #PLD, #MRD, #WAR, #DRK, #GNB, 
   #CNJ, #WHM, #SCH, #AST, #SGE, 
   #PGL, #MNK, #LNC, #DRG, #ROG, #NIN, #SAM, #RPR, 
@@ -9,6 +10,7 @@ export const Type_1 = `
   #MIN, #BTN, #FSH,
   #BLU, #ELE, #RES, 
   #New, #RNew, #MPVE, #MPRP, #MPVP {
+    font-family: 'Gothic';
     position: absolute;
     img {
       width: 32px;
@@ -23,40 +25,77 @@ export const Type_1 = `
 
   // Text Input Start //
   #Name {
-    left: 100px;
-    top: 100px;
+    font-size: 3rem;
+    left: 60px;
+    top: 65px;
   }
 
   #Title {
-    left: 100px;
-    top: 140px;
+    left: 70px;
+    top: 70px;
+  }
+  
+  #FC {
+    text-align: right;
+    left: 70px;
+    top: 165px;
+  }
+
+  #FCs {
+    left: 190px;
+    top: 165px;
+  }
+
+  #Server {
+    left: 300px;
+    top: 70px;
+  }
+
+  #Style {
+    left: 60px;
+    top: 630px;
+  }
+
+  #Like {
+    left: 60px;
+    top: 720px;
+  }
+
+  #Dislike {
+    left: 60px;
+    top: 810px;
+  }
+
+  #Desc {
+    left: 60px;
+    top: 900px;
   }
   // Text Input End //
   
   // User Status Start //
   #New {
-    left: 50px;
-    top: 120px;
+    left: 360px;
+    top: 80px;
   }
   
   #RNew {
-    left: 150px;
-    top: 120px;
+    left: 390px;
+    top: 80px;
   }
   
   #MPVE {
-    left: 250px;
-    top: 120px;
+    left: 420px;
+    top: 80px;
   }
   
   #MPRP {
-    left: 350px;
-    top: 120px;
+    left: 450px;
+    top: 80px;
   }
   
   #MPVP {
-    left: 450px;
-    top: 120px;
+    left: 480px;
+    top: 80px;
   }
   // User Status End //
 
@@ -66,22 +105,22 @@ export const Type_1 = `
   // Tank //
   #PLD {
     left: 100px;
-    top: 160px;
+    top: 240px;
   }
   
   #WAR {
-    left: 200px;
-    top: 160px;
+    left: 190px;
+    top: 240px;
   }
   
   #DRK {
-    left: 300px;
-    top: 160px;
+    left: 280px;
+    top: 240px;
   }
 
   #GNB {
-    left: 400px;
-    top: 160px;
+    left: 370px;
+    top: 240px;
   }
 
 
@@ -89,35 +128,86 @@ export const Type_1 = `
 
   #WHM {
     left: 100px;
-    top: 300px;
+    top: 280px;
   }
 
   #SCH {
-    left: 200px;
-    top: 300px;
+    left: 190px;
+    top: 280px;
   }
 
   #AST {
-    left: 300px;
-    top: 300px;
+    left: 280px;
+    top: 280px;
   }
 
   #SGE {
-    left: 400px;
-    top: 300px;
+    left: 370px;
+    top: 280px;
   }
 
 
-  // DPS //
+  // DPS M //
 
   #DRG {
+    left: 100px;
+    top: 320px;
+  }
+
+  #MNK {
+    left: 190px;
+    top: 320px;
+  }
+
+  #NIN {
+    left: 280px;
+    top: 320px;
+  }
+
+  #RPR {
+    left: 370px;
+    top: 320px;
+  }
+
+  #SAM {
+    left: 460px;
+    top: 320px;
+  }
+
+
+  // DPS RP //
+
+  #BRD {
     left: 100px;
     top: 360px;
   }
 
-  #SAM {
+  #MCH {
+    left: 190px;
+    top: 360px;
+  }
+
+  #DNC {
+    left: 280px;
+    top: 360px;
+  }
+
+
+  // DPS RM //
+
+  #BLM {
     left: 100px;
-    top: 340px;
+    top: 400px;
+  }
+
+  #SMN {
+    left: 190px;
+    top: 400px;
+  }
+
+  #RDM {
+    left: 280px;
+    top: 400px;
   }
 
   
@@ -125,7 +215,42 @@ export const Type_1 = `
 
   #CRP {
     left: 100px;
-    top: 420px;
+    top: 440px;
+  }
+
+  #BSM {
+    left: 190px;
+    top: 440px;
+  }
+
+  #ARM {
+    left: 280px;
+    top: 440px;
+  }
+
+  #GSM {
+    left: 370px;
+    top: 440px;
+  }
+
+  #LTW {
+    left: 100px;
+    top: 480px;
+  }
+
+  #WVR {
+    left: 190px;
+    top: 480px;
+  }
+
+  #ALC {
+    left: 280px;
+    top: 480px;
+  }
+
+  #CUL {
+    left: 370px;
+    top: 480px;
   }
 
 
@@ -133,7 +258,17 @@ export const Type_1 = `
 
   #MIN {
     left: 100px;
-    top: 500px;
+    top: 520px;
+  }
+
+  #BTN {
+    left: 190px;
+    top: 520px;
+  }
+
+  #FSH {
+    left: 280px;
+    top: 520px;
   }
 
   
@@ -141,43 +276,24 @@ export const Type_1 = `
 
   #BLU {
     left: 100px;
-    top: 380px;
+    top: 560px;
   }
 
   #ELE {
-    left: 200px;
-    top: 380px;
+    left: 190px;
+    top: 560px;
   }
 
   #RES {
-    invert: 100%;
-    left: 300px;
-    top: 380px;
+    left: 280px;
+    top: 560px;
   }
   // Job End //
   `
 ;
 
 export const Type_2 = `
-#SGE {
-  position: absolute;
-  left: 320px;
-  top: 300px;
-  svg {
-    position: absolute;
-    left: -50px;
-    top: -5px;
-  };
-}
 
-#SAM {
-  position: absolute;
-  left: 320px;
-  top: 340px;
-  svg {
-    position: absolute;
-    left: -50px;
-    top: -5px;
-  };
-}`
+
+`
 ;

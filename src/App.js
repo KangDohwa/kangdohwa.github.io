@@ -6,6 +6,7 @@ import Info from "../package.json";
 
 import Header from "./pages/Header";
 import Nav from "./pages/Nav";
+import Footer from "./pages/Footer";
 
 import Home from "./pages/Home";
 import Clock from "./component/Clock";
@@ -35,6 +36,9 @@ function App(props) {
             </Routes>
           {/* </BrowserRouter> */}
         </div>
+      </div>
+      <div className = "App-Footer">
+        <Footer />
       </div>
     </div>
   );

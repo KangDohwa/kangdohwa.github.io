@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 
 import { MdHome } from "react-icons/md";
 
+import Clock from "../component/Clock";
+
 function Nav(props) {
   const [open, setOpen] = React.useState([false, false]);
   const [selectedIndex, setSelectedIndex] = React.useState(1);
@@ -21,6 +23,7 @@ function Nav(props) {
     <>
       <div className = "Nav">
         <ul>
+          <Clock />
           {/* <li className = "Nav-Cat1">
             <MdHome /> 일반
           </li> */}

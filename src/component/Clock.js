@@ -17,8 +17,8 @@ export default function Clock() {
   startTimer()
 
   return (
-    <span className = "Clock">
-      {timer}
-    </span>
+    <div className = "Clock">
+      <span>{timer}</span>
+    </div>
   );
 }

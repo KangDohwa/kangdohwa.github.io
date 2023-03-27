@@ -59,6 +59,11 @@ body {
     padding: auto;
     width: 100%;
   }
+
+  &-Footer {
+    position: relative;
+    width: 100%;
+  }
 }
 
 .Header {
@@ -77,10 +82,25 @@ body {
   }
 }
 
+.Footer {
+  position: sticky;
+  bottom: 5px;
+  height: 5rem;
+  font-size: 0.75em;
+  color: $color-contrast;
+  text-align: center;
+}
+
 .Nav {
   padding-left: 8px;
   width: 150px;
   max-width: 150px;
+  color: #ffffff;
+
+  .Clock {
+    margin-left: -16px;
+    text-align: center;
+  }
 
   ul {
     list-style-type: none;

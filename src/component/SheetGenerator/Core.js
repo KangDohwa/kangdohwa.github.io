@@ -1,11 +1,13 @@
-import React, { useState,
+import React, { useState
   //  useCallback, useRef, createRef, useEffect,
    } from "react";
 
-import domtoimage from "dom-to-image";
+// import domtoimage from "dom-to-image";
 
 import imgPreviewPre from "./images/Preview_Pre.png";
-import imgBackground from "./images/bg_v3.png";
+
+import BG_Type1 from "./images/bg/Bg_Type1.png";
+import BG_Type2 from "./images/bg/Bg_Type2.png";
 
 // eslint-disable-next-line no-unused-vars
 import FileSaver from "file-saver"; // actually using
@@ -67,10 +69,13 @@ import FileSaver from "file-saver"; // actually using
 // }
 
 import FileInput from "./FileInput";
+import FileDownload from "./FileDownload";
 // import IconLoader from "./IconLoader";
 import IconLoaderSC from "./IconLoaderSC";
 import StatusLoaderSC from "./StatusLoaderSC";
 import TextLoaderSC from "./TextLoaderSC";
+
+import { JobIconPng } from "./Icons";
 
 import INew from "./images/status/Newbie.png";
 import IRNew from "./images/status/Return.png";
@@ -109,30 +114,30 @@ const Jname = { // jobs define
   lvBLU: "청마도사", lvELE: "엘리멘탈", lvRES: "레지스탕스",
 };
 
-function downloadDivAsPng() { // save image
-  domtoimage.toBlob(document.getElementsByClassName("box")[0])
-    .then(function (blob) {
-      window.saveAs(blob, "Test.png")
-    });
+// function DownloadDivAsPng() { // save image
+//   domtoimage.toBlob(document.getElementsByClassName("box")[0])
+//     .then(function (blob) {
+//       window.saveAs(blob, "Test.png")
+//     });
 
-  // domtoimage.toBlob(document.getElementById("final-canvas"))
-  // .then(function (blob) {
-  //   window.saveAs(blob, "Test.png")
-  // });
+//   // domtoimage.toBlob(document.getElementById("final-canvas"))
+//   // .then(function (blob) {
+//   //   window.saveAs(blob, "Test.png")
+//   // });
 
-  // var div = document.getElementById("preview-final");
-  // domtoimage.toBlob(div)
-    //   const link = document.createElement("a");
-    //   link.download = "test-png";
-    //   link.href = dataUrl;
-    //   document.appendChild(link);
-    //   link.click();
-    //   document.removeChild(link);
-    // })
-    // .catch(function (error) {
-    //   console.error("Error while generating PNG : ", error);
-    // });
-};
+//   // var div = document.getElementById("preview-final");
+//   // domtoimage.toBlob(div)
+//     //   const link = document.createElement("a");
+//     //   link.download = "test-png";
+//     //   link.href = dataUrl;
+//     //   document.appendChild(link);
+//     //   link.click();
+//     //   document.removeChild(link);
+//     // })
+//     // .catch(function (error) {
+//     //   console.error("Error while generating PNG : ", error);
+//     // });
+// };
 
 function MakeTextInput(props) {
   return (
@@ -151,6 +156,7 @@ function MakeJobInput(props) { // function make input field
   return (
     <>
       <div className = {props.type}>{Jname[props.job]}
+      <img src = {JobIconPng[props.name]} alt = "" />
       <input 
         className = {props.job}
         type = "number"
@@ -167,13 +173,15 @@ function MakeJobInput(props) { // function make input field
 
 function MakeStatusBox(props) {
   return (
-    <input 
-      className = {props.stat}
-      type = "checkbox"
-      name = {props.stat}
-      checked = {props.value}
-      onChange = {props.fc}
-    />
+    <label>
+      <input 
+        className = {props.stat}
+        type = "checkbox"
+        name = {props.stat}
+        checked = {props.value}
+        onChange = {props.fc}
+      /> <span>{props.name}</span>
+    </label>
   )
 };
 
@@ -196,6 +204,15 @@ function MyPage() {
   // };
 
   const [urlImage, setUrlImage] = useState("");
+  
+  const [index, setIndex] = useState([0]); // style selector state
+
+  // const DownloadDivAsPng = () => { // save image
+  //   domtoimage.toBlob(document.getElementsByClassName("box")[0])
+  //     .then(function (blob) {
+  //       window.saveAs(blob, "Test.png")
+  //     });
+  // };
 
   const createImageURL = (fileBlob) => { // createObjectURL
     if (urlImage) URL.revokeObjectURL(urlImage); // revoke for rem
@@ -213,11 +230,9 @@ function MyPage() {
     const uploadImage = files[0];
     createImageURL(uploadImage);
   };
-
-  const [index, setIndex] = useState([]); // style selector state
   
   const [text, setText] = useState({
-    Name: "", Title: "", FC: "", FCs: "",
+    Name: "", Title: "", FC: "", FCs: "", Server: "",
     Style: "", Like: "", Dislike: "", Desc: "",
   });
 
@@ -252,10 +267,8 @@ function MyPage() {
     New: false, RNew: false, MPVE: false, MPRP: false, MPVP: false,
   })
 
-  
-
   const {
-    Name, Title, FC, FCs,
+    Name, Title, FC, FCs, Server,
     Style, Like, Dislike, Desc,
   } = text;
 
@@ -321,73 +334,94 @@ function MyPage() {
         <div className = "preview"> {/* image upload/download button div */}
           <FileInput label = "사진 업로드" onChange = {onImageChange} comment = "현재 16:9 비율의 사진만 지원합니다."/>
         </div>
-        <div className = "input-desc">
-          <MakeTextInput name = "Name" t = {Name} fc = {changeText} PH = "닉네임" />
-          <MakeTextInput name = "Title" t = {Title} fc = {changeText} PH = "칭호" />
-          <MakeTextInput name = "FC" t = {FC} fc = {changeText} PH = "자유부대" />
-          <MakeTextInput name = "FCs" t = {FCs} fc = {changeText} PH = "약칭" />
+        <div className = "partial-desc">
+          <div className = "input-desc">
+            <MakeTextInput name = "Name" t = {Name} fc = {changeText} PH = "닉네임" />
+            <MakeTextInput name = "Title" t = {Title} fc = {changeText} PH = "칭호" />
+            <MakeTextInput name = "FC" t = {FC} fc = {changeText} PH = "자유부대" />
+            <MakeTextInput name = "FCs" t = {FCs} fc = {changeText} PH = "약칭" />
+            <MakeTextInput name = "Server" t = {Server} fc = {changeText} PH = "서버" />
+          </div>
+          <div className = "input-desc2">
+            <MakeTextInput name = "Style" t = {Style} fc = {changeText} PH = "성향" />
+            <MakeTextInput name = "Like" t = {Like} fc = {changeText} PH = "좋아요" />
+            <MakeTextInput name = "Dislike" t = {Dislike} fc = {changeText} PH = "싫어요" />
+            <MakeTextInput name = "Desc" t = {Desc} fc = {changeText} PH = "한마디" />
+          </div>
         </div>
         <div className = "check-status">
-          <MakeStatusBox stat = "New" value = {New} fc = {statusCheck} />새싹
-          <MakeStatusBox stat = "RNew" value = {RNew} fc = {statusCheck} />복귀
-          <MakeStatusBox stat = "MPVE" value = {MPVE} fc = {statusCheck} />전투 멘토
-          <MakeStatusBox stat = "MPRP" value = {MPRP} fc = {statusCheck} />제작/채집 멘토
-          <MakeStatusBox stat = "MPVP" value = {MPVP} fc = {statusCheck} />PVP 멘토
+          <MakeStatusBox stat = "New" name = "새싹" value = {New} fc = {statusCheck} />
+          <MakeStatusBox stat = "RNew" name = "복귀" value = {RNew} fc = {statusCheck} />
+          <MakeStatusBox stat = "MPVE" name = "전투 멘토" value = {MPVE} fc = {statusCheck} />
+          <MakeStatusBox stat = "MPRP" name = "제작/채집 멘토" value = {MPRP} fc = {statusCheck} />
+          <MakeStatusBox stat = "MPVP" name = "PVP 멘토" value = {MPVP} fc = {statusCheck} />
         </div>
         <div className = "input-level">
-          <div className = "tank">
-            <MakeJobInput job = "lvPLD" value = {lvPLD} fc = {changeLv} type = "Tank" />
-            <MakeJobInput job = "lvWAR" value = {lvWAR} fc = {changeLv} type = "Tank" />
-            <MakeJobInput job = "lvDRK" value = {lvDRK} fc = {changeLv} type = "Tank" />
-            <MakeJobInput job = "lvGNB" value = {lvGNB} fc = {changeLv} type = "Tank" />
+          <div className = "partial">
+            <div className = "tank">
+              <MakeJobInput name = "PLDp" job = "lvPLD" value = {lvPLD} fc = {changeLv} type = "Tank" />
+              <MakeJobInput name = "WARp" job = "lvWAR" value = {lvWAR} fc = {changeLv} type = "Tank" />
+              <MakeJobInput name = "DRKp" job = "lvDRK" value = {lvDRK} fc = {changeLv} type = "Tank" />
+              <MakeJobInput name = "GNBp" job = "lvGNB" value = {lvGNB} fc = {changeLv} type = "Tank" />
+            </div>
+            <div className = "healer">
+              <MakeJobInput name = "WHMp" job = "lvWHM" value = {lvWHM} fc = {changeLv} type = "Healer" />
+              <MakeJobInput name = "SCHp" job = "lvSCH" value = {lvSCH} fc = {changeLv} type = "Healer" />
+              <MakeJobInput name = "ASTp" job = "lvAST" value = {lvAST} fc = {changeLv} type = "Healer" />
+              <MakeJobInput name = "SGEp" job = "lvSGE" value = {lvSGE} fc = {changeLv} type = "Healer" />
+            </div>
           </div>
-          <div className = "healer">
-            <MakeJobInput job = "lvWHM" value = {lvWHM} fc = {changeLv} type = "Healer" />
-            <MakeJobInput job = "lvSCH" value = {lvSCH} fc = {changeLv} type = "Healer" />
-            <MakeJobInput job = "lvAST" value = {lvAST} fc = {changeLv} type = "Healer" />
-            <MakeJobInput job = "lvSGE" value = {lvSGE} fc = {changeLv} type = "Healer" />
+          <div className = "partial">
+            <div className = "dps-m">
+              <MakeJobInput name = "MNKp" job = "lvMNK" value = {lvMNK} fc = {changeLv} type = "DPS" />
+              <MakeJobInput name = "DRGp" job = "lvDRG" value = {lvDRG} fc = {changeLv} type = "DPS" />
+              <MakeJobInput name = "NINp" job = "lvNIN" value = {lvNIN} fc = {changeLv} type = "DPS" />
+              <MakeJobInput name = "SAMp" job = "lvSAM" value = {lvSAM} fc = {changeLv} type = "DPS" />
+              <MakeJobInput name = "RPRp" job = "lvRPR" value = {lvRPR} fc = {changeLv} type = "DPS" />
+            </div>
           </div>
-          <div className = "dps-m">
-            <MakeJobInput job = "lvDRG" value = {lvDRG} fc = {changeLv} type = "DPS" />
-            <MakeJobInput job = "lvMNK" value = {lvMNK} fc = {changeLv} type = "DPS" />
-            <MakeJobInput job = "lvNIN" value = {lvNIN} fc = {changeLv} type = "DPS" />
-            <MakeJobInput job = "lvRPR" value = {lvRPR} fc = {changeLv} type = "DPS" />
-            <MakeJobInput job = "lvSAM" value = {lvSAM} fc = {changeLv} type = "DPS" />
+          <div className = "partial">
+            <div className = "dps-rp">
+              <MakeJobInput name = "BRDp" job = "lvBRD" value = {lvBRD} fc = {changeLv} type = "DPS" />
+              <MakeJobInput name = "MCHp" job = "lvMCH" value = {lvMCH} fc = {changeLv} type = "DPS" />
+              <MakeJobInput name = "DNCp" job = "lvDNC" value = {lvDNC} fc = {changeLv} type = "DPS" />
+            </div>
+            <div className = "dps-rm">
+              <MakeJobInput name = "BLMp" job = "lvBLM" value = {lvBLM} fc = {changeLv} type = "DPS" />
+              <MakeJobInput name = "SMNp" job = "lvSMN" value = {lvSMN} fc = {changeLv} type = "DPS" />
+              <MakeJobInput name = "RDMp" job = "lvRDM" value = {lvRDM} fc = {changeLv} type = "DPS" />
+            </div>
           </div>
-          <div className = "dps-rp">
-            <MakeJobInput job = "lvBRD" value = {lvBRD} fc = {changeLv} type = "DPS" />
-            <MakeJobInput job = "lvMCH" value = {lvMCH} fc = {changeLv} type = "DPS" />
-            <MakeJobInput job = "lvDNC" value = {lvDNC} fc = {changeLv} type = "DPS" />
+          <div className = "partial">
+            <div className = "doh1">
+              <MakeJobInput name = "CRPp" job = "lvCRP" value = {lvCRP} fc = {changeLv} type = "DOH" />
+              <MakeJobInput name = "BSMp" job = "lvBSM" value = {lvBSM} fc = {changeLv} type = "DOH" />
+              <MakeJobInput name = "ARMp" job = "lvARM" value = {lvARM} fc = {changeLv} type = "DOH" />
+              <MakeJobInput name = "GSMp" job = "lvGSM" value = {lvGSM} fc = {changeLv} type = "DOH" />
+            </div>
+            <div className = "doh2">
+              <MakeJobInput name = "LTWp" job = "lvLTW" value = {lvLTW} fc = {changeLv} type = "DOH" />
+              <MakeJobInput name = "WVRp" job = "lvWVR" value = {lvWVR} fc = {changeLv} type = "DOH" />
+              <MakeJobInput name = "ALCp" job = "lvALC" value = {lvALC} fc = {changeLv} type = "DOH" />
+              <MakeJobInput name = "CULp" job = "lvCUL" value = {lvCUL} fc = {changeLv} type = "DOH" />
+            </div>
           </div>
-          <div className = "dps-rm">
-            <MakeJobInput job = "lvBLM" value = {lvBLM} fc = {changeLv} type = "DPS" />
-            <MakeJobInput job = "lvSMN" value = {lvSMN} fc = {changeLv} type = "DPS" />
-            <MakeJobInput job = "lvRDM" value = {lvRDM} fc = {changeLv} type = "DPS" />
+          <div className = "partial">
+            <div className = "dol">
+              <MakeJobInput name = "MINp" job = "lvMIN" value = {lvMIN} fc = {changeLv} type = "DOL" />
+              <MakeJobInput name = "BTNp" job = "lvBTN" value = {lvBTN} fc = {changeLv} type = "DOL" />
+              <MakeJobInput name = "FSHp" job = "lvFSH" value = {lvFSH} fc = {changeLv} type = "DOL" />
+            </div>
           </div>
-          <div className = "doh1">
-            <MakeJobInput job = "lvCRP" value = {lvCRP} fc = {changeLv} type = "DOH" />
-            <MakeJobInput job = "lvBSM" value = {lvBSM} fc = {changeLv} type = "DOH" />
-            <MakeJobInput job = "lvARM" value = {lvARM} fc = {changeLv} type = "DOH" />
-            <MakeJobInput job = "lvGSM" value = {lvGSM} fc = {changeLv} type = "DOH" />
-          </div>
-          <div className = "doh2">
-            <MakeJobInput job = "lvLTW" value = {lvLTW} fc = {changeLv} type = "DOH" />
-            <MakeJobInput job = "lvWVR" value = {lvWVR} fc = {changeLv} type = "DOH" />
-            <MakeJobInput job = "lvALC" value = {lvALC} fc = {changeLv} type = "DOH" />
-            <MakeJobInput job = "lvCUL" value = {lvCUL} fc = {changeLv} type = "DOH" />
-          </div>
-          <div className = "dol">
-            <MakeJobInput job = "lvMIN" value = {lvMIN} fc = {changeLv} type = "DOL" />
-            <MakeJobInput job = "lvBTN" value = {lvBTN} fc = {changeLv} type = "DOL" />
-            <MakeJobInput job = "lvFSH" value = {lvFSH} fc = {changeLv} type = "DOL" />
-          </div>
-          <div className = "special">
-            <MakeJobInput job = "lvBLU" value = {lvBLU} fc = {changeLv} type = "SPC" />
-            <MakeJobInput job = "lvELE" value = {lvELE} fc = {changeLv} type = "SPC" />
-            <MakeJobInput job = "lvRES" value = {lvRES} fc = {changeLv} type = "SPC" />
+          <div className = "partial">
+            <div className = "special">
+              <MakeJobInput name = "BLUp" job = "lvBLU" value = {lvBLU} fc = {changeLv} type = "SPC" />
+              <MakeJobInput name = "ELEp" job = "lvELE" value = {lvELE} fc = {changeLv} type = "SPC" />
+              <MakeJobInput name = "RESp" job = "lvRES" value = {lvRES} fc = {changeLv} type = "SPC" />
+            </div>
           </div>
         </div>
-        <fieldset className = "type-select"> {/* type selecting radio buttons */}
+        <div className = "type-select"> {/* type selecting radio buttons */}
           <label>
             <input 
               className = "type1"
@@ -395,7 +429,7 @@ function MyPage() {
               value = "0"
               checked = {index === "0"}
               onChange = {selectIndex}
-            /> <span>Ind.0</span>
+            /> <span>1번 타입</span>
           </label>
           <label>
             <input 
@@ -404,19 +438,22 @@ function MyPage() {
               value = "1"
               checked = {index === "1"}
               onChange = {selectIndex}
-            /> <span>Ind.1</span>
+            /> <span>2번 타입(제작중)</span>
           </label>
-          <label>
+          {/* <label>
             <input 
               className = "type3"
               type = "radio"
               value = "2"
               checked = {index === "2"}
               onChange = {selectIndex}
-            /> <span>Ind.2</span>
-          </label>
-        </fieldset>
-        <button onClick = {downloadDivAsPng}>다운로드</button>
+            /> <span>3번 타입</span>
+          </label> */}
+        </div>
+        <div className = "btn-download">
+          <FileDownload label = "PNG 파일로 저장" comment = "" docTarget = {document.getElementsByClassName("box")[0]}/>
+        </div>
+        {/* <button onClick = {DownloadDivAsPng}>다운로드</button> */}
       </div>
       <div className = "box">
         <div className = "preview-final">
@@ -425,13 +462,27 @@ function MyPage() {
           ) : ( 
             <img className = "img-preview-pre" src = {imgPreviewPre} alt = "예시 이미지" />
           )}
-          <img className = "img-Background" src = {imgBackground} alt = "BG" />
+          {index == 0 ? (
+            <img className = "img-Background" src = {BG_Type1} alt = "Type 1" />
+          ) : (
+            <img className = "img-Background" src = {BG_Type2} alt = "BG" />
+          )}
+          {/* <img className = "img-Background" src = {imgBackground} alt = "BG" /> */}
           <div className = "preview-icon">
             <div className = "PlayerInfo">
               <TextLoaderSC name = "Name" i = {index} t = {Name} />
               <TextLoaderSC name = "Title" i = {index} t = {Title} />
-              <TextLoaderSC name = "FC" i = {index} t = {FC} />
-              <TextLoaderSC name = "FCs" i = {index} t = {FCs} />
+              <div className = "FCLine">
+                <TextLoaderSC name = "FC" i = {index} t = {FC} />
+                <TextLoaderSC name = "FCs" i = {index} t = {FCs} />
+              </div>
+              <TextLoaderSC name = "Server" i = {index} t = {Server} />
+            </div>
+            <div className = "PlayerDesc">
+              <TextLoaderSC name = "Style" i = {index} t = {Style} />
+              <TextLoaderSC name = "Like" i = {index} t = {Like} />
+              <TextLoaderSC name = "Dislike" i = {index} t = {Dislike} />
+              <TextLoaderSC name = "Desc" i = {index} t = {Desc} />
             </div>
             <div className = "PlayerStatus">
               <StatusLoaderSC stat = "New" i = {index} src = {INew} c = {New} />

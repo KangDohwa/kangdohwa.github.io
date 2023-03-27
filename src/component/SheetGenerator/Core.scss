@@ -1,7 +1,7 @@
 $text-color: #f0f0f0;
 $text-color-test: #ff0000;
 
-$job-color-unset: #b0b0b0;
+$job-color-unset: #303030;
 $job-color-tank: #4d5aa0;
 $job-color-healer: #548644;
 $job-color-dps: #934848;
@@ -23,18 +23,210 @@ $selected: #bb9b51;
   font-family: sans-serif;
   margin: auto;
   zoom: 50%;
+  width: 90%;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 5%;
+  color: $text-color;
 }
 
 .custom-box {
+  padding-top: 3rem;
   zoom: 200%;
-  padding-bottom: 3rem;
+  // padding-bottom: 3rem;
+
+  .type-select {
+    width: 30rem;
+    margin: auto;
+    padding: 1rem;
+    border: 3px solid $selected;
+    font-size: 24px;
+    text-align: center;
+    background-color: #505050;
+    color: $text-color;
+  
+    input {
+      width: 2rem;
+    }
+  
+    span {
+      vertical-align: middle;
+    }
+  
+    [type = "radio"] {
+      vertical-align: middle;
+    }
+  }
+
+  .input-desc {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    padding-top: 3rem;
+    width: 12rem;
+  
+    input {
+      font-size: 1rem;
+      text-align: left;
+      width: 10rem;
+      height: 2.3rem;
+      border: 0;
+      border-bottom: #707070 0.125rem solid;
+      background: transparent;
+      // font-size: 0.875rem;
+      color: $text-color;
+      outline: none;
+    }
+  }
+
+  .partial-desc {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .input-desc2 {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    padding-top: 3rem;
+    width: 32rem;
+  
+    input {
+      font-size: 1rem;
+      text-align: left;
+      width: 30rem;
+      height: 2.3rem;
+      border: 0;
+      border-bottom: #707070 0.125rem solid;
+      background: transparent;
+      // font-size: 0.875rem;
+      color: $text-color;
+      outline: none;
+    }
+  }
+  
+  .check-status {
+    font-size: 0.875rem;
+    padding: 2rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+
+    label {
+      display: flex;
+      padding: 0.5rem;
+    }
+  }
+  
+  .input-level {
+    position: sticky;
+    font-size: 0.5rem;
+    color: $text-color;
+    display: block;
+    flex-direction: row;
+
+    img {
+      width: 56px;
+      height: 56px;
+      position: absolute;
+      z-index: 50;
+      opacity: 25%;
+    }
+
+    // svg {
+    //   width: 48px;
+    //   height: 48px;
+    //   position: absolute;
+    //   z-index: 1000;
+    //   background-color: $text-color-test;
+    //   fill: #b0b0b0;
+    // }
+  
+    .partial {
+      display: flex;
+
+      div {
+        display: flex;
+        flex-direction: row;
+        height: 4rem;
+        // margin-top: 2rem;
+        margin-bottom: 2rem;
+        // margin-left: 0.1rem;
+        // margin-right: 0.1rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+    
+        div {
+          align-items: center;
+          display: flex;
+          flex-direction: column;
+          width: 4rem;
+          margin-left: 0.5rem;
+          padding-top: 1rem;
+          padding-bottom: 1rem;
+        }
+    
+        .Tank {
+          background-color: $job-color-tank;
+        }
+    
+        .Healer {
+          background-color: $job-color-healer;
+        }
+        
+        .DPS {
+          background-color: $job-color-dps;
+        }
+        
+        .DOH {
+          background-color: $job-color-doh;
+        }
+        
+        .DOL {
+          background-color: $job-color-dol;
+        }
+        
+        .SPC {
+          background-color: $job-color-special;
+        }
+    
+        input {
+          z-index: 200;
+          background: transparent;
+          font-size: 1.25rem;
+          text-align: center;
+          width: 2.5rem;
+          height: 2rem;
+          border: 0;
+          border-bottom: #f0f0f0 0.125rem solid;
+          color: $text-color;
+          outline: none;
+          margin: auto;
+        }
+      }
+    }
+  }
+}
+
+.btn-download {
+  display: flex;
+  align-items: center;
+  padding: 2.5%;
+  button {
+    color: $text-color;
+    font-size: 1.5rem;
+    margin: auto;
+    width: 15rem;
+    height: 3rem;
+    background-color: $selected;
+    border: 0;
+  }
 }
 
 .box {
   width: 1350px;
-  left: auto;
-  margin: auto;
-  // align-content: center;
+  // left: auto;
+  // margin: auto;
+  // align-items: center;
   // width: max-content;
   // background-color: white;
   // position: absolute;
@@ -45,103 +237,6 @@ $selected: #bb9b51;
 // .preview {
 //   position: relative;
 // }
-
-.type-select {
-  font-size: 24px;
-
-  input {
-    width: 2rem;
-  }
-
-  span {
-    vertical-align: middle;
-  }
-
-  [type = "radio"] {
-    vertical-align: middle;
-  }
-}
-
-.input-desc {
-
-  input {
-    text-align: left;
-    width: 5rem;
-    height: 1.8rem;
-    border: 0;
-    border-bottom: #707070 0.125rem solid;
-  }
-}
-
-.check-status {
-  font-size: 0.875rem;
-}
-
-.input-level {
-  position: sticky;
-  font-size: 0.5rem;
-  color: $text-color;
-  display: block;
-  flex-direction: row;
-
-  div {
-    display: flex;
-    flex-direction: row;
-    height: 4rem;
-    // margin-top: 2rem;
-    margin-bottom: 2rem;
-    margin-left: 0.1rem;
-    margin-right: 0.1rem;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-
-    div {
-      align-items: center;
-      display: flex;
-      flex-direction: column;
-      width: 4rem;
-      padding-top: 1rem;
-      padding-bottom: 1rem;
-    }
-
-    .Tank {
-      background-color: $job-color-tank;
-    }
-
-    .Healer {
-      background-color: $job-color-healer;
-    }
-    
-    .DPS {
-      background-color: $job-color-dps;
-    }
-    
-    .DOH {
-      background-color: $job-color-doh;
-    }
-    
-    .DOL {
-      background-color: $job-color-dol;
-    }
-    
-    .SPC {
-      background-color: $job-color-special;
-    }
-
-    input {
-      background: transparent;
-      font-size: 1.25rem;
-      text-align: center;
-      width: 2.5rem;
-      height: 2rem;
-      border: 0;
-      border-bottom: #f0f0f0 0.125rem solid;
-      color: $text-color;
-      outline: none;
-      margin: auto;
-    }
-  }
-}
 
 .img-preview-pre {
   z-index: 1;
@@ -169,11 +264,11 @@ $selected: #bb9b51;
 }
 
 .preview-final {
-  z-index: 100;
   position: relative;
+  z-index: 100;
   width: 1350px;
   height: 1080px;
-  // right: -570px;
+  // left: auto;
   overflow: hidden;
 }
 
@@ -194,28 +289,4 @@ $selected: #bb9b51;
     width: 50px;
     color: $text-color;
   }
-
-  // .Tank {
-  //   display: flex;
-  //   position: absolute;
-  //   // left: 1rem;
-  //   top: 100px;
-  //   // fill: $job-color-tank; // svg use fill to color
-  // }
-  
-  // .Healer {
-  //   display: flex;
-  //   position: absolute;
-  //   // left: 1rem;
-  //   top: 300px;
-  //   // fill: $job-color-healer; // svg use fill to color
-  // }
-
-  // .DpsM {
-  //   display: flex;
-  //   position: absolute;
-  //   // left: 1rem;
-  //   top: 400px;
-  //   // fill: $job-color-dps; // svg use fill to color
-  // }
 }
