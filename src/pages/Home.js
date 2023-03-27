@@ -22,7 +22,7 @@ function Home() {
   <>
     <div className = "MainHome">
       <header>
-        쩨의 개인 페이지에 오신 것을 환영합니다!
+        쩨의 사이트에 오신 것을 환영합니다!
       </header>
       <p>
         아직은 개발 및 테스트중입니다.<br />
