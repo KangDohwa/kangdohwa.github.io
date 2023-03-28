@@ -36,7 +36,9 @@ $selected: #bb9b51;
 .ButtonField {
   display: flex;
   align-items: center;
-  padding: 2.5%;
+  padding-top: 2rem;
+  // padding: 1rem;
+
   button {
     color: $text-color;
     font-size: 1.5rem;
