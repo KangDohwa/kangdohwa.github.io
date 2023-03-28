@@ -1,0 +1,26 @@
+@use "../Core";
+
+.InputType {
+  margin: auto;
+  padding: 1rem;
+  font-size: 1.5rem;
+  text-align: center;
+
+  label {
+    align-items: center;
+    border: 0.125rem Core.$selected solid;
+    padding: 0.5rem;
+  }
+
+  [type = "radio"] {
+    display: none;
+
+    + .-label {
+      color: Core.$text-color;
+    }
+
+    &:checked + .-label {
+      background-color: Core.$selected;
+    }
+  }
+}

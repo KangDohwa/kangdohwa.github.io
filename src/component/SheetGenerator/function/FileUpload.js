@@ -1,6 +1,6 @@
 import { useRef } from "react";
 
-export default function FileInput({ label, onChange, comment }) {
+export default function FileUpload({ label, onChange, comment }) {
   const ref = useRef(null);
 
   const onClick = () => {
@@ -19,7 +19,8 @@ export default function FileInput({ label, onChange, comment }) {
         onChange = {onChange}
         ref = {ref}
       />
-    </button>   {comment}
+    </button>
+    <p>{comment}</p>
     </>
   );
 }

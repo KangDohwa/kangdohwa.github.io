@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import styled, { css } from "styled-components";
 
-import { Type_1, Type_2 } from "./Type";
+import { Type_1, Type_2 } from "../def/Type";
 
 const StyledLevel = styled.div`
   
@@ -30,12 +30,12 @@ const StyledLevel = styled.div`
   `};
 
   ${(props) =>
-    (props.i == 0) &&
+    (props.i == 1) &&
     css`${Type_1}`
   };
 
   ${(props) =>
-    (props.i == 1) &&
+    (props.i == 2) &&
     css`${Type_2}`
   };
 

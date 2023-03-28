@@ -9,6 +9,11 @@ $job-color-doh: #5f4592;
 $job-color-dol: #bb9b51;
 $job-color-special: #808080;
 
+$core-bg-color: #505050;
+$core-input-underline-color: #707070;
+
+$selected: #bb9b51;
+
 // $job-color-unset: #b0b0b0;
 // $job-color-tank: #2d3a80;
 // $job-color-healer: #346624;
@@ -16,209 +21,19 @@ $job-color-special: #808080;
 // $job-color-doh: #5f4592;
 // $job-color-dol: #bb9b51;
 
-$selected: #bb9b51;
 
-.Admin-Desc {
-  font-size: 24px;
-  text-align: center;
-  padding-bottom: 5rem;
-
-  a {
-    text-decoration: none;
-    color: #33a7ff;
-  }
-}
-
-.container {
-  background-color: #505050;
+.Core {
+  background-color: $core-bg-color;
   font-family: sans-serif;
   margin: auto;
-  zoom: 50%;
-  width: 90%;
-  padding-left: 5%;
-  padding-right: 5%;
-  padding-bottom: 5%;
+  max-width: 64rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 4rem;
   color: $text-color;
 }
 
-.custom-box {
-  padding-top: 3rem;
-  zoom: 200%;
-  // padding-bottom: 3rem;
-
-  .type-select {
-    width: 30rem;
-    margin: auto;
-    padding: 1rem;
-    border: 3px solid $selected;
-    font-size: 24px;
-    text-align: center;
-    background-color: #505050;
-    color: $text-color;
-  
-    input {
-      width: 2rem;
-    }
-  
-    span {
-      vertical-align: middle;
-    }
-  
-    [type = "radio"] {
-      vertical-align: middle;
-    }
-  }
-
-  .input-desc {
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-    padding-top: 3rem;
-    width: 12rem;
-  
-    input {
-      font-size: 1rem;
-      text-align: left;
-      width: 10rem;
-      height: 2.3rem;
-      border: 0;
-      border-bottom: #707070 0.125rem solid;
-      background: transparent;
-      // font-size: 0.875rem;
-      color: $text-color;
-      outline: none;
-    }
-  }
-
-  .partial-desc {
-    display: flex;
-    align-items: flex-end;
-  }
-
-  .input-desc2 {
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-    padding-top: 3rem;
-    width: 32rem;
-  
-    input {
-      font-size: 1rem;
-      text-align: left;
-      width: 30rem;
-      height: 2.3rem;
-      border: 0;
-      border-bottom: #707070 0.125rem solid;
-      background: transparent;
-      // font-size: 0.875rem;
-      color: $text-color;
-      outline: none;
-    }
-  }
-  
-  .check-status {
-    font-size: 0.875rem;
-    padding: 2rem;
-    padding-top: 4rem;
-    padding-bottom: 4rem;
-
-    label {
-      display: flex;
-      padding: 0.5rem;
-    }
-  }
-  
-  .input-level {
-    position: sticky;
-    font-size: 0.5rem;
-    color: $text-color;
-    display: block;
-    flex-direction: row;
-
-    img {
-      width: 56px;
-      height: 56px;
-      position: absolute;
-      z-index: 50;
-      opacity: 25%;
-    }
-
-    // svg {
-    //   width: 48px;
-    //   height: 48px;
-    //   position: absolute;
-    //   z-index: 1000;
-    //   background-color: $text-color-test;
-    //   fill: #b0b0b0;
-    // }
-  
-    .partial {
-      display: flex;
-
-      div {
-        display: flex;
-        flex-direction: row;
-        height: 4rem;
-        // margin-top: 2rem;
-        margin-bottom: 2rem;
-        // margin-left: 0.1rem;
-        // margin-right: 0.1rem;
-        padding-top: 0.5rem;
-        padding-bottom: 0.5rem;
-    
-        div {
-          align-items: center;
-          display: flex;
-          flex-direction: column;
-          width: 4rem;
-          margin-left: 0.5rem;
-          padding-top: 1rem;
-          padding-bottom: 1rem;
-        }
-    
-        .Tank {
-          background-color: $job-color-tank;
-        }
-    
-        .Healer {
-          background-color: $job-color-healer;
-        }
-        
-        .DPS {
-          background-color: $job-color-dps;
-        }
-        
-        .DOH {
-          background-color: $job-color-doh;
-        }
-        
-        .DOL {
-          background-color: $job-color-dol;
-        }
-        
-        .SPC {
-          background-color: $job-color-special;
-        }
-    
-        input {
-          z-index: 200;
-          background: transparent;
-          font-size: 1.25rem;
-          text-align: center;
-          width: 2.5rem;
-          height: 2rem;
-          border: 0;
-          border-bottom: #f0f0f0 0.125rem solid;
-          color: $text-color;
-          outline: none;
-          margin: auto;
-        }
-      }
-    }
-  }
-}
-
-.btn-download {
+.ButtonField {
   display: flex;
   align-items: center;
   padding: 2.5%;
@@ -226,78 +41,93 @@ $selected: #bb9b51;
     color: $text-color;
     font-size: 1.5rem;
     margin: auto;
+    border: 0;
     width: 15rem;
     height: 3rem;
     background-color: $selected;
-    border: 0;
   }
 }
 
-.box {
-  width: 1350px;
-  // left: auto;
-  // margin: auto;
-  // align-items: center;
-  // width: max-content;
-  // background-color: white;
-  // position: absolute;
-  // max-width: 1350px;
-  height: 1080px;
+#PreviewUser {
+  img {
+    width: 100%;
+  }
 }
 
-// .preview {
-//   position: relative;
-// }
-
-.img-preview-pre {
-  z-index: 1;
+.Result {
   position: absolute;
-  width: 1350px;
-  height: 1080px;
+  // width: 90vw;
+  // width: 100%;
+  height: 100%;
+  overflow: hidden;
+  // width: calc(100vw - 12rem);
+  // transform: scale(0.65);
+  // transform: scale(0.5) translate(-50%, -50%);
+  // max-width: fit-content;
 }
 
-.img-preview {
-  z-index: 1;
-  position: absolute;
-  height: 1080px;
-  // left: -570px;
-  // margin-left: -570px;
-  // margin-right: -570px;
-  // clip: rect(0px, 1350px, 1080px, 0px);
-  // overflow: hidden;
-}
-
-.img-Background {
-  z-index: 10;
-  top: 0;
-  // left: 570px;
-  position: absolute;
-}
-
-.preview-final {
+.PreviewDisplay {
   position: relative;
-  z-index: 100;
-  width: 1350px;
+  z-index: 1;
+  width: 84.375rem;
+  width: 100%;
+  // width: 1350px;
+  // // width: 90vw;
+  // height: 67.5rem;
   height: 1080px;
-  // left: auto;
   overflow: hidden;
 }
 
-.preview-icon {
-  z-index: 150;
+.ImageInput {
   position: absolute;
+  z-index: 10;
+  // object-fit: cover;
+  width: 1350px;
+  height: 100%;
+  overflow: hidden;
+
+  .ImgInput {
+    z-index: -1;
+    position: relative;
+    // width: 100%;
+    height: 67.5rem;
+    height: 100%;
+  }
+  
+  .ImgNone {
+    // z-index: 1;
+    position: relative;
+    // width: 100%;
+    height: 67.5rem;
+    height: 100%;
+  }
+}
+
+.ImageBackground {
+  position: absolute;
+  z-index: 15;
+  width: 84.375rem;
+    width: 100%;
+    height: 100%;
+
+  .ImgBG {
+    position: relative;
+    // width: 84.375rem;
+    // width: 100%;
+    // height: 100%;
+  }
+}
+
+.DisplayContent {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 20;
   color: $text-color;
-  // display: flex;
-  // left: 50px;
-  // top: 300px;
   fill: $job-color-unset; // svg use fill to color
 
   span {
-    // position: relative;
-    // top: -0.25rem;
-    // left: 0.5rem;
-    // padding-right: 3.25rem;
-    width: 50px;
+    width: 3.125rem;
     color: $text-color;
   }
 }

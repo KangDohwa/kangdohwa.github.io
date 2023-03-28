@@ -3,9 +3,9 @@
 import React, { useState } from "react";
 import styled, { css } from "styled-components";
 
-import { JobIcon } from "./Icons";
+import { JobIconSVG } from "../def/Icons_svg";
 
-import { Type_1, Type_2 } from "./Type";
+import { Type_1, Type_2 } from "../def/Type";
 
 // export const JobList = [
 //   // Tank
@@ -123,15 +123,6 @@ import { Type_1, Type_2 } from "./Type";
 //   </StyledLevel>
 // }
 
-const jobColor = { // Job Color
-  None: "#b0b0b0",
-  Tank: "#4d5aa0",
-  Healer: "#548644",
-  Dps: "#934848",
-  DOH: "#5f4592",
-  DOL: "#bb9b51",
-  Special: "#808080",
-}
 
 // const J = { // Job List
 //   // Tank
@@ -159,6 +150,16 @@ const jobColor = { // Job Color
 //   BLU, ELE, RES,
 // };
 
+const jobColor = { // Job Color
+  None: "#b0b0b0",
+  Tank: "#4d5aa0",
+  Healer: "#548644",
+  Dps: "#934848",
+  DOH: "#5f4592",
+  DOL: "#bb9b51",
+  Special: "#808080",
+}
+
 const StyledLevel = styled.div`
 
   z-index: 150;
@@ -168,19 +169,25 @@ const StyledLevel = styled.div`
   // font-family: "KorailRoundGothicBold";
   font-family: "LINESeedKR-Bd";
   
-  fill: ${(props) => jobColor[props.j]}
+  fill: ${jobColor[0]};
+  
+  span {
+    display: none;
+  }
   
   ${(props) =>
-    (props.lv == 0) &&
+    (props.lv != 0) &&
     css`
-    fill: ${jobColor[0]};
+    svg {
+      fill: ${jobColor[props.j]};
+    }
     span {
-      display: none;
+      display: block;
     }
   `};
 
   ${(props) =>
-    (props.i == 0) &&
+    (props.i == 1) &&
     css`
     span {
       font-size: 1.6rem;
@@ -195,7 +202,7 @@ const StyledLevel = styled.div`
   `};
   
   ${(props) =>
-    (props.i == 1) &&
+    (props.i == 2) &&
     css`
     span {
       font-size: 2.2rem;
@@ -212,7 +219,7 @@ const StyledLevel = styled.div`
 `;
 
 export default function Jobs(props) {
-  const Jobs = JobIcon[props.job];
+  const Jobs = JobIconSVG[props.job];
   return <StyledLevel {...props}>
     <div id = {props.job}>
       <Jobs className = {props.job} /><span>{props.lv}</span>

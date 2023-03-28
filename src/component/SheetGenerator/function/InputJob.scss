@@ -1,0 +1,67 @@
+@use "../Core";
+
+.InputLevel {
+  font-size: 0.5rem;
+  color: Core.$text-color;
+
+  img {
+    position: absolute;
+    width: 4rem;
+    z-index: 50;
+    opacity: 25%;
+  }
+}
+
+.Group {
+  display: flex;
+  height: 6rem;
+  margin-bottom: 2rem;
+
+  div {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 4rem;
+    margin-left: 0.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  input {
+    z-index: 200;
+    font-size: 1.25rem;
+    background: transparent;
+    text-align: center;
+    width: 3rem;
+    height: 2rem;
+    border: 0;
+    border-bottom: #b0b0b0 0.125rem solid;
+    color: Core.$text-color;
+    outline: none;
+    margin: auto;
+  }
+}
+
+.Tank {
+  background-color: Core.$job-color-tank;
+}
+
+.Healer {
+  background-color: Core.$job-color-healer;
+}
+
+.DPS {
+  background-color: Core.$job-color-dps;
+}
+
+.DOH {
+  background-color: Core.$job-color-doh;
+}
+
+.DOL {
+  background-color: Core.$job-color-dol;
+}
+
+.SPC {
+  background-color: Core.$job-color-special;
+}

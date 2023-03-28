@@ -1,0 +1,32 @@
+@use "../Core";
+
+.InputStatus {
+  display: flex;
+  flex-direction: row;
+  
+  font-size: 0.875rem;
+  padding: 2rem;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+
+  label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 0.125rem Core.$selected solid;
+    padding: 0.5rem;
+    width: 7.5rem;
+  }
+
+  input[type = checkbox] {
+    display: none; // erase checkbox
+
+    + .-label {
+      color: Core.$text-color;
+    }
+
+    &:checked + .-label {
+      background-color: Core.$selected;
+    }
+  }
+}

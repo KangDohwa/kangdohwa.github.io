@@ -69,11 +69,12 @@ This is Project URL : [Here!](https://jjae.xyz).
 > + [x] Image Crop when downloading
 > + [x] Inputs for user's lv, desc, etc...
 > + [x] Apply every change from inputs' data
-> + [ ] Set at least 2 types of sheet
 > + [x] Make base sheet image
 > + [x] Change styles when type selected
-> + [ ] Make awesome designed page - WIP
 > + [x] Prototype Deploy
+> + [ ] Set at least 2 types of sheet
+> + [ ] Make awesome designed page
+> + [ ] Font Select and Change System
 
 * * *
 

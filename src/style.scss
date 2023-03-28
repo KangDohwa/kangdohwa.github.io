@@ -20,7 +20,6 @@
 // $Header-Height: 80px;
 
 
-
 $color-bg: #272727;
 $color-base: #505050;
 $color-contrast: #ffffff;
@@ -38,7 +37,7 @@ body {
 }
 
 .Fonts-desc {
-  width: 90%;
+  width: 80vw;
   margin: auto;
 }
 
@@ -49,7 +48,7 @@ body {
     color: #33a7ff;
   }
 
-  width: 80%;
+  width: calc(100vw - 10rem);
   margin: auto;
   transform: translateY(60px);
   // textAlign: 'justify';
@@ -84,24 +83,24 @@ body {
     color: #ffffff;
     position: relative;
     padding: auto;
-    width: 90%;
+    width: calc(100vw - 12rem);
   }
 
   &-Footer {
     position: relative;
-    width: 100%;
+    width: 100vw;
   }
 }
 
 .Header {
   display: flex;
   font-size: 0.875rem;
-  padding-left: 8px;
+  padding-left: 0.5rem;
   align-items: center;
   justify-content: center;
 
   &-Logo {
-    padding: 8px;
+    padding: 0.5rem;
   }
 
   &-Spacer {
@@ -111,7 +110,7 @@ body {
 
 .Footer {
   position: sticky;
-  bottom: 5px;
+  bottom: 0.5rem;
   height: 5rem;
   font-size: 0.75em;
   color: $color-contrast;
@@ -119,22 +118,22 @@ body {
 }
 
 .Nav {
-  padding-left: 8px;
-  width: 150px;
-  max-width: 150px;
+  padding-left: 0.5rem;
+  width: 9.5rem;
+  max-width: 9.5rem;
   color: #ffffff;
 
   .Clock {
-    margin-left: -16px;
+    margin-left: -1rem;
     text-align: center;
   }
 
   ul {
     list-style-type: none;
     line-height: 2.4;
-    padding-left: 8px;
-    margin-top: 8px;
-    margin-bottom: 8px;
+    padding-left: 0.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
 
     a {
       text-decoration: none;
