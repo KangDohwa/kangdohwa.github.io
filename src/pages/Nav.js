@@ -1,58 +1,38 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
+import { HashRouter, Link, withRouter } from "react-router-dom";
 
-import { MdHome } from "react-icons/md";
+import Clock from "../component/Clock/Clock";
 
-import Clock from "../component/Clock";
+import "./Nav.scss";
 
-function Nav(props) {
-  const [open, setOpen] = React.useState([false, false]);
-  const [selectedIndex, setSelectedIndex] = React.useState(1);
+function Nav(props, { location }) {
+  // const [open, setOpen] = React.useState([false, false]);
+  // const [selectedIndex, setSelectedIndex] = React.useState(1);
 
-  const handleClick = (i) => {
-    const o = { ...open };
-    o[i] = !o[i];
-    setOpen(o);
-  };
+  // const handleClick = (i) => {
+  //   const o = { ...open };
+  //   o[i] = !o[i];
+  //   setOpen(o);
+  // };
 
-  const handleListItemClick = (event, i) => {
-    setSelectedIndex(i);
-  };
+  // const handleListItemClick = (event, i) => {
+  //   setSelectedIndex(i);
+  // };
 
   return (
     <>
       <div className = "Nav">
-        <ul>
-          <Clock />
-          {/* <li className = "Nav-Cat1">
-            <MdHome /> 일반
-          </li> */}
-          <Link to = "/home">
-            <li className = "Nav-Home">
-              <MdHome /> 메인 
-            </li>
-          </Link>
-          {/* <Link to = "/clock">
-            <li className = "Nav-Clock">
-              <MdHome /> <span>Clock</span>
-            </li>
-          </Link>
-          <Link to = "/mine">
-            <li className = "Nav-Mine">
-              <MdHome /> <span>Minesweeper</span>
-            </li>
-          </Link>
-          <Link to = "/tictactoe">
-            <li className = "Nav-TicTacToe">
-              <MdHome /> <span>TicTacToe</span>
-            </li>
-          </Link> */}
-          <Link to = "/sheetgenerator">
-            <li className = "Nav-SheetGenerator">
-              <MdHome /> <span>트친소 시트</span>
-            </li>
-          </Link>
-        </ul>
+        <Link to = "/">
+          메인
+        </Link>
+        <Link to = "/FFXIV_Sheet">
+          트친소 시트
+        </Link>
+        <div className = "Spacer" />
+        <div className = "Version">
+          V{props.version}
+        </div>
+        <Clock />
       </div>
     </>
   )

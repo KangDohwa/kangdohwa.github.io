@@ -24,12 +24,8 @@ $selected: #bb9b51;
 
 .Core {
   background-color: $core-bg-color;
-  font-family: sans-serif;
+  padding: 4rem;
   margin: auto;
-  max-width: 64rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  padding-bottom: 4rem;
   color: $text-color;
 }
 
@@ -37,7 +33,7 @@ $selected: #bb9b51;
   display: flex;
   align-items: center;
   padding-top: 2rem;
-  // padding: 1rem;
+  padding-bottom: 2rem;
 
   button {
     color: $text-color;
@@ -56,80 +52,57 @@ $selected: #bb9b51;
   }
 }
 
-.Result {
-  position: absolute;
-  // width: 90vw;
-  // width: 100%;
-  height: 100%;
-  overflow: hidden;
-  // width: calc(100vw - 12rem);
-  // transform: scale(0.65);
-  // transform: scale(0.5) translate(-50%, -50%);
-  // max-width: fit-content;
-}
-
-.PreviewDisplay {
+#R {
   position: relative;
   z-index: 1;
-  width: 84.375rem;
   width: 100%;
-  // width: 1350px;
-  // // width: 90vw;
-  // height: 67.5rem;
-  height: 1080px;
-  overflow: hidden;
-}
-
-.ImageInput {
-  position: absolute;
-  z-index: 10;
-  // object-fit: cover;
-  width: 1350px;
-  height: 100%;
   overflow: hidden;
 
-  .ImgInput {
-    z-index: -1;
-    position: relative;
+  .ImageInput {
+    position: absolute;
+    z-index: 10;
+    width: 1350px;
+    height: 1080px;
+    overflow: hidden;
+  
+    .ImgInput {
+      position: relative;
+      z-index: -1;
+      height: 100%;
+    }
+    
+    .ImgNone {
+      position: relative;
+      height: 100%;
+    }
+  }
+
+  .ImageBackground {
+    position: absolute;
+    z-index: 15;
     // width: 100%;
-    height: 67.5rem;
     height: 100%;
+  
+    .ImgBG {
+      position: relative;
+    }
   }
   
-  .ImgNone {
-    // z-index: 1;
+  .DisplayContent {
     position: relative;
+    z-index: 20;
     // width: 100%;
-    height: 67.5rem;
     height: 100%;
-  }
-}
-
-.ImageBackground {
-  position: absolute;
-  z-index: 15;
-  width: 84.375rem;
-    width: 100%;
-    height: 100%;
-
-  .ImgBG {
-    position: relative;
-    // width: 84.375rem;
-    // width: 100%;
-    // height: 100%;
-  }
-}
-
-.DisplayContent {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  z-index: 20;
-  color: $text-color;
-  fill: $job-color-unset; // svg use fill to color
-
-  span {
-    width: 3.125rem;
     color: $text-color;
+    fill: $job-color-unset; // svg use fill to color
+  
+    div {
+      // position: absolute;
+  
+      p {
+        width: 30rem;
+        color: $text-color;
+      }
+    }
   }
 }

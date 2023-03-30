@@ -9,6 +9,7 @@ export default function InputType(props) {
       id = {props.type}
       type = "radio"
       value = {props.index}
+      // eslint-disable-next-line eqeqeq
       checked = {props.select == props.index}
       onChange = {props.fc}
     />

@@ -1,26 +1,12 @@
 import React from 'react';
 
-// import "./Home.scss";
-
-// const HomeStyle = {
-//   width: '80%',
-//   margin: 'auto',
-//   transform: 'translateY(60px)',
-//   // textAlign: 'justify',
-//   color: '#f0f0f0',
-// };
-
-// const HeaderStyle = {
-//   textAlign: 'center',
-//   margin: '0px',
-//   color: '#33a7ff',
-// };
+import "./Home.scss";
 
 function Home() {
 
   return (
   <>
-    <div className = "MainHome">
+    <div className = "Home">
       <header>
         쩨의 사이트에 오신 것을 환영합니다!
       </header>

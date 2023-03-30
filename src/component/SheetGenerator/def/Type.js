@@ -35,17 +35,19 @@ export const Type_1 = `
   
   #FC {
     text-align: right;
-    left: 3.5rem;
+    left: -2.5rem;
     top: 10.25rem;
   }
 
   #FCs {
-    left: 11.5rem;
+    text-align: right;
+    left: 1.5rem;
     top: 10.25rem;
   }
 
   #Server {
-    left: 19.25rem;
+    text-align: right;
+    left: -8rem;
     top: 4.25rem;
   }
 

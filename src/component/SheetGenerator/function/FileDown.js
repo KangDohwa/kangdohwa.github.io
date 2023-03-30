@@ -1,5 +1,5 @@
 import { toPng } from "html-to-image";
-import FileSaver from "file-saver";
+// import FileSaver from "file-saver";
 
 export default function testT() {
   var node = document.getElementById("R");

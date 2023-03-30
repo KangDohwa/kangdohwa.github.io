@@ -167,7 +167,7 @@ const StyledLevel = styled.div`
   
   // font-family: "Gamja Flower";
   // font-family: "KorailRoundGothicBold";
-  font-family: "LINESeedKR-Bd";
+  font-family: "LINESeedKRBold";
   
   fill: ${jobColor[0]};
   

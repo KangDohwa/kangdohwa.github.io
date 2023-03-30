@@ -1,0 +1,34 @@
+@use "../Style";
+@use "../component/SheetGenerator/Core";
+
+.Nav {
+  display: flex;
+  width: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  align-items: center;
+  justify-content: center;
+
+  a {
+    // padding: 1rem;
+    margin: 0.5rem;
+    text-decoration: none;
+    color: Style.$Basic-Contrast;
+    padding: 0.5rem;
+    border: 0;
+
+    :focus {
+      color: #000000;
+    }
+  }
+
+  .Spacer {
+    margin: auto;
+  }
+
+  .Version {
+    font-size: 0.875rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}

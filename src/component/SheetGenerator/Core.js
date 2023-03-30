@@ -10,7 +10,6 @@ import BG_Type1 from "./images/bg/Bg_Type1.png";
 import BG_Type2 from "./images/bg/Bg_Type2.png";
 
 import FileUpload from "./function/FileUpload";
-import FileDownload from "./function/FileDownload";
 import LoaderIcon from "./function/LoaderIcon";
 import LoaderStatus from "./function/LoaderStatus";
 import LoaderText from "./function/LoaderText";
@@ -27,13 +26,9 @@ import InputJob from "./function/InputJob";
 import InputStatus from "./function/InputStatus";
 import InputType from "./function/InputType";
 
-// import html2canvas from "html2canvas";
-// import testT from "./function/FileDown";
-
 import { toPng } from "html-to-image";
 
 import "./Core.scss";
-
 
 function MyPage() {
   const [urlImage, setUrlImage] = useState("");
@@ -147,31 +142,13 @@ function MyPage() {
   };
 
   const statusCheck = event => {
-    // setIsCheck(!isCheck);
     setIsCheck({
       ...isCheck,
       [event.target.name]: event.target.checked,
     });
   };
 
-  // const onCapture = () => { // html2canvas things
-  //   console.log("onCapture");
-  //   html2canvas(document.getElementById("R")).then(canvas => {
-  //     onSaveAs(canvas.toDataURL("image/png"), "Image.png")
-  //   });
-  // };
-
-  // const onSaveAs = (url, filename) => {
-  //   console.log("onSaveAs");
-  //   var link = document.createElement("a");
-  //   document.body.appendChild(link);
-  //   link.href = url;
-  //   link.download = filename;
-  //   link.click();
-  //   document.body.removeChild(link);
-  // };
-
-  const testT = () => {
+  const showPreview = () => {
     toPng(document.getElementById("R"), {width: 1350, height: 1080})
       .then(function (dataUrl) {
         var img = new Image();
@@ -180,10 +157,15 @@ function MyPage() {
         const area = document.getElementById("PreviewUser");
         console.log(area.hasChildNodes());
         if (area.hasChildNodes()) {
+          // console.log("run condition");
           const oldimg = document.getElementById("PI");
-          area.replaceChild(img, oldimg)
-        }
-        area.appendChild(img);
+          area.replaceChild(img, oldimg);
+          // console.log("replaced");
+        } else {
+          // console.log("run else");
+          area.appendChild(img);
+          // console.log("append");
+        };
       });
   };
 
@@ -202,28 +184,28 @@ function MyPage() {
     <div className = "Core">
       <div className = "Info">
         <Description />
-        <div className = "InputTextInfo"> {/* Information Input Field */}
+        <div className = "InputTextInfo">{/* Information Input Field */}
           <InputText name = "Name" t = {Name} fc = {changeText} PH = "닉네임" />
           <InputText name = "Title" t = {Title} fc = {changeText} PH = "칭호" />
           <InputText name = "FC" t = {FC} fc = {changeText} PH = "자유부대" />
           <InputText name = "FCs" t = {FCs} fc = {changeText} PH = "약칭" />
           <InputText name = "Server" t = {Server} fc = {changeText} PH = "서버" />
         </div>
-        <div className = "InputTextDesc"> {/* Description Input Field */}
+        <div className = "InputTextDesc">{/* Description Input Field */}
           <InputText name = "Style" t = {Style} fc = {changeText} PH = "성향" />
           <InputText name = "Like" t = {Like} fc = {changeText} PH = "좋아요" />
           <InputText name = "Dislike" t = {Dislike} fc = {changeText} PH = "싫어요" />
           <InputText name = "Desc" t = {Desc} fc = {changeText} PH = "한마디" />
         </div>
-        <div className = "InputStatus"> {/* Status Check Box */}
+        <div className = "InputStatus">{/* Status Check Box */}
           <InputStatus stat = "New" name = "새싹" value = {New} fc = {statusCheck} />
           <InputStatus stat = "RNew" name = "복귀" value = {RNew} fc = {statusCheck} />
           <InputStatus stat = "MPVE" name = "전투 멘토" value = {MPVE} fc = {statusCheck} />
           <InputStatus stat = "MPRP" name = "제작/채집 멘토" value = {MPRP} fc = {statusCheck} />
           <InputStatus stat = "MPVP" name = "PVP 멘토" value = {MPVP} fc = {statusCheck} />
         </div>
-        <div className = "InputLevel"> {/* Level Input Field */}
-          <div className = "Group"> {/* Tank / Healer */}
+        <div className = "InputLevel">{/* Level Input Field */}
+          <div className = "Group">{/* Tank / Healer */}
             <InputJob name = "PLD" job = "lvPLD" value = {lvPLD} fc = {changeLv} type = "Tank" />
             <InputJob name = "WAR" job = "lvWAR" value = {lvWAR} fc = {changeLv} type = "Tank" />
             <InputJob name = "DRK" job = "lvDRK" value = {lvDRK} fc = {changeLv} type = "Tank" />
@@ -233,14 +215,14 @@ function MyPage() {
             <InputJob name = "AST" job = "lvAST" value = {lvAST} fc = {changeLv} type = "Healer" />
             <InputJob name = "SGE" job = "lvSGE" value = {lvSGE} fc = {changeLv} type = "Healer" />
           </div>
-          <div className = "Group"> {/* DPS Melee */}
+          <div className = "Group">{/* DPS Melee */}
             <InputJob name = "MNK" job = "lvMNK" value = {lvMNK} fc = {changeLv} type = "DPS" />
             <InputJob name = "DRG" job = "lvDRG" value = {lvDRG} fc = {changeLv} type = "DPS" />
             <InputJob name = "NIN" job = "lvNIN" value = {lvNIN} fc = {changeLv} type = "DPS" />
             <InputJob name = "SAM" job = "lvSAM" value = {lvSAM} fc = {changeLv} type = "DPS" />
             <InputJob name = "RPR" job = "lvRPR" value = {lvRPR} fc = {changeLv} type = "DPS" />
           </div>
-          <div className = "Group"> {/* DPS RP / DPS RM */}
+          <div className = "Group">{/* DPS RP / DPS RM */}
             <InputJob name = "BRD" job = "lvBRD" value = {lvBRD} fc = {changeLv} type = "DPS" />
             <InputJob name = "MCH" job = "lvMCH" value = {lvMCH} fc = {changeLv} type = "DPS" />
             <InputJob name = "DNC" job = "lvDNC" value = {lvDNC} fc = {changeLv} type = "DPS" />
@@ -248,7 +230,7 @@ function MyPage() {
             <InputJob name = "SMN" job = "lvSMN" value = {lvSMN} fc = {changeLv} type = "DPS" />
             <InputJob name = "RDM" job = "lvRDM" value = {lvRDM} fc = {changeLv} type = "DPS" />
           </div>
-          <div className = "Group"> {/* DOH */}
+          <div className = "Group">{/* DOH */}
             <InputJob name = "CRP" job = "lvCRP" value = {lvCRP} fc = {changeLv} type = "DOH" />
             <InputJob name = "BSM" job = "lvBSM" value = {lvBSM} fc = {changeLv} type = "DOH" />
             <InputJob name = "ARM" job = "lvARM" value = {lvARM} fc = {changeLv} type = "DOH" />
@@ -258,119 +240,116 @@ function MyPage() {
             <InputJob name = "ALC" job = "lvALC" value = {lvALC} fc = {changeLv} type = "DOH" />
             <InputJob name = "CUL" job = "lvCUL" value = {lvCUL} fc = {changeLv} type = "DOH" />
           </div>
-          <div className = "Group"> {/* DOL */}
+          <div className = "Group">{/* DOL */}
             <InputJob name = "MIN" job = "lvMIN" value = {lvMIN} fc = {changeLv} type = "DOL" />
             <InputJob name = "BTN" job = "lvBTN" value = {lvBTN} fc = {changeLv} type = "DOL" />
             <InputJob name = "FSH" job = "lvFSH" value = {lvFSH} fc = {changeLv} type = "DOL" />
           </div>
-          <div className = "Group"> {/* Special */}
+          <div className = "Group">{/* Special */}
             <InputJob name = "BLU" job = "lvBLU" value = {lvBLU} fc = {changeLv} type = "SPC" />
             <InputJob name = "ELE" job = "lvELE" value = {lvELE} fc = {changeLv} type = "SPC" />
             <InputJob name = "RES" job = "lvRES" value = {lvRES} fc = {changeLv} type = "SPC" />
           </div>
         </div>
-        <div className = "InputType"> {/* Type Select Radio Field */}
+        <div className = "InputType">{/* Type Select Radio Field */}
           <InputType type = "Type1" index = "1" select = {index} fc = {selectIndex} />
           <InputType type = "Type2" index = "2" select = {index} fc = {selectIndex} wip = "(제작중)" />
         </div>
-        <div className = "ButtonField"> {/* Up/Download Button */}
+        <div className = "ButtonField">{/* Up/Download Button */}
           <FileUpload label = "사진 업로드" onChange = {onImageChange} 
-            comment = "현재 16:9 비율의 사진만 지원합니다."/>
+            comment = "현재 캐릭터가 중간에 나온 16:9 비율의 사진만 지원합니다."/>
           {/* <FileDownload label = "PNG 파일로 저장" comment = "" docTarget = {document.getElementsByClassName("Result")[0]}/> */}
-          <button onClick = {testT}>미리보기</button>
+          <button onClick = {showPreview}>변경 적용하기</button>
           <button onClick = {saveAsPNG}>PNG 파일로 저장</button>
         </div>
       </div>
-      <div id = "PreviewUser">
-
+      <div id = "PreviewUser">{/* Location where  */}
+        <img id = "PI" src = {BG_None} alt = "예시 이미지" />
       </div>
-      <div className = "Result">
-        <div id = "R" className = "PreviewDisplay">
-          <div className = "ImageInput">
-            {urlImage ? (
-              <img className = "ImgInput" src = {urlImage} alt = "urlImage" />
-            ) : ( 
-              <img className = "ImgNone" src = {BG_None} alt = "예시 이미지" />
-            )}
+      <div id = "R" className = "PreviewDisplay">
+        <div className = "ImageInput">
+          {urlImage ? (
+            <img className = "ImgInput" src = {urlImage} alt = "urlImage" />
+          ) : ( 
+            <img className = "ImgNone" src = {BG_None} alt = "예시 이미지" />
+          )}
+        </div>
+        <div className = "ImageBackground">
+          {index === 0 ? (
+            <img className = "ImgBG" src = {BG_Type1} alt = "Type 1" />
+          ) : (
+            <img className = "ImgBG" src = {BG_Type2} alt = "Type 2" />
+          )}
+        </div>
+        <div className = "DisplayContent">
+          <div className = "PlayerInfo">
+            <LoaderText name = "Name" i = {index} t = {Name} />
+            <LoaderText name = "Title" i = {index} t = {Title} />
+            <LoaderText name = "FC" i = {index} t = {FC} />
+            <LoaderText name = "FCs" i = {index} t = {FCs} />
+            <LoaderText name = "Server" i = {index} t = {Server} />
           </div>
-          <div className = "ImageBackground">
-            {index === 0 ? (
-              <img className = "ImgBG" src = {BG_Type1} alt = "Type 1" />
-            ) : (
-              <img className = "ImgBG" src = {BG_Type2} alt = "Type 2" />
-            )}
+          <div className = "PlayerDesc">
+            <LoaderText name = "Style" i = {index} t = {Style} />
+            <LoaderText name = "Like" i = {index} t = {Like} />
+            <LoaderText name = "Dislike" i = {index} t = {Dislike} />
+            <LoaderText name = "Desc" i = {index} t = {Desc} />
           </div>
-          {/* <img className = "img-Background" src = {imgBackground} alt = "BG" /> */}
-          <div className = "DisplayContent">
-            <div className = "PlayerInfo">
-              <LoaderText name = "Name" i = {index} t = {Name} />
-              <LoaderText name = "Title" i = {index} t = {Title} />
-              <LoaderText name = "FC" i = {index} t = {FC} />
-              <LoaderText name = "FCs" i = {index} t = {FCs} />
-              <LoaderText name = "Server" i = {index} t = {Server} />
-            </div>
-            <div className = "PlayerDesc">
-              <LoaderText name = "Style" i = {index} t = {Style} />
-              <LoaderText name = "Like" i = {index} t = {Like} />
-              <LoaderText name = "Dislike" i = {index} t = {Dislike} />
-              <LoaderText name = "Desc" i = {index} t = {Desc} />
-            </div>
-            <div className = "PlayerStatus">
-              <LoaderStatus stat = "New" i = {index} src = {INew} c = {New} />
-              <LoaderStatus stat = "RNew" i = {index} src = {IRNew} c = {RNew} />
-              <LoaderStatus stat = "MPVE" i = {index} src = {IMPVE} c = {MPVE} />
-              <LoaderStatus stat = "MPRP" i = {index} src = {IMPRP} c = {MPRP} />
-              <LoaderStatus stat = "MPVP" i = {index} src = {IMPVP} c = {MPVP} />
-            </div>
-            <div className = "Tank">
-              <LoaderIcon job = "PLD" i = {index} j = "Tank" lv = {lvPLD} />
-              <LoaderIcon job = "WAR" i = {index} j = "Tank" lv = {lvWAR} />
-              <LoaderIcon job = "DRK" i = {index} j = "Tank" lv = {lvDRK} />
-              <LoaderIcon job = "GNB" i = {index} j = "Tank" lv = {lvGNB} />
-            </div>
-            <div className = "Healer">
-              <LoaderIcon job = "WHM" i = {index} j = "Healer" lv = {lvWHM} />
-              <LoaderIcon job = "SCH" i = {index} j = "Healer" lv = {lvSCH} />
-              <LoaderIcon job = "AST" i = {index} j = "Healer" lv = {lvAST} />
-              <LoaderIcon job = "SGE" i = {index} j = "Healer" lv = {lvSGE} />
-            </div>
-            <div className = "DpsM">
-              <LoaderIcon job = "DRG" i = {index} j = "Dps" lv = {lvDRG} />
-              <LoaderIcon job = "MNK" i = {index} j = "Dps" lv = {lvMNK} />
-              <LoaderIcon job = "NIN" i = {index} j = "Dps" lv = {lvNIN} />
-              <LoaderIcon job = "RPR" i = {index} j = "Dps" lv = {lvRPR} />
-              <LoaderIcon job = "SAM" i = {index} j = "Dps" lv = {lvSAM} />
-            </div>
-            <div className = "DpsRP">
-              <LoaderIcon job = "BRD" i = {index} j = "Dps" lv = {lvBRD} />
-              <LoaderIcon job = "MCH" i = {index} j = "Dps" lv = {lvMCH} />
-              <LoaderIcon job = "DNC" i = {index} j = "Dps" lv = {lvDNC} />
-            </div>
-            <div className = "DpsRM">
-              <LoaderIcon job = "BLM" i = {index} j = "Dps" lv = {lvBLM} />
-              <LoaderIcon job = "SMN" i = {index} j = "Dps" lv = {lvSMN} />
-              <LoaderIcon job = "RDM" i = {index} j = "Dps" lv = {lvRDM} />
-            </div>
-            <div className = "DOH">
-              <LoaderIcon job = "CRP" i = {index} j = "DOH" lv = {lvCRP} />
-              <LoaderIcon job = "BSM" i = {index} j = "DOH" lv = {lvBSM} />
-              <LoaderIcon job = "ARM" i = {index} j = "DOH" lv = {lvARM} />
-              <LoaderIcon job = "GSM" i = {index} j = "DOH" lv = {lvGSM} />
-              <LoaderIcon job = "LTW" i = {index} j = "DOH" lv = {lvLTW} />
-              <LoaderIcon job = "WVR" i = {index} j = "DOH" lv = {lvWVR} />
-              <LoaderIcon job = "ALC" i = {index} j = "DOH" lv = {lvALC} />
-              <LoaderIcon job = "CUL" i = {index} j = "DOH" lv = {lvCUL} />
-            </div>
-            <div className = "DOL">
-              <LoaderIcon job = "MIN" i = {index} j = "DOL" lv = {lvMIN} />
-              <LoaderIcon job = "BTN" i = {index} j = "DOL" lv = {lvBTN} />
-              <LoaderIcon job = "FSH" i = {index} j = "DOL" lv = {lvFSH} />
-            </div>
-            <div className = "Special">
-              <LoaderIcon job = "BLU" i = {index} j = "Special" lv = {lvBLU} />
-              <LoaderIcon job = "ELE" i = {index} j = "Special" lv = {lvELE} />
-              <LoaderIcon job = "RES" i = {index} j = "Special" lv = {lvRES} />
-            </div>
+          <div className = "PlayerStatus">
+            <LoaderStatus stat = "New" i = {index} src = {INew} c = {New} />
+            <LoaderStatus stat = "RNew" i = {index} src = {IRNew} c = {RNew} />
+            <LoaderStatus stat = "MPVE" i = {index} src = {IMPVE} c = {MPVE} />
+            <LoaderStatus stat = "MPRP" i = {index} src = {IMPRP} c = {MPRP} />
+            <LoaderStatus stat = "MPVP" i = {index} src = {IMPVP} c = {MPVP} />
+          </div>
+          <div className = "Tank">
+            <LoaderIcon job = "PLD" i = {index} j = "Tank" lv = {lvPLD} />
+            <LoaderIcon job = "WAR" i = {index} j = "Tank" lv = {lvWAR} />
+            <LoaderIcon job = "DRK" i = {index} j = "Tank" lv = {lvDRK} />
+            <LoaderIcon job = "GNB" i = {index} j = "Tank" lv = {lvGNB} />
+          </div>
+          <div className = "Healer">
+            <LoaderIcon job = "WHM" i = {index} j = "Healer" lv = {lvWHM} />
+            <LoaderIcon job = "SCH" i = {index} j = "Healer" lv = {lvSCH} />
+            <LoaderIcon job = "AST" i = {index} j = "Healer" lv = {lvAST} />
+            <LoaderIcon job = "SGE" i = {index} j = "Healer" lv = {lvSGE} />
+          </div>
+          <div className = "DpsM">
+            <LoaderIcon job = "DRG" i = {index} j = "Dps" lv = {lvDRG} />
+            <LoaderIcon job = "MNK" i = {index} j = "Dps" lv = {lvMNK} />
+            <LoaderIcon job = "NIN" i = {index} j = "Dps" lv = {lvNIN} />
+            <LoaderIcon job = "RPR" i = {index} j = "Dps" lv = {lvRPR} />
+            <LoaderIcon job = "SAM" i = {index} j = "Dps" lv = {lvSAM} />
+          </div>
+          <div className = "DpsRP">
+            <LoaderIcon job = "BRD" i = {index} j = "Dps" lv = {lvBRD} />
+            <LoaderIcon job = "MCH" i = {index} j = "Dps" lv = {lvMCH} />
+            <LoaderIcon job = "DNC" i = {index} j = "Dps" lv = {lvDNC} />
+          </div>
+          <div className = "DpsRM">
+            <LoaderIcon job = "BLM" i = {index} j = "Dps" lv = {lvBLM} />
+            <LoaderIcon job = "SMN" i = {index} j = "Dps" lv = {lvSMN} />
+            <LoaderIcon job = "RDM" i = {index} j = "Dps" lv = {lvRDM} />
+          </div>
+          <div className = "DOH">
+            <LoaderIcon job = "CRP" i = {index} j = "DOH" lv = {lvCRP} />
+            <LoaderIcon job = "BSM" i = {index} j = "DOH" lv = {lvBSM} />
+            <LoaderIcon job = "ARM" i = {index} j = "DOH" lv = {lvARM} />
+            <LoaderIcon job = "GSM" i = {index} j = "DOH" lv = {lvGSM} />
+            <LoaderIcon job = "LTW" i = {index} j = "DOH" lv = {lvLTW} />
+            <LoaderIcon job = "WVR" i = {index} j = "DOH" lv = {lvWVR} />
+            <LoaderIcon job = "ALC" i = {index} j = "DOH" lv = {lvALC} />
+            <LoaderIcon job = "CUL" i = {index} j = "DOH" lv = {lvCUL} />
+          </div>
+          <div className = "DOL">
+            <LoaderIcon job = "MIN" i = {index} j = "DOL" lv = {lvMIN} />
+            <LoaderIcon job = "BTN" i = {index} j = "DOL" lv = {lvBTN} />
+            <LoaderIcon job = "FSH" i = {index} j = "DOL" lv = {lvFSH} />
+          </div>
+          <div className = "Special">
+            <LoaderIcon job = "BLU" i = {index} j = "Special" lv = {lvBLU} />
+            <LoaderIcon job = "ELE" i = {index} j = "Special" lv = {lvELE} />
+            <LoaderIcon job = "RES" i = {index} j = "Special" lv = {lvRES} />
           </div>
         </div>
       </div>

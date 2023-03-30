@@ -1,8 +1,10 @@
 import React from "react";
 
-import Clock from "../component/Clock";
+import Clock from "../component/Clock/Clock";
 
 import Logo from "../images/dohwa.png";
+
+import "./Header.scss";
 
 function Header(props) {
   return (

@@ -1,13 +1,20 @@
-.MainHome {
-    width: 80%;
-    margin: auto;
-    transform: translateY(60px);
-    // textAlign: 'justify';
-    color: #f0f0f0;
+@use "../Style";
 
-  div {
+.Home {
+  width: 90vw;
+  margin: auto;
+  padding-top: 4rem;
+  
+  header {
     text-align: center;
-    margin: 0px;
-    color: #33a7ff;
+    font-size: 2rem;
+    padding-bottom: 2rem;
+    margin: 0rem;
+    color: Style.$Basic-Symbol;
+  }
+
+  a {
+    text-decoration: none;
+    color: Style.$Basic-Symbol;
   }
 }

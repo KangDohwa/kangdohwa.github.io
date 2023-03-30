@@ -1,7 +1,7 @@
 {
   "homepage": "https://jjae.xyz",
   "name": "fftools",
-  "version": "0.3.0-alpha",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
@@ -9,7 +9,6 @@
     "@testing-library/user-event": "^13.5.0",
     "dom-to-image": "^2.6.0",
     "file-saver": "^2.0.5",
-    "firebase": "^9.18.0",
     "gh-pages": "^5.0.0",
     "html-to-image": "^1.11.11",
     "html2canvas": "^1.4.1",

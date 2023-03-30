@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import "./Clock.scss";
+
 export default function Clock() {
   const [timer, setTimer] = useState("00:00");
 

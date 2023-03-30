@@ -10,6 +10,8 @@ This is Project URL : [Here!](https://jjae.xyz).
 
 + Removed MUI cuz it's so difficult to customize for me.
 
++ Need to migrate js to ts.
+
 ### Todo
 
 * * *

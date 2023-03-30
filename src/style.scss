@@ -1,168 +1,37 @@
-@font-face {
-  font-family: "Gamja Flower";
-  src: url(./component/fonts/GamjaFlower-Regular.ttf);
-}
+@use "./component/Fonts/FontLoader"; // import all Fonts
 
-@font-face {
-  font-family: 'KorailRoundGothicBold';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2212@1.0/KorailRoundGothicBold.woff2') format('woff2');
-  font-weight: 700;
-  font-style: normal;
-}
+$Basic-BG: #505050;
+$Basic-Contrast: #f0f0f0;
 
-@font-face {
-  font-family: 'LINESeedKR-Bd';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Bd.woff2') format('woff2');
-  font-weight: 700;
-  font-style: normal;
-}
-
-// $Header-Height: 80px;
-
-
-$color-bg: #272727;
-$color-base: #505050;
-$color-contrast: #ffffff;
+$Basic-Symbol: #33a7ff;
 
 // $color-bg: #0065b2;
 // $color-base: #33a7ff;
 // $color-contrast: #ffffff;
 
 body {
-  margin: 0;
-  font-family: D2Coding;
-  background-color: $color-base;
+  width: 100%;
+  margin: auto;
+  font-family: "LINESeedKRBold";
+  background-color: $Basic-BG;
+  color: $Basic-Contrast;
+  // overflow-x: hidden; // vertical scrollbar hidden
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-.Fonts-desc {
-  width: 80vw;
-  margin: auto;
-}
-
-.MainHome {
-  header {
-    text-align: center;
-    margin: 0px;
-    color: #33a7ff;
-  }
-
-  width: calc(100vw - 10rem);
-  margin: auto;
-  transform: translateY(60px);
-  // textAlign: 'justify';
-  color: #f0f0f0;
-  
-  a {
-    text-decoration: none;
-    color: #33a7ff;
-  }
-  
-}
-
-.App {
-  &-Header {
-    z-index: 9999;
-    background-color: $color-bg;
-    position: sticky;
-    top: 0;
-  }
-
-  &-Body {
-    display: flex;
-  }
-
-  &-Nav {
-    z-index: 9998;
-    background-color: $color-bg;
-    height: 100%;
-  }
-
-  &-Section {
-    color: #ffffff;
-    position: relative;
-    padding: auto;
-    width: calc(100vw - 12rem);
-  }
-
-  &-Footer {
-    position: relative;
-    width: 100vw;
-  }
-}
-
 .Header {
-  display: flex;
-  font-size: 0.875rem;
-  padding-left: 0.5rem;
+  font-size: 1rem;
   align-items: center;
   justify-content: center;
+}
 
-  &-Logo {
-    padding: 0.5rem;
-  }
-
-  &-Spacer {
-    margin: auto;
-  }
+.Container {
+  display: flex;
 }
 
 .Footer {
   position: sticky;
-  bottom: 0.5rem;
-  height: 5rem;
-  font-size: 0.75em;
-  color: $color-contrast;
+  font-size: 0.875em;
   text-align: center;
 }
-
-.Nav {
-  padding-left: 0.5rem;
-  width: 9.5rem;
-  max-width: 9.5rem;
-  color: #ffffff;
-
-  .Clock {
-    margin-left: -1rem;
-    text-align: center;
-  }
-
-  ul {
-    list-style-type: none;
-    line-height: 2.4;
-    padding-left: 0.5rem;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-
-    a {
-      text-decoration: none;
-      li {
-        color: #ffffff;
-
-      }
-    }
-  }
-}
-
-.ttt-board-row {
-  :after {
-    clear: both;
-    content: "";
-    display: table;
-  }
-}
-
-.square {
-  border: 1px solid;
-  width: 50px;
-  height: 50px;
-  float: left;
-  margin-left: -1px;
-  margin-top: -1px;
-  padding: 0;
-  :focus {
-    outline: none;
-  }
-}
-
