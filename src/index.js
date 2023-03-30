@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+// eslint-disable-next-line no-unused-vars
 import { BrowserRouter, HashRouter } from "react-router-dom";
 import "./Style.scss";
 import App from "./App";
@@ -8,11 +9,11 @@ import reportWebVitals from "./reportWebVitals";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    {/* <BrowserRouter> */}
-    <HashRouter>
+    <BrowserRouter basename = {process.env.PUBLIC_URL}>
+    {/* <HashRouter> */}
       <App />
-    </HashRouter>
-    {/* </BrowserRouter> */}
+    {/* </HashRouter> */}
+    </BrowserRouter>
   </React.StrictMode>
 );
 

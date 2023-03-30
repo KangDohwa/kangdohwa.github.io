@@ -1,23 +1,11 @@
 import React from "react";
-import { HashRouter, Link, withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import Clock from "../component/Clock/Clock";
 
 import "./Nav.scss";
 
-function Nav(props, { location }) {
-  // const [open, setOpen] = React.useState([false, false]);
-  // const [selectedIndex, setSelectedIndex] = React.useState(1);
-
-  // const handleClick = (i) => {
-  //   const o = { ...open };
-  //   o[i] = !o[i];
-  //   setOpen(o);
-  // };
-
-  // const handleListItemClick = (event, i) => {
-  //   setSelectedIndex(i);
-  // };
+function Nav(props) {
 
   return (
     <>

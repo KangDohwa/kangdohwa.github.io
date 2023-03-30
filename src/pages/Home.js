@@ -1,6 +1,8 @@
-import React from 'react';
+import React from "react";
+import { Link } from "react-router-dom";
 
 import "./Home.scss";
+import "../component/Fonts/Fonts.scss"
 
 function Home() {
 
@@ -14,7 +16,7 @@ function Home() {
         아직은 개발 및 테스트중입니다.<br />
         문의는 twitter : <a href = "https://www.twitter.com/Jjae_ff14">@Jjae_ff14</a>로 해주세요.
       </p>
-      <p><a href = "./Fonts">사용한 폰트</a></p>
+      <Link to = "/Fonts">사용한 폰트</Link>
     </div>
   </>
   );

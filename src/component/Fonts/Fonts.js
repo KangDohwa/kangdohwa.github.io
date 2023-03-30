@@ -1,8 +1,9 @@
-function Fonts() {
+import "./Fonts";
 
+function Fonts() {
   return (
-  <>
-    <div className = "Fonts-desc">
+    <>
+    <div className = "Fonts">
       <p> {/* Gamja Flower Font */}
         License
         These fonts are licensed under the Open Font License.
@@ -24,7 +25,7 @@ function Fonts() {
         http://scripts.sil.org/OFL
       </p>
     </div>
-  </>
+    </>
   );
 };
 
