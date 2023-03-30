@@ -24,6 +24,8 @@ This is Project URL : [Here!](https://jjae.xyz).
 + [x] Component Clock
 + [ ] User Avatar Page
 + [ ] Design - pretty important & difficult cuz bad at this
++ [x] Now Header has Nav bar
++ [x] Version mark
 
 * * *
 
@@ -32,26 +34,14 @@ This is Project URL : [Here!](https://jjae.xyz).
 + [x] Make NavBar (Parts)
 + [x] Load Component via NavBar (Router, Link)
 + [x] Load Component beside NavBar (.scss)
-+ [ ] Stretch Height of NavBar
-+ [ ] Fix Style through .scss (pretty difficult for now)
-+ [ ] Collapsible NavBar
-+ [ ] NavBar Collapse Split - has return OMG
++ [x] Stretch Height of NavBar => repositioned to top
++ [x] Fix Style through .scss (pretty difficult for now)
 
 * * *
 
 ### Component
 
 ###### let's think about functions that we need...
-
-* * *
-
-> Minesweeper
->
-> ### Progress
->
-> + [x] Making Board via props.row, props.col
-> + [ ] Separate every button with buttons' {key}
-> + [ ] Make bomb array, then attach with buttons' key
 
 * * *
 
@@ -62,7 +52,7 @@ This is Project URL : [Here!](https://jjae.xyz).
 > If user upload an image(e.ff14 screenshot), put it to frame
 > Hook inputs(infos - lv, desc, server, etc...) to frame
 > Export when click button "export" as .png
-> Similar "sheet generator"
+> Similar "Sheet Generator"
 >
 > ### Progress
 >
@@ -84,7 +74,7 @@ This is Project URL : [Here!](https://jjae.xyz).
 
 + [x] turn private previous repo
 + [x] custom domain setting
-
++ [x] fix refreshing makes 404 error
 
 <!-- # Getting Started with Create React App
 

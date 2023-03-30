@@ -1,5 +1,4 @@
 @use "../Style";
-@use "../component/SheetGenerator/Core";
 
 .Nav {
   display: flex;
@@ -16,10 +15,6 @@
     color: Style.$Basic-Contrast;
     padding: 0.5rem;
     border: 0;
-
-    :focus {
-      color: #000000;
-    }
   }
 
   .Spacer {

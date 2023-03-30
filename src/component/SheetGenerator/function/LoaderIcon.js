@@ -1,6 +1,5 @@
-/* eslint-disable no-unused-vars */
 /* eslint-disable eqeqeq */
-import React, { useState } from "react";
+import React from "react";
 import styled, { css } from "styled-components";
 
 import { JobIconSVG } from "../def/Icons_svg";

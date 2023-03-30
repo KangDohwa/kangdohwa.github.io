@@ -1,8 +1,9 @@
+/* eslint-disable no-unused-vars */
+
 import React, { useState
   //  useCallback, useRef, createRef, useEffect,
   } from "react";
 
-// eslint-disable-next-line no-unused-vars
 import FileSaver from "file-saver"; // actually using i think but idk actually
 
 import BG_None from "./images/bg/Bg_None.png";
@@ -26,7 +27,7 @@ import InputJob from "./function/InputJob";
 import InputStatus from "./function/InputStatus";
 import InputType from "./function/InputType";
 
-import Core_Footer from "./Core_Footer";
+import CoreFooter from "./CoreFooter";
 
 import { toPng } from "html-to-image";
 
@@ -356,7 +357,7 @@ function MyPage() {
         </div>
       </div>
       <div>
-        <Core_Footer />
+        <CoreFooter />
       </div>
     </div>
   );

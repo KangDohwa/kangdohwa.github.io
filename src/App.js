@@ -22,7 +22,7 @@ function App(props) {
       <div className = "Container">
         <RouteChangeTracker />
           <Routes>
-            <Route exact path = "/Home" element = {<Home />} />
+            <Route path = "/Home" element = {<Home />} />
             <Route path = "/FFXIV_Sheet" element = {<SheetGenerator />} />
             <Route path = "/Fonts" element = {<Fonts />} />
           </Routes>
