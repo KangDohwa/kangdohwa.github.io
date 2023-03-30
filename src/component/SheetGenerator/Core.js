@@ -26,6 +26,8 @@ import InputJob from "./function/InputJob";
 import InputStatus from "./function/InputStatus";
 import InputType from "./function/InputType";
 
+import Core_Footer from "./Core_Footer";
+
 import { toPng } from "html-to-image";
 
 import "./Core.scss";
@@ -352,6 +354,9 @@ function MyPage() {
             <LoaderIcon job = "RES" i = {index} j = "Special" lv = {lvRES} />
           </div>
         </div>
+      </div>
+      <div>
+        <Core_Footer />
       </div>
     </div>
   );
