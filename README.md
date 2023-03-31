@@ -8,10 +8,6 @@ This is Project URL : [Here!](https://jjae.xyz).
 
 * * *
 
-+ Removed MUI cuz it's so difficult to customize for me.
-
-+ Need to migrate js to ts.
-
 ### Todo
 
 * * *
@@ -75,6 +71,9 @@ This is Project URL : [Here!](https://jjae.xyz).
 + [x] turn private previous repo
 + [x] custom domain setting
 + [x] fix refreshing makes 404 error
+
++ Removed MUI cuz it's so difficult to customize for me.
++ Need to migrate js to ts. - ok stopped cuz feel comfy w. js
 
 <!-- # Getting Started with Create React App
 

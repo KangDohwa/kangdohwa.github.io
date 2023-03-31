@@ -13,10 +13,6 @@ export default function Timer(props) {
     setInterval(currentTimer, 1000);
   }
 
-  function stopTimer() {
-    
-  }
-
   startTimer()
 
   return (
