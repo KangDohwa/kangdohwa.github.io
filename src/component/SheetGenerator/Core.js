@@ -151,7 +151,7 @@ function MyPage() {
     });
   };
 
-  // const showPreview = () => {
+  // const showPreview = () => { // Legacy Preview refresh / Download function
   //   toPng(document.getElementById("R"), {width: 1350, height: 1080})
   //     .then(function (dataUrl) {
   //       var img = new Image();
@@ -169,6 +169,18 @@ function MyPage() {
   //         area.appendChild(img);
   //         // console.log("append");
   //       };
+  //     });
+  // };
+
+  // const saveAsPNG = () => {
+  //   const saveName = "시트 - " + new Date().toLocaleTimeString();
+  //   toPng(document.getElementById("R"), {width: 1350, height: 1080})
+  //     .then(function (blob) {
+  //       if (window.saveAs) {
+  //         window.saveAs(blob, saveName);
+  //       } else {
+  //         FileSaver.saveAs(blob, saveName);
+  //       }
   //     });
   // };
 
