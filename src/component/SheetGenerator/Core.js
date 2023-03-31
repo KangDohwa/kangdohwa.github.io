@@ -29,7 +29,7 @@ import InputType from "./function/InputType";
 
 import CoreFooter from "./CoreFooter";
 
-import { toPng } from "html-to-image";
+import { toPng, toBlob } from "html-to-image";
 
 import "./Core.scss";
 
@@ -151,7 +151,29 @@ function MyPage() {
     });
   };
 
-  const showPreview = () => {
+  // const showPreview = () => {
+  //   toPng(document.getElementById("R"), {width: 1350, height: 1080})
+  //     .then(function (dataUrl) {
+  //       var img = new Image();
+  //       img.src = dataUrl;
+  //       img.id = "PI";
+  //       const area = document.getElementById("PreviewUser");
+  //       console.log(area.hasChildNodes());
+  //       if (area.hasChildNodes()) {
+  //         // console.log("run condition");
+  //         const oldimg = document.getElementById("PI");
+  //         area.replaceChild(img, oldimg);
+  //         // console.log("replaced");
+  //       } else {
+  //         // console.log("run else");
+  //         area.appendChild(img);
+  //         // console.log("append");
+  //       };
+  //     });
+  // };
+
+  const saveAsPNG = () => {
+    const saveName = "시트 - " + new Date().toLocaleTimeString();
     toPng(document.getElementById("R"), {width: 1350, height: 1080})
       .then(function (dataUrl) {
         var img = new Image();
@@ -170,15 +192,12 @@ function MyPage() {
           // console.log("append");
         };
       });
-  };
-
-  const saveAsPNG = () => {
     toPng(document.getElementById("R"), {width: 1350, height: 1080})
       .then(function (blob) {
         if (window.saveAs) {
-          window.saveAs(blob, "시트 - " + new Date().toLocaleTimeString());
+          window.saveAs(blob, saveName);
         } else {
-          FileSaver.saveAs(blob, "시트 - " + new Date().toLocaleTimeString());
+          FileSaver.saveAs(blob, saveName);
         }
       });
   };
@@ -262,12 +281,12 @@ function MyPage() {
           <FileUpload label = "사진 업로드" onChange = {onImageChange} 
             comment = "현재 캐릭터가 중간에 나온 16:9 비율의 사진만 지원합니다."/>
           {/* <FileDownload label = "PNG 파일로 저장" comment = "" docTarget = {document.getElementsByClassName("Result")[0]}/> */}
-          <button onClick = {showPreview}>변경 적용하기</button>
+          {/* <button onClick = {showPreview}>변경 적용하기</button> */}
           <button onClick = {saveAsPNG}>PNG 파일로 저장</button>
         </div>
       </div>
       <div id = "PreviewUser">{/* Location where  */}
-        <img id = "PI" src = {BG_None} alt = "예시 이미지" />
+        {/* <img id = "PI" src = {BG_None} alt = "예시 이미지" /> */}
       </div>
       <div id = "R" className = "PreviewDisplay">
         <div className = "ImageInput">

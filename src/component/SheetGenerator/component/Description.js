@@ -3,8 +3,6 @@ import "./Description.scss";
 export default function Desc() {
   return (
     <div className = "Admin-Desc">
-      <p>새로고침 버튼을 누를 시 작성한 데이터가 전부 사라집니다! 주의해주세요!</p>
-      <br />
       <p>안녕하세요! 사이트를 만든 쩨 입니다!</p>
       <p>트친소 생성기를 직접 만들어보고 싶어서 열심히 만들어봤습니다 :D</p>
       <p>테스트를 충분히 거치지 않았으며, 데스크톱 크롬 환경에서만 확인해봤습니다.</p>
@@ -13,6 +11,10 @@ export default function Desc() {
         href = "https://www.twitter.com/Jjae_ff14" target = "_blank" rel="noreferrer">트위터 @Jjae_ff14</a>
         로 멘션해주시거나 DM 보내주세요! </p>
       <p>예쁘거나 멋진 디자인을 보내주시면, 구현해보도록 하겠습니다!</p>
+      <br /><br />
+      <p>새로고침 버튼을 누를 시 작성한 데이터가 전부 사라집니다. 주의해주세요!</p>
+      <p>이 페이지는 너비가 1440px 이상인 해상도에 최적화됐습니다.</p>
+      <p>그 이하의 해상도에서는 정상 작동을 보장하지 않습니다.</p>
     </div>
   )
 }

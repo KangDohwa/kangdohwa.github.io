@@ -4,6 +4,9 @@ import "./InputText.scss";
 
 export default function InputText(props) {
   return (
+    <>
+    <div className = "TextLine">
+    <p>{props.PH} : </p>
     <input 
       className = {props.name}
       type = "text"
@@ -12,5 +15,7 @@ export default function InputText(props) {
       value = {props.t}
       onChange = {props.fc}
     />
+    </div>
+    </>
   )
 };

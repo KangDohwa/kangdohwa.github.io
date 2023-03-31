@@ -9,23 +9,35 @@
   input {
     font-size: 1rem;
     text-align: left;
-    width: 100%;
     height: 2.3rem;
     border: 0;
     border-bottom: Core.$core-input-underline-color 0.125rem solid;
     background: transparent;
-    // font-size: 0.875rem;
     color: Core.$text-color;
     outline: none;
   }
 }
 
+.TextLine {
+  display: flex;
+
+  p {
+    width: 8rem;
+  }
+}
+
 .InputTextInfo {
-  width: 12rem;
-  @include set-input-style
+  @include set-input-style;
+  
+  input {
+    width: 12rem;
+  }
 }
 
 .InputTextDesc {
-  width: 70%;
-  @include set-input-style
+  @include set-input-style;
+
+  input {
+    width: 64rem;
+  }
 }

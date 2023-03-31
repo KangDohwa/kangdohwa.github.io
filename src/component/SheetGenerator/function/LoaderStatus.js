@@ -7,24 +7,17 @@ import { Type_1, Type_2 } from "../def/Type";
 
 const StyledLevel = styled.div`
   
-  position: absolute;
+  // position: absolute;
+
+  img {
+    height: 1.8rem;
+  }
 
   ${(props) =>
     (props.c == false) &&
     css`
-    .New {
-      filter: grayscale(100%);
-    }
-    .RNew {
-      filter: grayscale(100%);
-    }
-    .MPVE {
-      filter: grayscale(100%);
-    }
-    .MPRP {
-      filter: grayscale(100%);
-    }
-    .MPVP {
+    
+    .New, .RNew, .MPVE, .MPRP, .MPVP {
       filter: grayscale(100%);
     }
   `};
