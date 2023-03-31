@@ -11,7 +11,7 @@ export default function InputStatus(props) {
       checked = {props.value}
       onChange = {props.fc}
     />
-    <label for = {props.stat} className = "-label">{props.name}</label>
+    <label htmlFor = {props.stat} className = "-label">{props.name}</label>
     </>
   )
 };

@@ -13,7 +13,7 @@ export default function InputType(props) {
       checked = {props.select == props.index}
       onChange = {props.fc}
     />
-    <label for = {props.type} className = "-label">{props.index}번 타입{props.wip}</label>
+    <label htmlFor = {props.type} className = "-label">{props.index}번 타입{props.wip}</label>
     {/* <span> {No}번 타입 </span> */}
     {/* <span> {props.index}번 타입 </span> */}
     </>
