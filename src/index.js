@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-// eslint-disable-next-line no-unused-vars, @typescript-eslint/no-unused-vars
+// eslint-disable-next-line no-unused-vars
 import { BrowserRouter, HashRouter } from "react-router-dom";
 import "./Style.scss";
 import App from "./App";

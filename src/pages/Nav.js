@@ -10,7 +10,7 @@ function Nav(props) {
   return (
     <>
       <div className = "Nav">
-        <Link to = "/Home">
+        <Link to = "/">
           메인
         </Link>
         <Link to = "/FFXIV_Sheet">
