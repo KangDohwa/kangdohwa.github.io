@@ -1,4 +1,4 @@
-@use "@SheetGenerator/Core";
+@use "@src/Style";
 
 @mixin set-input-style {
   display: flex;
@@ -11,9 +11,9 @@
     text-align: left;
     height: 2.3rem;
     border: 0;
-    border-bottom: Core.$core-input-underline-color 0.125rem solid;
+    border-bottom: Style.$Basic-Input-Underline 0.125rem solid;
     background: transparent;
-    color: Core.$text-color;
+    color: Style.$Basic-Contrast;
     outline: none;
   }
 }

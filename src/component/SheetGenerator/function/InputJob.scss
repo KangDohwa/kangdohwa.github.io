@@ -1,8 +1,8 @@
-@use "@SheetGenerator/Core";
+@use "@src/Style";
 
 .InputLevel {
   font-size: 0.5rem;
-  color: Core.$text-color;
+  color: Style.$Basic-Contrast;
 
   img {
     position: absolute;
@@ -35,33 +35,33 @@
     width: 3rem;
     height: 2rem;
     border: 0;
-    border-bottom: #b0b0b0 0.125rem solid;
-    color: Core.$text-color;
+    border-bottom: Style.$Basic-Input-Underline 0.125rem solid;
+    color: Style.$Basic-Contrast;
     outline: none;
     margin: auto;
   }
 }
 
 .Tank {
-  background-color: Core.$job-color-tank;
+  background-color: Style.$SG-Tank;
 }
 
 .Healer {
-  background-color: Core.$job-color-healer;
+  background-color: Style.$SG-Healer;
 }
 
 .DPS {
-  background-color: Core.$job-color-dps;
+  background-color: Style.$SG-Dps;
 }
 
 .DOH {
-  background-color: Core.$job-color-doh;
+  background-color: Style.$SG-DOH;
 }
 
 .DOL {
-  background-color: Core.$job-color-dol;
+  background-color: Style.$SG-DOL;
 }
 
 .SPC {
-  background-color: Core.$job-color-special;
+  background-color: Style.$SG-Special;
 }

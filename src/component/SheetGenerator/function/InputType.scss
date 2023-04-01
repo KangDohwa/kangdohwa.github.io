@@ -1,4 +1,4 @@
-@use "@SheetGenerator/Core";
+@use "@src/Style";
 
 .InputType {
   margin: auto;
@@ -8,7 +8,7 @@
 
   label {
     align-items: center;
-    border: 0.125rem Core.$selected solid;
+    border: Style.$Basic-Selected 0.125rem solid;
     padding: 0.5rem;
   }
 
@@ -16,11 +16,11 @@
     display: none;
 
     + .-label {
-      color: Core.$text-color;
+      color: Style.$Basic-Contrast;
     }
 
     &:checked + .-label {
-      background-color: Core.$selected;
+      background-color: Style.$Basic-Selected;
     }
   }
 }

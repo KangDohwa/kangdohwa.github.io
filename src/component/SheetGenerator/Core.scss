@@ -1,35 +1,11 @@
 @use "@src/Style.scss";
 
-$text-color: #f0f0f0;
-$text-color-test: #ff0000;
-
-$job-color-unset: #303030;
-$job-color-tank: #4d5aa0;
-$job-color-healer: #548644;
-$job-color-dps: #934848;
-$job-color-doh: #5f4592;
-$job-color-dol: #bb9b51;
-$job-color-special: #808080;
-
-$core-bg-color: #505050;
-$core-input-underline-color: #707070;
-
-$selected: #bb9b51;
-
-// $job-color-unset: #b0b0b0;
-// $job-color-tank: #2d3a80;
-// $job-color-healer: #346624;
-// $job-color-dps: #732828;
-// $job-color-doh: #5f4592;
-// $job-color-dol: #bb9b51;
-
-
 .Core {
-  background-color: $core-bg-color;
+  background-color: Style.$Basic-BG;
   padding: 2rem;
   // width: 90%;
   margin: auto;
-  color: $text-color;
+  color: Style.$Basic-Contrast;
 }
 
 .ButtonField {
@@ -39,13 +15,13 @@ $selected: #bb9b51;
   padding-bottom: 2rem;
 
   button {
-    color: $text-color;
+    color: Style.$Basic-Contrast;
     font-size: 1.5rem;
     margin: auto;
     border: 0;
     width: 15rem;
     height: 3rem;
-    background-color: $selected;
+    background-color: Style.$Basic-Selected;
   }
 }
 
@@ -93,12 +69,12 @@ $selected: #bb9b51;
     position: relative;
     z-index: 20;
     // height: 100%;
-    color: $text-color;
-    fill: $job-color-unset; // svg use fill to color
+    color: Style.$Basic-Contrast;
+    fill: Style.$SG-Unset; // svg use fill to color
   
     p {
       width: 30rem;
-      color: $text-color;
+      color: Style.$Basic-Contrast;
     }
   }
 }
