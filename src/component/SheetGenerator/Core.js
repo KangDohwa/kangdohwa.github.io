@@ -311,11 +311,6 @@ function MyPage() {
         </div>
         <div className = "ImageBackground">
           <LoaderBG index = {index} />
-          {/* {index == 1 ? (
-            <img className = "ImgBG" src = {BG_Type1} alt = "Type 1" />
-          ) : (
-            <img className = "ImgBG" src = {BG_Type2} alt = "Type 2" />
-          )} */}
         </div>
         <div className = "DisplayContent">
           <div className = "PlayerInfo">
