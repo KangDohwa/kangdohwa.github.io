@@ -11,6 +11,7 @@ import BG_Type1 from "./images/bg/Bg_Type1.png";
 import BG_Type2 from "./images/bg/Bg_Type2.png";
 
 import FileUpload from "./function/FileUpload";
+import LoaderBG from "./function/LoaderBG";
 import LoaderIcon from "./function/LoaderIcon";
 import LoaderStatus from "./function/LoaderStatus";
 import LoaderText from "./function/LoaderText";
@@ -21,7 +22,7 @@ import IMPVE from "./images/status/MPVE.png";
 import IMPRP from "./images/status/MPRP.png";
 import IMPVP from "./images/status/MPVP.png";
 
-import Description from "./component/Description";
+import Description from "./function/Description";
 import InputText from "./function/InputText";
 import InputJob from "./function/InputJob";
 import InputStatus from "./function/InputStatus";
@@ -186,24 +187,24 @@ function MyPage() {
 
   const saveAsPNG = () => {
     const saveName = "시트 - " + new Date().toLocaleTimeString();
-    toPng(document.getElementById("R"), {width: 1350, height: 1080})
-      .then(function (dataUrl) {
-        var img = new Image();
-        img.src = dataUrl;
-        img.id = "PI";
-        const area = document.getElementById("PreviewUser");
-        console.log(area.hasChildNodes());
-        if (area.hasChildNodes()) {
-          // console.log("run condition");
-          const oldimg = document.getElementById("PI");
-          area.replaceChild(img, oldimg);
-          // console.log("replaced");
-        } else {
-          // console.log("run else");
-          area.appendChild(img);
-          // console.log("append");
-        };
-      });
+    // toPng(document.getElementById("R"), {width: 1350, height: 1080})
+    //   .then(function (dataUrl) {
+    //     var img = new Image();
+    //     img.src = dataUrl;
+    //     img.id = "PI";
+    //     const area = document.getElementById("PreviewUser");
+    //     console.log(area.hasChildNodes());
+    //     if (area.hasChildNodes()) {
+    //       // console.log("run condition");
+    //       const oldimg = document.getElementById("PI");
+    //       area.replaceChild(img, oldimg);
+    //       // console.log("replaced");
+    //     } else {
+    //       // console.log("run else");
+    //       area.appendChild(img);
+    //       // console.log("append");
+    //     };
+    //   });
     toPng(document.getElementById("R"), {width: 1350, height: 1080})
       .then(function (blob) {
         if (window.saveAs) {
@@ -297,9 +298,9 @@ function MyPage() {
           <button onClick = {saveAsPNG}>PNG 파일로 저장</button>
         </div>
       </div>
-      <div id = "PreviewUser">{/* Location where  */}
-        {/* <img id = "PI" src = {BG_None} alt = "예시 이미지" /> */}
-      </div>
+      {/* <div id = "PreviewUser">
+        <img id = "PI" src = {BG_None} alt = "예시 이미지" />
+      </div> */}
       <div id = "R" className = "PreviewDisplay">
         <div className = "ImageInput">
           {urlImage ? (
@@ -309,11 +310,12 @@ function MyPage() {
           )}
         </div>
         <div className = "ImageBackground">
-          {index === 0 ? (
+          <LoaderBG index = {index} />
+          {/* {index == 1 ? (
             <img className = "ImgBG" src = {BG_Type1} alt = "Type 1" />
           ) : (
             <img className = "ImgBG" src = {BG_Type2} alt = "Type 2" />
-          )}
+          )} */}
         </div>
         <div className = "DisplayContent">
           <div className = "PlayerInfo">

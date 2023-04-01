@@ -11,7 +11,7 @@ const StyledLevel = styled.div`
 
   // font-family: "Gamja Flower";
   // font-family: "KorailRoundGothicBold";
-  font-family: "LINESeedKRBold";
+  // font-family: "LINESeedKRBold";
 
   ${(props) =>
     (props.i == 1) &&

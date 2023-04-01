@@ -19,6 +19,9 @@ export const Type_1 = `
       width: 2rem;
       left: -2.375rem;
     };
+    span {
+      font-size: 1.6rem;
+    }
   }
 
   // Text Input Start //

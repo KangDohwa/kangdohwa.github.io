@@ -160,9 +160,6 @@ const jobColor = { // Job Color
 }
 
 const StyledLevel = styled.div`
-
-  z-index: 150;
-  font-weight: 700;
   
   // font-family: "Gamja Flower";
   // font-family: "KorailRoundGothicBold";
@@ -188,33 +185,14 @@ const StyledLevel = styled.div`
   ${(props) =>
     (props.i == 1) &&
     css`
-    span {
-      font-size: 1.6rem;
-    };
-    
-    svg {
-      width: 1.8rem;
-    }
-
     ${Type_1}
-
   `};
   
   ${(props) =>
     (props.i == 2) &&
     css`
-    span {
-      font-size: 2.2rem;
-    };
-    
-    svg {
-      width: 48px;
-    }
-
     ${Type_2}
-
-  `};
-  
+  `};  
 `;
 
 export default function Jobs(props) {
