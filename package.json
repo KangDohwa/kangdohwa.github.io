@@ -1,7 +1,7 @@
 {
   "homepage": "https://jjae.xyz",
   "name": "fftools",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "private": true,
   "dependencies": {
     "@craco/craco": "^7.1.0",
