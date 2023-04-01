@@ -1,8 +1,8 @@
 import React from "react";
 
-import Clock from "../component/Clock/Clock";
+import Clock from "@Clock/Clock";
 
-import Logo from "../images/dohwa.png";
+import Logo from "@src/images/dohwa.png";
 
 import "./Header.scss";
 

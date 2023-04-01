@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import Clock from "../component/Clock/Clock";
+import Clock from "@Clock/Clock";
 
 import "./Nav.scss";
 

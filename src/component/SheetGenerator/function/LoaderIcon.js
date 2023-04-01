@@ -2,9 +2,9 @@
 import React from "react";
 import styled, { css } from "styled-components";
 
-import { JobIconSVG } from "../def/Icons_svg";
+import { JobIconSVG } from "@SheetGenerator/def/Icons_svg";
 
-import { Type_1, Type_2 } from "../def/Type";
+import { Type_1, Type_2 } from "@SheetGenerator/def/Type";
 
 // export const JobList = [
 //   // Tank

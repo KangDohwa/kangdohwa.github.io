@@ -1,16 +1,16 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import RouteChangeTracker from "./RouteChangeTracker";
+import RouteChangeTracker from "@src/RouteChangeTracker";
 
 import Info from "../package.json";
 
 // import Header from "./pages/Header";
-import Nav from "./pages/Nav";
-import Footer from "./pages/Footer";
+import Nav from "@Pages/Nav";
+import Footer from "@Pages/Footer";
 
-import Home from "./pages/Home";
-import SheetGenerator from "./component/SheetGenerator/Core";
-import Fonts from "./component/Fonts/Fonts";
+import Home from "@Pages/Home";
+import SheetGenerator from "@SheetGenerator/Core";
+import Fonts from "@Fonts/Fonts";
 
 function App(props) {
   return (

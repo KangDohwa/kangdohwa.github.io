@@ -1,5 +1,5 @@
-import { JobName } from "../def/Jobs";
-import { JobIconPNG } from "../def/Icons_png";
+import { JobName } from "@SheetGenerator/def/Jobs";
+import { JobIconPNG } from "@SheetGenerator/def/Icons_png";
 
 import "./InputJob.scss";
 

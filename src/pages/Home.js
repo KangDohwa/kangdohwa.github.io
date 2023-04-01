@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import "./Home.scss";
-import "../component/Fonts/Fonts.scss"
+import "@Fonts/Fonts.scss";
 
 function Home() {
 

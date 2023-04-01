@@ -1,9 +1,23 @@
-@use "./component/Fonts/FontLoader"; // import all Fonts
+@use "@Fonts/FontLoader"; // import all Fonts
 
 $Basic-BG: #505050;
 $Basic-Contrast: #f0f0f0;
+$Basic-Test: #ff0000;
 
 $Basic-Symbol: #33a7ff;
+
+$job-color-unset: #303030;
+$job-color-tank: #4d5aa0;
+$job-color-healer: #548644;
+$job-color-dps: #934848;
+$job-color-doh: #5f4592;
+$job-color-dol: #bb9b51;
+$job-color-special: #808080;
+
+$core-bg-color: #505050;
+$core-input-underline-color: #707070;
+
+$selected: #bb9b51;
 
 // $color-bg: #0065b2;
 // $color-base: #33a7ff;

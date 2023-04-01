@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import styled, { css } from "styled-components";
 
-import { Type_1, Type_2 } from "../def/Type";
+import { Type_1, Type_2 } from "@SheetGenerator/def/Type";
 
 const StyledLevel = styled.div`
   
