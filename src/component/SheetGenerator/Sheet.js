@@ -28,13 +28,14 @@ import InputJob from "./function/InputJob";
 import InputStatus from "./function/InputStatus";
 import InputType from "./function/InputType";
 
-import CoreFooter from "./CoreFooter";
+import SheetFooter from "./SheetFooter";
 
 import { toPng, toBlob } from "html-to-image";
 
-import "./Core.scss";
+import "./Sheet.scss";
+import { analytics, logEvent } from "@src/firebase";
 
-function MyPage() {
+function Sheet() {
   const [urlImage, setUrlImage] = useState("");
   
   const [index, setIndex] = useState([1]); // style selector state
@@ -186,6 +187,7 @@ function MyPage() {
   // };
 
   const saveAsPNG = () => {
+    logEvent(analytics, "sg_save_image");
     const saveName = "시트 - " + new Date().toLocaleTimeString();
     // toPng(document.getElementById("R"), {width: 1350, height: 1080})
     //   .then(function (dataUrl) {
@@ -216,7 +218,7 @@ function MyPage() {
   };
 
   return (
-    <div className = "Core">
+    <div className = "Sheet">
       <div className = "Info">
         <Description />
         <div className = "InputTextInfo">{/* Information Input Field */}
@@ -385,10 +387,10 @@ function MyPage() {
         </div>
       </div>
       <div>
-        <CoreFooter />
+        <SheetFooter />
       </div>
     </div>
   );
 }
 
-export default MyPage;
+export default Sheet;

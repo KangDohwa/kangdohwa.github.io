@@ -16,6 +16,9 @@ function Nav(props) {
         <Link to = "/FFXIV_Sheet">
           트친소 시트
         </Link>
+        <Link to = "/Scheduler">
+          일정
+        </Link>
         <div className = "Spacer" />
         <div className = "Version">
           V{props.version}

@@ -9,7 +9,8 @@ import Nav from "@Pages/Nav";
 import Footer from "@Pages/Footer";
 
 import Home from "@Pages/Home";
-import SheetGenerator from "@SheetGenerator/Core";
+import Sheet from "@SheetGenerator/Sheet";
+import Scheduler from "@Scheduler/Scheduler";
 import Fonts from "@Fonts/Fonts";
 
 function App(props) {
@@ -23,7 +24,8 @@ function App(props) {
         <RouteChangeTracker />
           <Routes>
             <Route path = "/" element = {<Home />} />
-            <Route path = "/FFXIV_Sheet" element = {<SheetGenerator />} />
+            <Route path = "/FFXIV_Sheet" element = {<Sheet />} />
+            <Route path = "/Scheduler" element = {<Scheduler />} />
             <Route path = "/Fonts" element = {<Fonts />} />
           </Routes>
       </div>
