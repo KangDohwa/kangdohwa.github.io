@@ -188,24 +188,6 @@ function Sheet() {
     logEvent(analytics, "sg_save_image");
     alert("PNG 파일로 저장합니다. 잠시만 기다려주세요!")
     const saveName = "시트 - " + new Date().toLocaleTimeString();
-    // toPng(document.getElementById("R"), {width: 1350, height: 1080})
-    //   .then(function (dataUrl) {
-    //     var img = new Image();
-    //     img.src = dataUrl;
-    //     img.id = "PI";
-    //     const area = document.getElementById("PreviewUser");
-    //     console.log(area.hasChildNodes());
-    //     if (area.hasChildNodes()) {
-    //       // console.log("run condition");
-    //       const oldimg = document.getElementById("PI");
-    //       area.replaceChild(img, oldimg);
-    //       // console.log("replaced");
-    //     } else {
-    //       // console.log("run else");
-    //       area.appendChild(img);
-    //       // console.log("append");
-    //     };
-    //   });
     toPng(document.getElementById("R"))
       .then(async function (blob) {
         if (window.saveAs) {
