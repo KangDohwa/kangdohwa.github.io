@@ -66,6 +66,24 @@ This is Project URL : [Here!](https://jjae.xyz).
 
 * * *
 
+> Calendar With User
+>
+> ### Concept
+>
+> The reason FF14 Party Finder's description is hard to read for me,
+> I just thought 'if we had a shared calendar and users add, modify, etc... w. that calendar?'
+> 
+> ### Progress
+>
+> + [ ] Select start/end date/time field
+> + [ ] Input for server, town, res number, description...
+> + [ ] Add to calendar when click submit button
+> + [ ] Refresh with button click
+> + [ ] Remove if password correct
+> + [ ] Hide when schedule reported above some point
+
+* * *
+
 ### ETC
 
 + [x] turn private previous repo

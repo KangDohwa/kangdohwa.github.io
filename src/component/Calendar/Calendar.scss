@@ -1,0 +1,10 @@
+@use "@src/Style";
+
+.Calendar {
+  display: flex;
+}
+
+.Input {
+  display: flex;
+  flex-direction: column;
+}

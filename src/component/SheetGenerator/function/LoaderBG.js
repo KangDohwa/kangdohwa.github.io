@@ -6,7 +6,6 @@ export default function Background(props) {
     1: Type1,
     2: Type2,
   }
-  console.log(BG[props.index]);
 
   return (
     <img className = "ImgBG" src = {BG[props.index]} alt = {props.index} />

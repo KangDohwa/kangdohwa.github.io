@@ -14,7 +14,7 @@ module.exports = {
           "@Fonts": "./src/component/Fonts",
           "@SheetGenerator": "./src/component/SheetGenerator",
           "@Pages": "./src/pages",
-          "@Scheduler": "./src/component/Scheduler",
+          "@Calendar": "./src/component/Calendar",
         }
       },
     },

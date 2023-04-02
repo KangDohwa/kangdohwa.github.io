@@ -10,7 +10,7 @@ import Footer from "@Pages/Footer";
 
 import Home from "@Pages/Home";
 import Sheet from "@SheetGenerator/Sheet";
-import Scheduler from "@Scheduler/Scheduler";
+import Calendar from "@Calendar/Calendar";
 import Fonts from "@Fonts/Fonts";
 
 function App(props) {
@@ -25,7 +25,7 @@ function App(props) {
           <Routes>
             <Route path = "/" element = {<Home />} />
             <Route path = "/FFXIV_Sheet" element = {<Sheet />} />
-            <Route path = "/Scheduler" element = {<Scheduler />} />
+            <Route path = "/Calendar" element = {<Calendar />} />
             <Route path = "/Fonts" element = {<Fonts />} />
           </Routes>
       </div>
