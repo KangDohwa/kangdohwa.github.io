@@ -7,8 +7,6 @@ import React, { useState
 import FileSaver from "file-saver"; // actually using i think but idk actually
 
 import BG_None from "./images/bg/Bg_None.png";
-import BG_Type1 from "./images/bg/Bg_Type1.png";
-import BG_Type2 from "./images/bg/Bg_Type2.png";
 
 import FileUpload from "./function/FileUpload";
 import LoaderBG from "./function/LoaderBG";
@@ -30,7 +28,7 @@ import InputType from "./function/InputType";
 
 import SheetFooter from "./SheetFooter";
 
-import { toPng, toBlob } from "html-to-image";
+import { toPng } from "html-to-image";
 
 import "./Sheet.scss";
 import { analytics, logEvent } from "@src/firebase";
@@ -186,8 +184,9 @@ function Sheet() {
   //     });
   // };
 
-  const saveAsPNG = () => {
+  function saveAsPNG() {
     logEvent(analytics, "sg_save_image");
+    alert("PNG 파일로 저장합니다. 잠시만 기다려주세요!")
     const saveName = "시트 - " + new Date().toLocaleTimeString();
     // toPng(document.getElementById("R"), {width: 1350, height: 1080})
     //   .then(function (dataUrl) {
@@ -207,14 +206,14 @@ function Sheet() {
     //       // console.log("append");
     //     };
     //   });
-    toPng(document.getElementById("R"), {width: 1350, height: 1080})
-      .then(function (blob) {
+    toPng(document.getElementById("R"))
+      .then(async function (blob) {
         if (window.saveAs) {
-          window.saveAs(blob, saveName);
+          await window.saveAs(blob, saveName);
         } else {
-          FileSaver.saveAs(blob, saveName);
+          await  FileSaver.saveAs(blob, saveName);
         }
-      });
+    });
   };
 
   return (
