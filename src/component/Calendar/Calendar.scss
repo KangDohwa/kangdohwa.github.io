@@ -2,9 +2,10 @@
 
 .Calendar {
   display: flex;
+  padding: 0rem;
+  margin: auto;
+  background-color: Style.$Basic-BG-Light;
 }
 
-.Input {
-  display: flex;
-  flex-direction: column;
+.Display {
 }

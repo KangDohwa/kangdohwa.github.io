@@ -4,7 +4,6 @@ import React from "react";
 // import DocGet from "./function/DocumentGet";
 
 import InputForm from "./function/InputForm";
-import GetfromDB from "./function/GetfromDB";
 
 import "./Calendar.scss";
 
@@ -12,11 +11,10 @@ function Calendar() {
 
   return (
     <div className = "Calendar">
-      <div id = "Display" className = "Display">
+      <div className = "Display">
 
       </div>
       <InputForm />
-      <button onClick = {GetfromDB}>가져오기</button>
     </div>
   );
 }

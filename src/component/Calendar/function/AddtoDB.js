@@ -11,7 +11,7 @@ async function AddtoDB() {
   const _Res1 = document.getElementById("Res1").value;
   const _Res2 = document.getElementById("Res2").value;
   const _Username = document.getElementById("Username").value;
-  const _Password = document.getElementById("Password").value;
+  // const _Password = document.getElementById("Password").value;
   const _Description = document.getElementById("Description").value;
   const _Link = document.getElementById("Link").value;
 
@@ -41,7 +41,7 @@ async function AddtoDB() {
       Res1: _Res1,
       Res2: _Res2,
       Username: _Username,
-      Password: _Password,
+      // Password: _Password,
       Description: _Description,
       Link: _Link,
     });
