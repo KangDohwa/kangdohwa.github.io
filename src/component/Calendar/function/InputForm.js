@@ -11,7 +11,7 @@ export default function Form() {
   const [text, setText] = SessionStorage("Calendar", "");
 
   const {
-    BeginDay = "", 
+    BeginDay, BeginTime,
   } = text;
 
   const changeText = event => { // text change
@@ -19,14 +19,15 @@ export default function Form() {
       ...text,
       [event.target.name]: event.target.value
     });
+    console.log(BeginDay);
   };
 
   return (
     <form id = "Form" onSubmit = {handleSubmit}>
       <div className = "Input">
         <label htmlFor = "BeginDay" id = "Time">시작하는 시간</label>
-        <input id = "BeginDay" type = "date" value = {BeginDay | "1900-01-01"} onChange = {changeText} required />
-        <input id = "BeginTime" type = "time" required />
+        <input id = "BeginDay" name = "BeginDay" type = "date" value = {BeginDay | ""} onChange = {changeText} required />
+        <input id = "BeginTime" type = "time" value = {BeginTime | ""} onChange = {changeText} required />
         <label htmlFor = "EndDay" id = "Time">끝나는 시간</label>
         <input id = "EndDay" type = "date" required />
         <input id = "EndTime" type = "time" required />
