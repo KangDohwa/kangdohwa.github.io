@@ -1,13 +1,16 @@
+/* eslint-disable no-unused-vars */
 import AddtoDB from "./AddtoDB";
 import GetfromDB from "./GetfromDB";
 
 import { SessionStorage } from "@component/Hooks";
+import { analytics, logEvent } from "@src/firebase";
 
 import "./InputForm.scss";
 
 export default function Form() {
   const handleSubmit = (event) => {
     event.preventDefault();
+    logEvent(analytics, "Calendar_Submit");
     AddtoDB();
   }
 
@@ -79,8 +82,8 @@ export default function Form() {
         </div>
 
         <div>
-          <textarea id = "Description" value = {Description} onChange = {changeText} placeholder = "일정에 대한 설명을&#10;여기에 입력해주세요!" />
-          <textarea id = "Link" value = {Link} onChange = {changeText} placeholder = "포스타입 등의&#10;안내 페이지가 있다면&#10;여기에 입력해주세요!" />
+          <textarea id = "Description" value = {Description} onChange = {changeText} placeholder = "일정에 대한 설명을 여기에 입력해주세요!&#10;예)책이 많은 도서관 컨셉의 아트파티..." />
+          <textarea id = "Link" value = {Link} onChange = {changeText} placeholder = "포스타입 등의 안내 페이지가 있다면&#10;여기에 입력해주세요!&#10;반드시 앞부분의 http가 포함되게 적어주세요!&#10;예)https://www.twitter.com" />
         </div>
         
         <div className = "UserInfo">

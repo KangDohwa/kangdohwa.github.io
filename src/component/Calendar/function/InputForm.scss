@@ -9,6 +9,7 @@
 
 #Form {
   text-align: center;
+  background-color: Style.$Basic-BG-Light;
 
   .TimeField {
     @include area-style;
@@ -45,7 +46,7 @@
     @include area-style;
 
     flex-direction: column;
-    align-items: start;
+    align-items: flex-start;
 
     label {
       margin: auto;
@@ -70,11 +71,13 @@
     #Description {
       width: 18rem;
       height: 8rem;
+      resize: none;
     }
 
     #Link {
       width: 18rem;
       height: 4rem;
+      resize: none;
     }
 
     .UserInfo {

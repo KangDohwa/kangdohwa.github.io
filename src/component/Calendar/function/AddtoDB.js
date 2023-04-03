@@ -1,4 +1,3 @@
-// import { useState } from "react";
 import { db, doc, setDoc } from "@src/firebase";
 
 async function AddtoDB() {
@@ -30,7 +29,7 @@ async function AddtoDB() {
 
   try {
     await setDoc(docRef, {
-      id: now.getTime() + 2629800000,
+      id: now.getTime(),
       time: time,
       BeginDay: _BeginDay,
       BeginTime: _BeginTime,

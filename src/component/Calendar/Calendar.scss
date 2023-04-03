@@ -4,8 +4,45 @@
   display: flex;
   padding: 0rem;
   margin: auto;
+  background-color: Style.$Basic-BG;
+}
+
+#Display {
+  display: flex;
+  padding: 0.5rem;
+  margin: auto;
+  width: 70vw;
+  overflow-x: auto;
   background-color: Style.$Basic-BG-Light;
 }
 
-.Display {
+.Current, .Future {
+  padding: 0.5rem;
+  margin: 0.125rem;
+  float: left;
+  flex-direction: column;
+  border: 2px Style.$Basic-Symbol solid;
+
+  .Times {
+    text-align: center;
+
+    div {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+  
+  .Description {
+    width: 12rem;
+    word-break: break-all;
+  }
+  
+  .Link {
+    width: 12rem;
+  
+    a {
+      text-decoration: none;
+      color: Style.$Basic-Symbol;
+    }
+  }
 }
