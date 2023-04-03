@@ -213,11 +213,11 @@ function Sheet() {
       <div className = "Info">
         <Description />
         <div className = "InputTextInfo">{/* Information Input Field */}
-          <InputText name = "Name" t = {Name || ""} fc = {changeText} PH = "닉네임" />
-          <InputText name = "Title" t = {Title || ""} fc = {changeText} PH = "칭호" />
-          <InputText name = "FC" t = {FC || ""} fc = {changeText} PH = "자유부대" />
-          <InputText name = "FCs" t = {FCs || ""} fc = {changeText} PH = "약칭" />
-          <InputText name = "Server" t = {Server || ""} fc = {changeText} PH = "서버" />
+          <InputText name = "Name" t = {Name} fc = {changeText} PH = "닉네임" />
+          <InputText name = "Title" t = {Title} fc = {changeText} PH = "칭호" />
+          <InputText name = "FC" t = {FC} fc = {changeText} PH = "자유부대" />
+          <InputText name = "FCs" t = {FCs} fc = {changeText} PH = "약칭" />
+          <InputText name = "Server" t = {Server} fc = {changeText} PH = "서버" />
         </div>
         <div className = "InputTextDesc">{/* Description Input Field */}
           <InputText name = "Style" t = {Style} fc = {changeText} PH = "성향" />
