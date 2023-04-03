@@ -6,6 +6,8 @@ import React, { useState
 
 import FileSaver from "file-saver"; // actually using i think but idk actually
 
+import LocalStorage from "@component/Hooks";
+
 import BG_None from "./images/bg/Bg_None.png";
 
 import FileUpload from "./function/FileUpload";
@@ -56,75 +58,79 @@ function Sheet() {
     createImageURL(uploadImage);
   };
   
-  const [text, setText] = useState({
-    Name: "", Title: "", FC: "", FCs: "", Server: "",
-    Style: "", Like: "", Dislike: "", Desc: "",
-  });
+  const [text, setText] = LocalStorage(
+    "Name", "", "Title", "", "FC", "", "FCs", "", "Server", "",
+    "Style", "", "Like", "", "Dislike", "", "Desc", "",
+  );
 
-  const [lv, setLv] = useState({ // jobs define
+  const [lv, setLv] = LocalStorage( // jobs define
     // Tank
-    lvGLA: "", lvPLD: "", lvMRD: "", lvWAR: "", lvDRK: "", lvGNB: "",
+    "lvGLA", "", "lvPLD", "", "lvMRD", "", "lvWAR", "", "lvDRK", "", "lvGNB", "",
   
     // Healer
-    lvCNJ: "", lvWHM: "", lvSCH: "", lvAST: "", lvSGE: "",
+    "lvCNJ", "", "lvWHM", "", "lvSCH", "", "lvAST", "", "lvSGE", "",
   
     // DPS Melee
-    lvPGL: "", lvMNK: "", lvLNC: "", lvDRG: "", lvROG: "", lvNIN: "", lvSAM: "", lvRPR: "",
+    "lvPGL", "", "lvMNK", "", "lvLNC", "", "lvDRG", "", "lvROG", "", "lvNIN", "", "lvSAM", "", "lvRPR", "",
   
     // DPS Ranged Physical
-    lvARC: "", lvBRD: "", lvMCH: "", lvDNC: "",
+    "lvARC", "", "lvBRD", "", "lvMCH", "", "lvDNC", "",
   
     // DPS Ranged Magical
-    lvTHM: "", lvBLM: "", lvACN: "", lvSMN: "", lvRDM: "",
+    "lvTHM", "", "lvBLM", "", "lvACN", "", "lvSMN", "", "lvRDM", "",
   
     // Disciples of the Hand
-    lvCRP: "", lvBSM: "", lvARM: "", lvGSM: "", lvLTW: "", lvWVR: "", lvALC: "", lvCUL: "",
+    "lvCRP", "", "lvBSM", "", "lvARM", "", "lvGSM", "", "lvLTW", "", "lvWVR", "", "lvALC", "", "lvCUL", "",
   
     // Disciples of the Land
-    lvMIN: "", lvBTN: "", lvFSH: "",
+    "lvMIN", "", "lvBTN", "", "lvFSH", "",
 
     // Something Special
-    lvBLU: "", lvELE: "", lvRES: "",
-  })
+    "lvBLU", "", "lvELE", "", "lvRES", "",
+  )
 
   // const [isCheck, setIsCheck] = useState(false); // status check
-  const [isCheck, setIsCheck] = useState({
-    New: false, RNew: false, MPVE: false, MPRP: false, MPVP: false,
-  })
+  // const [isCheck, setIsCheck] = useState({
+  //   New: false, RNew: false, MPVE: false, MPRP: false, MPVP: false,
+  // })
+
+  const [isCheck, setIsCheck] = LocalStorage(
+    "New", false, "RNew", false, "MPVE", false, "MPRP", false, "MPVP", false,
+  )
 
   const {
-    Name, Title, FC, FCs, Server,
-    Style, Like, Dislike, Desc,
+    Name = "", Title = "", FC = "", FCs = "", Server = "",
+    Style = "", Like = "", Dislike = "", Desc = "",
   } = text;
 
   const { // jobs array define
     // Tank
-    lvGLA, lvPLD, lvMRD, lvWAR, lvDRK, lvGNB,
+    lvGLA = "", lvPLD = "", lvMRD = "", lvWAR = "", lvDRK = "", lvGNB = "",
   
     // Healer
-    lvCNJ, lvWHM, lvSCH, lvAST, lvSGE,
+    lvCNJ = "", lvWHM = "", lvSCH = "", lvAST = "", lvSGE = "",
   
     // DPS Melee
-    lvPGL, lvMNK, lvLNC, lvDRG, lvROG, lvNIN, lvSAM, lvRPR,
+    lvPGL = "", lvMNK = "", lvLNC = "", lvDRG = "", lvROG = "", lvNIN = "", lvSAM = "", lvRPR = "",
   
     // DPS Ranged Physical
-    lvARC, lvBRD, lvMCH, lvDNC,
+    lvARC = "", lvBRD = "", lvMCH = "", lvDNC = "",
   
     // DPS Ranged Magical
-    lvTHM, lvBLM, lvACN, lvSMN, lvRDM,
+    lvTHM = "", lvBLM = "", lvACN = "", lvSMN = "", lvRDM = "",
   
     // Disciples of the Hand
-    lvCRP, lvBSM, lvARM, lvGSM, lvLTW, lvWVR, lvALC, lvCUL,
+    lvCRP = "", lvBSM = "", lvARM = "", lvGSM = "", lvLTW = "", lvWVR = "", lvALC = "", lvCUL = "",
   
     // Disciples of the Land
-    lvMIN, lvBTN, lvFSH,
+    lvMIN = "", lvBTN = "", lvFSH = "",
 
     // Something Special
-    lvBLU, lvELE, lvRES
+    lvBLU = "", lvELE = "", lvRES = "",
   } = lv;
 
   const {
-    New, RNew, MPVE, MPRP, MPVP,
+    New = false, RNew = false, MPVE = false, MPRP = false, MPVP = false,
   } = isCheck;
 
   const changeText = event => {
@@ -199,16 +205,18 @@ function Sheet() {
     });
   };
 
+  // localStorage.clear();
+
   return (
     <div className = "Sheet">
       <div className = "Info">
         <Description />
         <div className = "InputTextInfo">{/* Information Input Field */}
-          <InputText name = "Name" t = {Name} fc = {changeText} PH = "닉네임" />
-          <InputText name = "Title" t = {Title} fc = {changeText} PH = "칭호" />
-          <InputText name = "FC" t = {FC} fc = {changeText} PH = "자유부대" />
-          <InputText name = "FCs" t = {FCs} fc = {changeText} PH = "약칭" />
-          <InputText name = "Server" t = {Server} fc = {changeText} PH = "서버" />
+          <InputText name = "Name" t = {Name || ""} fc = {changeText} PH = "닉네임" />
+          <InputText name = "Title" t = {Title || ""} fc = {changeText} PH = "칭호" />
+          <InputText name = "FC" t = {FC || ""} fc = {changeText} PH = "자유부대" />
+          <InputText name = "FCs" t = {FCs || ""} fc = {changeText} PH = "약칭" />
+          <InputText name = "Server" t = {Server || ""} fc = {changeText} PH = "서버" />
         </div>
         <div className = "InputTextDesc">{/* Description Input Field */}
           <InputText name = "Style" t = {Style} fc = {changeText} PH = "성향" />
