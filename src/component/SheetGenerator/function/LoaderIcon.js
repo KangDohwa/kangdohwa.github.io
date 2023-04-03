@@ -3,6 +3,7 @@ import React from "react";
 import styled, { css } from "styled-components";
 
 import { JobIconSVG } from "@SheetGenerator/def/Icons_svg";
+import { JobIconPNG } from "@SheetGenerator/def/Icons_png";
 
 import { Type_1, Type_2 } from "@SheetGenerator/def/Type";
 
@@ -197,9 +198,12 @@ const StyledLevel = styled.div`
 
 export default function Jobs(props) {
   const Jobs = JobIconSVG[props.job];
+  // const Jobs = JobIconPNG[props.job];
   return <StyledLevel {...props}>
     <div id = {props.job}>
       <Jobs className = {props.job} /><span>{props.lv}</span>
+      {/* <img id = {props.job} className = {props.job} src = {Jobs} alt = {props.job} />
+      <label htmlFor = {props.job}>{props.lv}</label> */}
     </div>
   </StyledLevel>
 }
