@@ -6,7 +6,7 @@ import React, { useState
 
 import FileSaver from "file-saver"; // actually using i think but idk actually
 
-import LocalStorage from "@component/Hooks";
+import { LocalStorage } from "@component/Hooks";
 
 import BG_None from "./images/bg/Bg_None.png";
 
