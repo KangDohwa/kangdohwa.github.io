@@ -14,7 +14,7 @@ function Home() {
       </header>
       <p>
         아직은 개발 및 테스트중입니다.<br />
-        문의는 twitter : <a href = "https://www.twitter.com/Jjae_ff14">@Jjae_ff14</a>로 해주세요.
+        문의는 twitter : <a href = "https://www.twitter.com/Jjae_ff14" target = "_blank" rel="noreferrer">@Jjae_ff14</a>로 해주세요.
       </p>
       <Link to = "/Fonts">사용한 폰트</Link>
     </div>
