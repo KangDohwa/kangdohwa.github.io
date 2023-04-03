@@ -4,7 +4,6 @@ import React from "react";
 // import DocGet from "./function/DocumentGet";
 
 import InputForm from "./function/InputForm";
-import AddtoDB from "./function/AddtoDB";
 import GetfromDB from "./function/GetfromDB";
 
 import "./Calendar.scss";
