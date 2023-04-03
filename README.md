@@ -60,6 +60,7 @@ This is Project URL : [Here!](https://jjae.xyz).
 > + [x] Make base sheet image
 > + [x] Change styles when type selected
 > + [x] Prototype Deploy
+> + [x] LocalStorage for convenience
 > + [ ] Set at least 2 types of sheet
 > + [ ] Make awesome designed page
 > + [ ] Font Select and Change System
@@ -75,8 +76,8 @@ This is Project URL : [Here!](https://jjae.xyz).
 > 
 > ### Progress
 >
-> + [ ] Select start/end date/time field
-> + [ ] Input for server, town, res number, description...
+> + [x] Select start/end date/time field
+> + [x] Input for server, town, res number, description...
 > + [ ] Add to calendar when click submit button
 > + [ ] Refresh with button click
 > + [ ] Remove if password correct
