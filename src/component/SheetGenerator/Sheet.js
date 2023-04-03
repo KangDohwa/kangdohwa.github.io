@@ -30,8 +30,9 @@ import SheetFooter from "./SheetFooter";
 
 import { toPng } from "html-to-image";
 
-import "./Sheet.scss";
 import { analytics, logEvent } from "@src/firebase";
+
+import "./Sheet.scss";
 
 function Sheet() {
   const [urlImage, setUrlImage] = useState("");
@@ -186,14 +187,14 @@ function Sheet() {
 
   function saveAsPNG() {
     logEvent(analytics, "sg_save_image");
-    alert("PNG 파일로 저장합니다. 잠시만 기다려주세요!")
+    alert("PNG 파일로 저장합니다. 최대 30초까지 소요되니 잠시만 기다려주세요!")
     const saveName = "시트 - " + new Date().toLocaleTimeString();
     toPng(document.getElementById("R"))
       .then(async function (blob) {
         if (window.saveAs) {
           await window.saveAs(blob, saveName);
         } else {
-          await  FileSaver.saveAs(blob, saveName);
+          await FileSaver.saveAs(blob, saveName);
         }
     });
   };

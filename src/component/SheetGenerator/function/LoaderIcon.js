@@ -3,7 +3,7 @@ import React from "react";
 import styled, { css } from "styled-components";
 
 import { JobIconSVG } from "@SheetGenerator/def/Icons_svg";
-import { JobIconPNG } from "@SheetGenerator/def/Icons_png";
+// import { JobIconPNG } from "@SheetGenerator/def/Icons_png";
 
 import { Type_1, Type_2 } from "@SheetGenerator/def/Type";
 
