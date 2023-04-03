@@ -39,69 +39,47 @@ import "./Sheet.scss";
 function Sheet() {
   const [urlImage, setUrlImage] = useState("");
   
-  const [index, setIndex] = useState([1]); // style selector state
-
-  const createImageURL = (fileBlob) => { // createObjectURL
-    if (urlImage) URL.revokeObjectURL(urlImage); // revoke for rem
-
-    const url = URL.createObjectURL(fileBlob);
-
-    setUrlImage(url);
-  };
-
-  const onImageChange = (e) => { // createObjectURL Upload
-    const { files } = e.target;
-
-    if (!files || !files[0]) return;
-
-    const uploadImage = files[0];
-    createImageURL(uploadImage);
-  };
+  const [index, setIndex] = LocalStorage("Index", 1); // style selector state
   
-  const [text, setText] = LocalStorage(
-    "Name", "", "Title", "", "FC", "", "FCs", "", "Server", "",
-    "Style", "", "Like", "", "Dislike", "", "Desc", "",
-  );
+  // const [text, setText] = LocalStorage(
+  //   "Name", "", "Title", "", "FC", "", "FCs", "", "Server", "",
+  //   "Style", "", "Like", "", "Dislike", "", "Desc", "",
+  // );
 
-  const [lv, setLv] = LocalStorage( // jobs define
-    // Tank
-    "lvGLA", "", "lvPLD", "", "lvMRD", "", "lvWAR", "", "lvDRK", "", "lvGNB", "",
-  
-    // Healer
-    "lvCNJ", "", "lvWHM", "", "lvSCH", "", "lvAST", "", "lvSGE", "",
-  
-    // DPS Melee
-    "lvPGL", "", "lvMNK", "", "lvLNC", "", "lvDRG", "", "lvROG", "", "lvNIN", "", "lvSAM", "", "lvRPR", "",
-  
-    // DPS Ranged Physical
-    "lvARC", "", "lvBRD", "", "lvMCH", "", "lvDNC", "",
-  
-    // DPS Ranged Magical
-    "lvTHM", "", "lvBLM", "", "lvACN", "", "lvSMN", "", "lvRDM", "",
-  
-    // Disciples of the Hand
-    "lvCRP", "", "lvBSM", "", "lvARM", "", "lvGSM", "", "lvLTW", "", "lvWVR", "", "lvALC", "", "lvCUL", "",
-  
-    // Disciples of the Land
-    "lvMIN", "", "lvBTN", "", "lvFSH", "",
-
-    // Something Special
-    "lvBLU", "", "lvELE", "", "lvRES", "",
-  )
-
-  // const [isCheck, setIsCheck] = useState(false); // status check
-  // const [isCheck, setIsCheck] = useState({
-  //   New: false, RNew: false, MPVE: false, MPRP: false, MPVP: false,
-  // })
-
-  const [isCheck, setIsCheck] = LocalStorage(
-    "New", false, "RNew", false, "MPVE", false, "MPRP", false, "MPVP", false,
-  )
+  const [text, setText] = LocalStorage("Text", "");
 
   const {
     Name = "", Title = "", FC = "", FCs = "", Server = "",
     Style = "", Like = "", Dislike = "", Desc = "",
   } = text;
+  
+  // const [lv, setLv] = LocalStorage( // jobs define
+  //   // Tank
+  //   "lvGLA", "", "lvPLD", "", "lvMRD", "", "lvWAR", "", "lvDRK", "", "lvGNB", "",
+  
+  //   // Healer
+  //   "lvCNJ", "", "lvWHM", "", "lvSCH", "", "lvAST", "", "lvSGE", "",
+  
+  //   // DPS Melee
+  //   "lvPGL", "", "lvMNK", "", "lvLNC", "", "lvDRG", "", "lvROG", "", "lvNIN", "", "lvSAM", "", "lvRPR", "",
+  
+  //   // DPS Ranged Physical
+  //   "lvARC", "", "lvBRD", "", "lvMCH", "", "lvDNC", "",
+  
+  //   // DPS Ranged Magical
+  //   "lvTHM", "", "lvBLM", "", "lvACN", "", "lvSMN", "", "lvRDM", "",
+  
+  //   // Disciples of the Hand
+  //   "lvCRP", "", "lvBSM", "", "lvARM", "", "lvGSM", "", "lvLTW", "", "lvWVR", "", "lvALC", "", "lvCUL", "",
+  
+  //   // Disciples of the Land
+  //   "lvMIN", "", "lvBTN", "", "lvFSH", "",
+
+  //   // Something Special
+  //   "lvBLU", "", "lvELE", "", "lvRES", "",
+  // )
+
+  const [lv, setLv] = LocalStorage("JobLv", "");
 
   const { // jobs array define
     // Tank
@@ -128,12 +106,37 @@ function Sheet() {
     // Something Special
     lvBLU = "", lvELE = "", lvRES = "",
   } = lv;
+  
+  // const [isCheck, setIsCheck] = useState(false); // status check
+
+  // const [isCheck, setIsCheck] = useState({
+  //   New: false, RNew: false, MPVE: false, MPRP: false, MPVP: false,
+  // })
+
+  const [isCheck, setIsCheck] = LocalStorage("Status", false);
 
   const {
     New = false, RNew = false, MPVE = false, MPRP = false, MPVP = false,
   } = isCheck;
 
-  const changeText = event => {
+  const createImageURL = (fileBlob) => { // createObjectURL
+    if (urlImage) URL.revokeObjectURL(urlImage); // revoke for rem
+
+    const url = URL.createObjectURL(fileBlob);
+
+    setUrlImage(url);
+  };
+
+  const onImageChange = (e) => { // createObjectURL Upload
+    const { files } = e.target;
+
+    if (!files || !files[0]) return;
+
+    const uploadImage = files[0];
+    createImageURL(uploadImage);
+  };
+
+  const changeText = event => { // text change
     setText({
       ...text,
       [event.target.name]: event.target.value
@@ -144,14 +147,14 @@ function Sheet() {
     setIndex(event.target.value);
   };
 
-  const changeLv = event => {
+  const changeLv = event => { // jobs level change
     setLv({
       ...lv,
       [event.target.name]: event.target.value
     });
   };
 
-  const statusCheck = event => {
+  const statusCheck = event => { // status select
     setIsCheck({
       ...isCheck,
       [event.target.name]: event.target.checked,
@@ -204,9 +207,7 @@ function Sheet() {
         }
     });
   };
-
-  // localStorage.clear();
-
+  
   return (
     <div className = "Sheet">
       <div className = "Info">
