@@ -14,10 +14,10 @@ function Nav(props) {
           메인
         </Link>
         <Link to = "/FFXIV_Sheet">
-          트친소 시트
+          파판 시트
         </Link>
-        <Link to = "#">
-          일정 (개발중)
+        <Link to = "/Calendar">
+          일정
         </Link>
         <div className = "Spacer" />
         <div className = "Version">

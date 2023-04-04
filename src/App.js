@@ -25,8 +25,10 @@ function App(props) {
           <Routes>
             <Route path = "/" element = {<Home />} />
             <Route path = "/FFXIV_Sheet" element = {<Sheet />} />
-            <Route path = "/Calendar" element = {<Calendar />} />
             <Route path = "/Fonts" element = {<Fonts />} />
+
+            <Route path = "/Calendar" element = {<Calendar />} />
+            <Route path = "/how/Calendar" element = {<Calendar />} />
           </Routes>
       </div>
       <div className = "Footer">
