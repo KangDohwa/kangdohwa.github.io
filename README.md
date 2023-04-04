@@ -78,10 +78,14 @@ This is Project URL : [Here!](https://jjae.xyz).
 >
 > + [x] Select start/end date/time field
 > + [x] Input for server, town, res number, description...
-> + [ ] Add to calendar when click submit button
-> + [ ] Refresh with button click
+> + [x] Add to calendar when click submit button
+> + [x] Refresh with button click
 > + [ ] Remove if password correct
 > + [ ] Hide when schedule reported above some point
+> + [x] Refresh when load page
+> + [x] SessionStorage
+> + [x] Delete schedule button
+> + [x] Move outdated schedule to Storage collections
 
 * * *
 
