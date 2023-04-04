@@ -1,5 +1,5 @@
 /* eslint-disable eqeqeq */
-import { db, collection, getDocs } from "@src/firebase";
+import { db, collection, doc, setDoc, getDocs, deleteDoc } from "@src/firebase";
 import { analytics, logEvent } from "@src/firebase";
 
 import DeltoDB from "./DelfromDB";
@@ -82,6 +82,7 @@ async function GetfromDB() {
   const _DivFut = document.getElementById("Future");
   
   var _Array = [];
+  var _ArrayOutdated = [];
   // var _CurrentArr = [];
   // var _FutureArr = [];
 
@@ -172,7 +173,24 @@ async function GetfromDB() {
           _Host: _Host,
         });
       } else {
-        // console.log("Outdated!");
+        _ArrayOutdated.push({
+          id: _DocID || "",
+          time: _DocTIME || "",
+          name: "Current" || "",
+          _BeginDay: _BeginDay || "",
+          _BeginTime: doc.data().BeginTime || "",
+          _EndDay: _EndDay || "",
+          _EndTime: doc.data().EndTime || "",
+          _Server: _Server || "",
+          _Town: _Town || "",
+          _Res1: _Res1 || "",
+          _Res2: _Res2 || "",
+          _Description: _Description || "",
+          _Link: _Link || "",
+          _Username: _Username || "",
+          _Host: _Host || "",
+          _Deleted: _Deleted || "",
+        });
       }
     });
   } catch (e) {
@@ -183,6 +201,8 @@ async function GetfromDB() {
   // sortByBeginDay(_FutureArr);
   sortByBeginDay(_Array);
   // console.log("Sort Completed.")
+
+  console.log(_ArrayOutdated);
 
   // console.log(_Array);
 
@@ -202,6 +222,34 @@ async function GetfromDB() {
       _Username: _Array[i]._Username,
       _Host: _Array[i]._Host,
     });
+  };
+
+
+  for (let i = 0; i < _ArrayOutdated.length; i++) {
+    const _CalendarDocRef = doc(db, "Calendar", _ArrayOutdated[i].time)
+    const _StorageDocRef = doc(db, "Storage", _ArrayOutdated[i].time)
+
+    console.log(_ArrayOutdated[i].time);
+
+    setDoc(_StorageDocRef, {
+      id: _ArrayOutdated[i].id,
+      time: _ArrayOutdated[i].time,
+      BeginDay: _ArrayOutdated[i]._BeginDay,
+      BeginTime: _ArrayOutdated[i]._BeginTime,
+      EndDay: _ArrayOutdated[i]._EndDay,
+      EndTime: _ArrayOutdated[i]._EndTime,
+      Server: _ArrayOutdated[i]._Server,
+      Town: _ArrayOutdated[i]._Town,
+      Res1: _ArrayOutdated[i]._Res1,
+      Res2: _ArrayOutdated[i]._Res2,
+      Description: _ArrayOutdated[i]._Description,
+      Link: _ArrayOutdated[i]._Link,
+      Username: _ArrayOutdated[i]._Username,
+      Host: _ArrayOutdated[i]._Host,
+      Deleted: _ArrayOutdated[i]._Deleted,
+    })
+
+    deleteDoc(_CalendarDocRef);
   };
   
   return (
