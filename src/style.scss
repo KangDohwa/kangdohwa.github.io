@@ -1,13 +1,17 @@
 @use "@Fonts/FontLoader"; // import all Fonts
 
+$Basic-Font: "LINESeedKRBold";
+
 $Basic-BG: #505050;
 $Basic-BG-Light: #707070;
 $Basic-Contrast: #f0f0f0;
-$Basic-Test: #ff0000;
+$Basic-Test: #9e00ce;
 
-$Basic-Symbol: #33a7ff;
-$Basic-Selected: #77aaff;
+$Basic-Symbol: #0098f0;
+$Basic-Selected: #55aaff;
 $Basic-Input-Underline: #707070;
+$Basic-Link: #4015ff;
+$Basic-Highlight: #ffee00;
 
 $SG-Unset: #303030;
 $SG-Tank: #4d5aa0;
@@ -17,10 +21,13 @@ $SG-DOH: #5f4592;
 $SG-DOL: #bb9b51;
 $SG-Special: #808080;
 
+* {
+  font-family: $Basic-Font;
+}
+
 body {
   width: 100%;
   margin: auto;
-  font-family: "LINESeedKRBold";
   background-color: $Basic-BG;
   color: $Basic-Contrast;
   // overflow-x: hidden; // vertical scrollbar hidden

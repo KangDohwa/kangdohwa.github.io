@@ -195,7 +195,7 @@ function Sheet() {
   // };
 
   function saveAsPNG() {
-    logEvent(analytics, "sg_save_image");
+    logEvent(analytics, "SheetGenerator_Save");
     alert("PNG 파일로 저장합니다. 최대 30초까지 소요되니 잠시만 기다려주세요!")
     const saveName = "시트 - " + new Date().toLocaleTimeString();
     toPng(document.getElementById("R"))

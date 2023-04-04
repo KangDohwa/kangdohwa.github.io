@@ -15,12 +15,12 @@
   padding-bottom: 2rem;
 
   button {
-    color: Style.$Basic-Contrast;
     font-size: 1.5rem;
     margin: auto;
     border: 0;
     width: 15rem;
     height: 3rem;
+    color: Style.$Basic-Contrast;
     background-color: Style.$Basic-Selected;
   }
 }
