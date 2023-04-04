@@ -83,7 +83,7 @@ export default function Form() {
 
         <div>
           <textarea id = "Description" value = {Description} onChange = {changeText} placeholder = "일정에 대한 설명을 여기에 입력해주세요!&#10;예)책이 많은 도서관 컨셉의 아트파티..." />
-          <textarea id = "Link" value = {Link} onChange = {changeText} placeholder = "포스타입 등의 안내 페이지가 있다면 여기에&#10;반드시 앞부분의 http가 포함되게 적어주세요!&#10;예)https://www.twitter.com/" />
+          <textarea id = "Link" value = {Link} onChange = {changeText} placeholder = "포스타입 등의 안내 페이지가 있다면 여기에&#10;링크를 붙여넣기 해주세요!&#10;예)https://www.twitter.com/" />
         </div>
         
         <div className = "UserInfo">
