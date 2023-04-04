@@ -9,10 +9,11 @@ async function AddtoDB() {
   const _Town = document.getElementById("Town").value;
   const _Res1 = document.getElementById("Res1").value;
   const _Res2 = document.getElementById("Res2").value;
-  const _Username = document.getElementById("Username").value;
-  // const _Password = document.getElementById("Password").value;
   const _Description = document.getElementById("Description").value;
   const _Link = document.getElementById("Link").value;
+  const _Host = document.getElementById("Host").value;
+  const _Username = document.getElementById("Username").value;
+  // const _Password = document.getElementById("Password").value;
 
   const now = new Date();
 
@@ -39,10 +40,12 @@ async function AddtoDB() {
       Town: _Town,
       Res1: _Res1,
       Res2: _Res2,
-      Username: _Username,
-      // Password: _Password,
       Description: _Description,
       Link: _Link,
+      Username: _Username,
+      Host: _Host,
+      // Password: _Password,
+      Deleted: 0,
     });
     console.log("Document has written with ID :", docRef.id);
   } catch (e) {

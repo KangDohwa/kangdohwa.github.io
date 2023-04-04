@@ -19,7 +19,7 @@ export default function Form() {
   const {
     BeginDay = "", BeginTime = "", EndDay = "", EndTime = "",
     Server = "", Town = "", Res1 = "", Res2 = "",
-    Username = "", Password = "", Description = "", Link = "",
+    Host = "", Username = "", Password = "", Description = "", Link = "",
   } = text;
 
   const changeText = event => { // text change
@@ -76,19 +76,23 @@ export default function Form() {
       <div className = "TextField">
         <div>
           <input id = "Res1" type = "number" value = {Res1} onChange = {changeText} min = {1} max = {24} required />
-          <label htmlFor = "Res1" id = "Res">구</label>
+          <label htmlFor = "Res1" id = "Res">구 </label>
           <input id = "Res2" type = "number" value = {Res2} onChange = {changeText} min = {1} max = {60} required />
           <label htmlFor = "Res2" id = "Res">번지</label>
         </div>
 
         <div>
           <textarea id = "Description" value = {Description} onChange = {changeText} placeholder = "일정에 대한 설명을 여기에 입력해주세요!&#10;예)책이 많은 도서관 컨셉의 아트파티..." />
-          <textarea id = "Link" value = {Link} onChange = {changeText} placeholder = "포스타입 등의 안내 페이지가 있다면&#10;여기에 입력해주세요!&#10;반드시 앞부분의 http가 포함되게 적어주세요!&#10;예)https://www.twitter.com" />
+          <textarea id = "Link" value = {Link} onChange = {changeText} placeholder = "포스타입 등의 안내 페이지가 있다면 여기에&#10;반드시 앞부분의 http가 포함되게 적어주세요!&#10;예)https://www.twitter.com/" />
         </div>
         
         <div className = "UserInfo">
           <div>
-            <p>개최자(or 작성자)</p>
+            <p>개최자</p>
+            <input id = "Host" type = "text" value = {Host} onChange = {changeText} placeholder = "닉네임@서버" required />
+          </div>
+          <div>
+            <p>글 작성자</p>
             <input id = "Username" type = "text" value = {Username} onChange = {changeText} placeholder = "닉네임@서버" required />
           </div>
           {/* <div>

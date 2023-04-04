@@ -13,6 +13,8 @@ import Sheet from "@SheetGenerator/Sheet";
 import Calendar from "@Calendar/Calendar";
 import Fonts from "@Fonts/Fonts";
 
+import GuideCalendar from "./guide/GuideCalendar";
+
 function App(props) {
   return (
     <div className = "App">
@@ -28,7 +30,7 @@ function App(props) {
             <Route path = "/Fonts" element = {<Fonts />} />
 
             <Route path = "/Calendar" element = {<Calendar />} />
-            <Route path = "/how/Calendar" element = {<Calendar />} />
+            <Route path = "/how/Calendar" element = {<GuideCalendar />} />
           </Routes>
       </div>
       <div className = "Footer">
