@@ -35,7 +35,7 @@ function createCard({...props}) {
   var __Link = document.createElement("div");
   __Link.className = "Link";
   var __Link_a = document.createElement("a");
-  __Link_a.setAttribute("href", props._Link);
+  __Link_a.setAttribute("href", props._Link.substr(0,4) == "http" ? props._Link : "//"+props._Link);
   __Link_a.setAttribute("target", "_blank");
   __Link_a.setAttribute("rel", "noreferrer");
   __Link_a.setAttribute("disabled", (props._Link == "") ? "disabled" : "enabled");

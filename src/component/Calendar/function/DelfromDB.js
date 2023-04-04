@@ -1,3 +1,4 @@
+/* eslint-disable eqeqeq */
 import { db, doc, updateDoc } from "@src/firebase";
 
 export default async function DeltoDB() {
