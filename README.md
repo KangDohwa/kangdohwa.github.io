@@ -86,6 +86,7 @@ This is Project URL : [Here!](https://jjae.xyz).
 > + [x] SessionStorage
 > + [x] Delete schedule button
 > + [x] Move outdated schedule to Storage collections
+> + [x] Link which not has http in front of itself now works fine
 
 * * *
 
