@@ -1,5 +1,7 @@
 import { db, doc, setDoc } from "@src/firebase";
 
+import GetfromDB from "./GetfromDB";
+
 async function AddtoDB() {
   const _BeginDay = document.getElementById("BeginDay").value;
   const _BeginTime = document.getElementById("BeginTime").value;
@@ -47,7 +49,9 @@ async function AddtoDB() {
       // Password: _Password,
       Deleted: 0,
     });
-    console.log("Document has written with ID :", docRef.id);
+    // console.log("Document has written with ID :", docRef.id);
+    alert("일정이 성공적으로 추가됐습니다!");
+    GetfromDB();
   } catch (e) {
     console.error("Error adding Calendar :", e);
   };
