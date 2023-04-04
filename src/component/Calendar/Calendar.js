@@ -3,9 +3,12 @@ import React from "react";
 import InputForm from "./function/InputForm";
 import Header from "./Header";
 
+import GetfromDB from "./function/GetfromDB";
+
 import "./Calendar.scss";
 
 function Calendar() {
+  GetfromDB();
 
   return (
     <>
