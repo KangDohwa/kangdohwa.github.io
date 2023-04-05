@@ -203,7 +203,7 @@ async function GetfromDB() {
   sortByBeginDay(_Array);
   // console.log("Sort Completed.")
 
-  console.log(_ArrayOutdated);
+  // console.log(_ArrayOutdated);
 
   // console.log(_Array);
 
