@@ -13,8 +13,8 @@ async function AddtoDB() {
   const _Res2 = document.getElementById("Res2").value;
   const _Description = document.getElementById("Description").value;
   const _Link = document.getElementById("Link").value;
-  const _Host = document.getElementById("Host").value;
-  const _Username = document.getElementById("Username").value;
+  // const _Host = document.getElementById("Host").value;
+  // const _Username = document.getElementById("Username").value;
   // const _Password = document.getElementById("Password").value;
 
   const now = new Date();
@@ -44,8 +44,8 @@ async function AddtoDB() {
       Res2: _Res2,
       Description: _Description,
       Link: _Link,
-      Username: _Username,
-      Host: _Host,
+      // Username: _Username,
+      // Host: _Host,
       // Password: _Password,
       Deleted: 0,
     });

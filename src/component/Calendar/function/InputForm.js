@@ -86,7 +86,7 @@ export default function Form() {
           <textarea id = "Link" value = {Link} onChange = {changeText} placeholder = "포스타입 등의 안내 페이지가 있다면 여기에&#10;링크를 붙여넣기 해주세요!&#10;예)https://www.twitter.com/" />
         </div>
         
-        <div className = "UserInfo">
+        {/* <div className = "UserInfo">
           <div>
             <p>개최자</p>
             <input id = "Host" type = "text" value = {Host} onChange = {changeText} placeholder = "닉네임@서버" required />
@@ -95,11 +95,11 @@ export default function Form() {
             <p>글 작성자</p>
             <input id = "Username" type = "text" value = {Username} onChange = {changeText} placeholder = "닉네임@서버" required />
           </div>
-          {/* <div>
+          <div>
             <p>비밀번호</p>
             <input id = "Password" type = "password" value = {Password} onChange = {changeText} required />
-          </div> */}
-        </div>
+          </div>
+        </div> */}
       </div>
       <div className = "BtnField">
         <button type = "submit">일정 추가하기</button>
