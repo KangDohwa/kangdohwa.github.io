@@ -21,7 +21,7 @@ async function AddtoDB() {
 
   const _Y = String(now.getFullYear());
   const _M = String(now.getMonth()+1).padStart(2, "0");
-  const _D = String(now.getDate()+1).padStart(2, "0");
+  const _D = String(now.getDate()).padStart(2, "0");
   const _h = String(now.getHours()).padStart(2, "0");
   const _m = String(now.getMinutes()).padStart(2, "0");
   const _s = String(now.getSeconds()).padStart(2, "0");
