@@ -9,7 +9,6 @@ function Home() {
     <div className = "Footer">
       <p>
         이 사이트는 개인이 개발중인 사이트입니다.<br />
-        오류 수정이 느릴 수 있습니다.
         <a href = "https://docs.github.com/ko/pages" target = "_blank" rel="noreferrer">Github Pages</a>를 통해 배포되고 있습니다.
       </p>
       {/* <p>
