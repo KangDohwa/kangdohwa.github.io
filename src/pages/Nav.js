@@ -19,6 +19,9 @@ function Nav(props) {
         <Link to = "/Calendar">
           일정
         </Link>
+        <Link to = "/Glamour">
+          룩템 번역기
+        </Link>
         <div className = "Spacer" />
         <div className = "Version">
           V{props.version}

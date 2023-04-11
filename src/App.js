@@ -14,6 +14,7 @@ import Calendar from "@Calendar/Calendar";
 import Fonts from "@Fonts/Fonts";
 
 import GuideCalendar from "./guide/GuideCalendar";
+import Glamour from "@Glamour/Glamour";
 
 function App(props) {
   return (
@@ -31,6 +32,8 @@ function App(props) {
 
             <Route path = "/Calendar" element = {<Calendar />} />
             <Route path = "/how/Calendar" element = {<GuideCalendar />} />
+
+            <Route path = "/Glamour" element = {<Glamour />} />
           </Routes>
       </div>
       <div className = "Footer">
