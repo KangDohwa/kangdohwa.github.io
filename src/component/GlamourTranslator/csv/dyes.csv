@@ -1,0 +1,116 @@
+Eng,Kor,Code
+Undyed,염색 없음,#None
+Snow White,하얀 눈색,#E4DFD0
+Ash Grey,회색,#ACA8A2
+Goobbue Grey,구부 회색,#898784
+Slate Grey,진회색,#656565
+Charcoal Grey,탄회색,#484742
+Soot Black,숯검정색,#2B2923
+Rose Pink,장미색,#E69F96
+Lilac Purple,라일락색,#836969
+Rolanberry Red,롤란베리색,#5B1729
+Dalamud Red,달라가브색,#781A1A
+Rust Red,녹슨 빨간색,#622207
+Wine Red,포도주색,#451511
+Coral Pink,산호색,#CC6C5E
+Blood Red,선홍색,#913B27
+Salmon Pink,연어색,#E4AA8A
+Ruby Red,홍옥색,#E2000E
+Cherry Pink,꽃분홍색,#F43195
+Sunset Orange,노을색,#B75C2D
+Mesa Red,황야의 붉은색,#7D3906
+Bark Brown,나무껍질색,#6A4B37
+Chocolate Brown,초콜릿색,#6E3D24
+Russet Brown,적갈색,#4F2D1F
+Kobold Brown,코볼드색,#30211B
+Cork Brown,코르크색,#C99156
+Qiqirn Brown,키키룬색,#996E3F
+Opo-opo Brown,오포오포색,#7B5C2D
+Aldgoat Brown,큰뿔염소색,#A2875C
+Pumpkin Orange,늙은호박색,#C57424
+Acorn Brown,도토리색,#8E581B
+Orchard Brown,과수원 흙색,#644216
+Chestnut Brown,밤색,#3D290D
+Gobbiebag Brown,고블린색,#B9A489
+Shale Brown,찰흙색,#92816C
+Mole Brown,두더지색,#615245
+Loam Brown,비옥토색,#3F3329
+Bone White,상아색,#EBD3A0
+Ul Brown,울다하 갈색,#B7A370
+Desert Yellow,사막노란색,#DBB457
+Honey Yellow,꿀색,#FAC62B
+Millioncorn Yellow,옥수수색,#E49E34
+Coeurl Yellow,커얼색,#BC8804
+Cream Yellow,크림색,#F2D770
+Halatali Yellow,할라탈리 노란색,#A58430
+Raisin Brown,건포도색,#403311
+Canary Yellow,카나리아색,#FEF75D
+Vanilla Yellow,바닐라색,#FBF0AF
+Mud Green,습지 녹색,#585230
+Sylph Green,실프색,#BBBB8A
+Lime Green,라임색,#ABB054
+Moss Green,이끼색,#707326
+Meadow Green,풀색,#8B9C63
+Olive Green,올리브색,#4B5232
+Marsh Green,늪지 녹색,#323621
+Apple Green,풋사과색,#9BB363
+Cactuar Green,선인장색,#658241
+Hunter Green,진녹색,#284B2C
+Ochu Green,오츄색,#406339
+Adamantoise Green,금강거북색,#5F7558
+Nophica Green,노피카의 녹색,#3B4D3C
+Deepwood Green,밀림 녹색,#1E2A21
+Celeste Green,옅은 청록색,#96BDB9
+Turquoise Green,터키석색,#437272
+Morbol Green,몰볼색,#1F4646
+Ice Blue,옅은 하늘색,#B2C4CE
+Sky Blue,하늘색,#83B0D2
+Seafog Blue,바다안개색,#6481A0
+Peacock Blue,공작깃 파란색,#3B6886
+Rhotano Blue,로타노 바다색,#1C3D54
+Corpse Blue,좀비의 얼굴색,#8E9BAC
+Ceruleum Blue,청린수색,#4F5766
+Woad Blue,쪽빛 파란색,#2F3851
+Ink Blue,검푸른색,#1A1F27
+Raptor Blue,랍토르색,#5B7FC0
+Othard Blue,오사드 바다색,#2F5889
+Storm Blue,선명한 파란색,#234172
+Void Blue,보이드의 파란색,#112944
+Royal Blue,감청색,#273067
+Midnight Blue,밤하늘색,#181937
+Shadow Blue,청회색,#373747
+Abyssal Blue,청보라색,#312D57
+Dragoon Blue,새파란색,#000B9D
+Turquoise Blue,담청색,#03AACA
+Lavender Purple,라벤더색,#877FAE
+Gloom Purple,어두운 보라색,#514560
+Currant Purple,머루색,#322C3B
+Iris Purple,붓꽃색,#B79EBC
+Grape Purple,포도색,#3B2A3D
+Lotus Purple,연꽃색,#FECEF5
+Colibri Pink,콜리브리색,#DC9BCA
+Plum Purple,매화색,#79526C
+Regal Purple,자주색,#66304E
+Pure White,순백색,#F9F8F4
+Jet Black,칠흑색,#1E1E1E
+Pastel Pink,부드러운 연분홍,#FDC8C6
+Dark Red,짙은 빨강,#321919
+Dark Brown,짙은 갈색,#28211C
+Pastel Green,부드러운 연녹색,#BACFAA
+Dark Green,짙은 녹색,#152C2C
+Pastel Blue,부드러운 연파랑,#96A4D9
+Dark Blue,짙은 파랑,#121F2D
+Pastel Purple,부드러운 연보라,#BBB5DA
+Dark Purple,짙은 자주색,#232026
+Metallic Silver,반짝이는 은색,#A7A7A7
+Metallic Gold,반짝이는 금색,#EDE63D
+Metallic Red,금속질 빨간색,#B61D4B
+Metallic Orange,금속질 주황색,#E48C2F
+Metallic Yellow,금속질 노란색,#F4DA46
+Metallic Green,금속질 녹색,#22A757
+Metallic Sky Blue,금속질 하늘색,#49F8FD
+Metallic Blue,금속질 파란색,#5052D9
+Metallic Purple,금속질 보라색,#D361FF
+Gunmetal Black,건메탈색,#181820
+Pearl White,진주색,#BFB4A3
+Metallic Brass,황동색,#E9C06F

@@ -1,19 +1,22 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 // eslint-disable-next-line no-unused-vars
-import { BrowserRouter, HashRouter } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import "@src/Style.scss";
 import App from "@src/App";
+import store from "@src/app/store";
+import { Provider } from "react-redux"
+
 import reportWebVitals from "@src/reportWebVitals";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
+    <Provider store = {store}>
     <BrowserRouter basename = {process.env.PUBLIC_URL}>
-    {/* <HashRouter> */}
       <App />
-    {/* </HashRouter> */}
     </BrowserRouter>
+    </Provider>
   </React.StrictMode>
 );
 

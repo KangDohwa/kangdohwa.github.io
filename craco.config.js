@@ -15,6 +15,7 @@ module.exports = {
           "@SheetGenerator": "./src/component/SheetGenerator",
           "@Pages": "./src/pages",
           "@Calendar": "./src/component/Calendar",
+          "@Glamour": "./src/component/GlamourTranslator",
         }
       },
     },

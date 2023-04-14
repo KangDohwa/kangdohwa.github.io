@@ -8,6 +8,12 @@ module.exports = function(app) {
         "^/eorzeacollection": ""
       },
       changeOrigin: true
-    })
+    }),
+    createProxyMiddleware("/wiki", {
+      target: "https://ffxiv.gamerescape.com/wiki",
+      pathRewrite: {
+        "^/wiki": ""
+      },
+    }),
   )
 }

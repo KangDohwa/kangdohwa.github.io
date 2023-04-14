@@ -1,48 +1,60 @@
 import React from "react";
 import * as cheerio from "cheerio";
 
+import { useSelector, useDispatch } from "react-redux";
+
+import { setAddress } from "@src/app/slice/Address";
+import { up } from "@src/app/slice/Address";
+
 import GetHtml from "./function/GetHtml";
+import GlamourList from "./function/GlamourList";
+import TranslateItems from "./function/TranslateItems";
+import TranslateDyes from "./function/TranslateDyes";
+
+import ArrayGlamour, { GetValue } from "./function/ArrayGlamour";
+import { setGlamour } from "../../app/slice/Glamour";
+
+// #mw-content-text > div > table.itembox.shadowed > tbody > tr:nth-child(1) > td:nth-child(2) > div:nth-child(3) > sup > a
 
 function Glamour() {
-  async function doGlamour() {
-    const _addr = document.getElementById("Glamour-Address").value;
-    const _data = await GetHtml(_addr);
-    const $ = cheerio.load(_data.data);
+  var _array = [];
 
-    let _arr = [];
-
-    for (let cat = 0; cat <= 10; cat++) {
-      for (let i = 1; i <= 5; i++) {
-        const $items = $(`#js-app > div > section.l-section.l-section-double > section > section > div:nth-child(${cat}) > div:nth-child(${i})`);
-        $items.each((idx, node) => {
-          const name = $(node).find(".c-gear-slot-item a span").text();
-
-          if (name === "") {
-            return;
-          }
-          
-          _arr.push({
-            // category: cat,
-            // index: i,
-            name: name,
-          });
-        });
-      }
-    }
-
-    console.log(_arr);
+  const dispatch = useDispatch();
+  const address = useSelector((state) => {
+    return state.address.address;
+  });
+  async function updateAddress() {
+    _array = await ArrayGlamour();
+    console.log(_array);
+    dispatch(setAddress(GetValue()));
+  };
+  const value = useSelector((state) => {
+    return state.address.value;
+  });
+  function addNumber() {
+    dispatch(up(2));
+  };
+  const glamour = useSelector((state) => {
+    return state.glamour.array;
+  })
+  async function updateGlamour() {
+    _array = await ArrayGlamour();
+    dispatch(setGlamour(_array));
   }
-  
+
   return (
     <>
     <div className = "Glamour">
       <input id = "Glamour-Address" type = "text" placeholder = "number" required />
-      <button onClick = {doGlamour}>Search</button>
+      <button onClick = {updateGlamour}>Search</button>
+      <button onClick = {updateAddress}>Refresh</button>
+      <button onClick = {addNumber}>+2</button>
     </div>
+    <div id = "gaddr">{address}</div>
+    <div id = "gvalu">{value}</div>
+    <GlamourList glamourList = {glamour} />
     </>
   )
 }
 
 export default Glamour;
-
-// #js-app > div > section.l-section.l-section-double > section > section > div:nth-child(3) > div:nth-child(1)
