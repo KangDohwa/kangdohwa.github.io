@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.351c6594.css",
-    "main.js": "/static/js/main.a93e6600.js",
-    "static/js/787.0308ed63.chunk.js": "/static/js/787.0308ed63.chunk.js",
+    "main.css": "/static/css/main.a16d6642.css",
+    "main.js": "/static/js/main.080eee01.js",
+    "static/js/27.f02662ae.chunk.js": "/static/js/27.f02662ae.chunk.js",
     "static/media/GamjaFlower-Regular.ttf": "/static/media/GamjaFlower-Regular.317f969e43bbf7cb06a0.ttf",
     "static/media/LINESeedKR-Bd.ttf": "/static/media/LINESeedKR-Bd.05663ee5b4753c23c17b.ttf",
     "static/media/2.png": "/static/media/2.940c3391efb718460de8.png",
@@ -53,13 +53,10 @@
     "static/media/MNK.svg": "/static/media/MNK.2bfd85af8419f5a82f14c30b8724a4d2.svg",
     "static/media/SMN.svg": "/static/media/SMN.d773a8880ef688f3f7792a214fed585d.svg",
     "static/media/PLD.svg": "/static/media/PLD.4da1fe3c78c1c7b5d25abd2cf7908be5.svg",
-    "static/media/WHM.svg": "/static/media/WHM.a52680e5f1ac78ae1bd80d05c4e94f37.svg",
-    "main.351c6594.css.map": "/static/css/main.351c6594.css.map",
-    "main.a93e6600.js.map": "/static/js/main.a93e6600.js.map",
-    "787.0308ed63.chunk.js.map": "/static/js/787.0308ed63.chunk.js.map"
+    "static/media/WHM.svg": "/static/media/WHM.a52680e5f1ac78ae1bd80d05c4e94f37.svg"
   },
   "entrypoints": [
-    "static/css/main.351c6594.css",
-    "static/js/main.a93e6600.js"
+    "static/css/main.a16d6642.css",
+    "static/js/main.080eee01.js"
   ]
 }
