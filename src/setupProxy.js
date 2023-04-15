@@ -5,7 +5,7 @@ module.exports = function(app) {
     createProxyMiddleware("/eorzeacollection", {
       target: "https://ffxiv.eorzeacollection.com",
       pathRewrite: {
-        "^/eorzeacollection": ""
+        "https://jjae.xyz/eorzeacollection": ""
       },
       changeOrigin: true
     }),
