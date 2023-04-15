@@ -5,14 +5,16 @@ export default async function GetHtml( addr ) {
     try {
       return await axios.get(addr);
     } catch (e) {
-      console.error("Error on NaN :", e);
+      alert("올바른 숫자를 입력해주세요!");
+      // console.error("Error on NaN :", e);
     }
   } else {
     const _addr = "eorzeacollection/glamour/" + addr;
     try {
       return await axios.get(_addr);
     } catch (e) {
-      console.error("Error on Num :", e);
+      alert("올바른 숫자를 입력해주세요!");
+      // console.error("Error on Num :", e);
     }
   }
 }

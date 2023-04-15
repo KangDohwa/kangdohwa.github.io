@@ -9,10 +9,10 @@ module.exports = function(app) {
       },
       changeOrigin: true
     }),
-    createProxyMiddleware("/wiki", {
-      target: "https://ffxiv.gamerescape.com/wiki",
+    createProxyMiddleware("/ver", {
+      target: "https://ffxiv.gamerescape.com",
       pathRewrite: {
-        "^/wiki": ""
+        "^/ver": ""
       },
       changeOrigin: true
     }),

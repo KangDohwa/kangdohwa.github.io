@@ -10,7 +10,6 @@ const glamourSlice = createSlice({
   reducers: {
     setGlamour(state, action) {
       state.array = action.payload;
-      console.log("Console", action.payload);
     },
   },
 });
