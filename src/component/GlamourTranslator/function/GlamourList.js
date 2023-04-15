@@ -1,5 +1,4 @@
 export default function GlamourList({ glamourList }) {
-  console.log(glamourList)
   return (
     <div className = "Glamour-List">
       {glamourList.map((it) => (
