@@ -2,10 +2,10 @@ const { createProxyMiddleware } = require("http-proxy-middleware");
 
 module.exports = function(app) {
   app.use(
-    createProxyMiddleware("/eorzeacollection", {
+    createProxyMiddleware("/https://ffxiv.eorzeacollection.com", {
       target: "https://ffxiv.eorzeacollection.com",
       pathRewrite: {
-        "https://jjae.xyz/eorzeacollection": ""
+        "https://ffxiv.eorzeacollection.com": ""
       },
       changeOrigin: true
     }),

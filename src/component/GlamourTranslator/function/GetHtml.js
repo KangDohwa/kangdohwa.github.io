@@ -9,7 +9,7 @@ export default async function GetHtml( addr ) {
       // console.error("Error on NaN :", e);
     }
   } else {
-    const _addr = "eorzeacollection/glamour/" + addr;
+    const _addr = "https://ffxiv.eorzeacollection.com/glamour/" + addr;
     try {
       return await axios.get(_addr);
     } catch (e) {
