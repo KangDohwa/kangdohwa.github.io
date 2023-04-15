@@ -14,6 +14,7 @@ module.exports = function(app) {
       pathRewrite: {
         "^/wiki": ""
       },
+      changeOrigin: true
     }),
   )
 }
