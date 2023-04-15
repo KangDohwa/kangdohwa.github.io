@@ -39,7 +39,7 @@ function createCard({...props}) {
   __Link_a.setAttribute("target", "_blank");
   __Link_a.setAttribute("rel", "noreferrer");
   __Link_a.setAttribute("disabled", (props._Link == "") ? "disabled" : "enabled");
-  console.log(props._Link);
+  // console.log(props._Link);
   __Link_a.innerHTML = "바로가기";
   __Link.appendChild(__Link_a);
 
