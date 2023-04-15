@@ -4,9 +4,9 @@ export default function GlamourList({ glamourList }) {
     <div className = "Glamour-List">
       {glamourList.map((it) => (
         <div key = {it.id}>
-          <div>{it.item}</div>
+          <div style = {{width: "20rem"}}>{it.item}</div>
           <div style = {it.code}>⬤</div>
-          <div>{it.dye}</div>
+          <div style = {{width: "15rem"}}>{it.dye}</div>
         </div>
       ))}
     </div>
