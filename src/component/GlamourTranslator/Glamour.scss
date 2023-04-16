@@ -1,7 +1,8 @@
 @use "@src/Style";
 
 .Glamour {
-  display: flex;
+  // display: flex;
+  margin: auto;
 
   input, button {
     padding: 0rem;
@@ -26,11 +27,11 @@
 }
 
 .Glamour-List {
+  margin: auto;
   
   div {
     width: 30rem;
     display: flex;
     padding: 0.25rem;
-    margin-left: auto;
   }
 }

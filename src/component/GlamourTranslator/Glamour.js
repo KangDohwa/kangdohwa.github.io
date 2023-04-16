@@ -26,10 +26,10 @@ function Glamour() {
     <div className = "Glamour">
       <input id = "Glamour-Address" type = "text" placeholder = "번호를 입력해주세요" required />
       <button onClick = {updateGlamour}>불러오기</button>
-      <button onClick = {ArrayVersion}>Version</button>
+      {/* <button onClick = {ArrayVersion}>Version</button> */}
       <div className = "Spacer" />
-      <GlamourList glamourList = {glamour} />
     </div>
+      <GlamourList glamourList = {glamour} />
     </>
   )
 }
