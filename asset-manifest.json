@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.d7a563da.css",
-    "main.js": "/static/js/main.db993224.js",
+    "main.js": "/static/js/main.0ef86efa.js",
     "static/js/27.f02662ae.chunk.js": "/static/js/27.f02662ae.chunk.js",
     "static/media/GamjaFlower-Regular.ttf": "/static/media/GamjaFlower-Regular.317f969e43bbf7cb06a0.ttf",
     "static/media/LINESeedKR-Bd.ttf": "/static/media/LINESeedKR-Bd.05663ee5b4753c23c17b.ttf",
@@ -57,6 +57,6 @@
   },
   "entrypoints": [
     "static/css/main.d7a563da.css",
-    "static/js/main.db993224.js"
+    "static/js/main.0ef86efa.js"
   ]
 }
