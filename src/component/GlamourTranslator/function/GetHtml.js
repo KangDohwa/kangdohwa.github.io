@@ -1,6 +1,8 @@
 import axios from "axios";
+import { analytics, logEvent } from "@src/firebase";
 
 export default async function GetHtml( addr ) {
+  logEvent(analytics, "Glamour_Translator_Request");
   if (isNaN(addr)) {
     const _addr = `${process.env.REACT_APP_SELF_PROXY_ADDRESS}${addr}`;
     try {
