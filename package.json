@@ -3,11 +3,6 @@
   "name": "fftools",
   "version": "1.3.0",
   "private": true,
-  "proxy": {
-    "/eorzeacollection": {
-      "target": "https://ffxiv.eorzeacollection.com"
-    }
-  },
   "dependencies": {
     "@craco/craco": "^7.1.0",
     "@reduxjs/toolkit": "^1.9.3",
