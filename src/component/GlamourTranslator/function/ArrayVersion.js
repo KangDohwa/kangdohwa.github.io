@@ -5,7 +5,7 @@ import * as cheerio from "cheerio";
 export default async function DoSome() {
   var _array = [];
   try {
-    for (let i = 0; i <= jsonItems.length; i++) {
+    for (let i = 39000; i <= jsonItems.length; i++) {
       var _itemEng = jsonItems[i].Eng;
       var _itemKor = jsonItems[i].Kor;
       var _itemVer = "Obsolete Item";
@@ -26,6 +26,8 @@ export default async function DoSome() {
         .replace(/ /g, "_")
         .replace(/'/g, "%27")
         .replace(/\+/g, "%2B")
+        .replace(/\[/g, "(")
+        .replace(/\]/g, ")")
         .replace(/\?/g, "");
       const _data = await GetVersion(_itemEng_r);
       const $ = cheerio.load(_data.data);
