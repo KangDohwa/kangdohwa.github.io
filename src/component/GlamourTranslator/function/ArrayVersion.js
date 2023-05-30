@@ -1,24 +1,30 @@
-import jsonItems from "../csv/items copy.json";
+import jsonItems from "../csv/items.json";
 import GetVersion from "../function/GetVersion";
 import * as cheerio from "cheerio";
 
 export default async function DoSome() {
   var _array = [];
   try {
-    for (let i = 39000; i <= jsonItems.length; i++) {
+    for (let i = 0; i <= jsonItems.length; i++) {
       var _itemEng = jsonItems[i].Eng;
       var _itemKor = jsonItems[i].Kor;
       var _itemVer = "Obsolete Item";
 
       if (jsonItems[i].Ver !== "") {
         console.log(`No.${i} Already Done`);
-        // _array.push({"Eng": _itemEng, "Kor": _itemKor, "Ver": jsonItems[i].Ver});
+        _array.push({"Eng": _itemEng, "Kor": _itemKor, "Ver": jsonItems[i].Ver});
         continue;
       }
 
       if (jsonItems[i].Eng === "" && jsonItems[i].Kor !== "") {
         console.log(`No.${i} is Kor Only Item. Skipped.`);
         _array.push({"Eng": _itemEng, "Kor": _itemKor, "Ver": "Only Kor Item"});
+        continue;
+      }
+
+      if (jsonItems[i].Eng === "" && jsonItems[i].Kor === "") {
+        console.log(`No.${i} is empty line. Skipped.`);
+        _array.push({"Eng": "", "Kor": "", "Ver": ""});
         continue;
       }
 
