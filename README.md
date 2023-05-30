@@ -41,7 +41,7 @@ This is Project URL : [Here!](https://jjae.xyz).
 
 * * *
 
-> FF14 Image Desiner
+> FF14 Image Designer
 >
 > ### Concept
 >
