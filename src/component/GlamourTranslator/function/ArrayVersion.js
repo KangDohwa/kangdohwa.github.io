@@ -24,7 +24,13 @@ export default async function DoSome() {
 
       if (jsonItems[i].Eng === "" && jsonItems[i].Kor === "") {
         console.log(`No.${i} is empty line. Skipped.`);
-        _array.push({"Eng": "", "Kor": "", "Ver": ""});
+        _array.push({"Eng": "None", "Kor": "None", "Ver": "None"});
+        continue;
+      }
+
+      if (jsonItems[i].Eng === "None" && jsonItems[i].Kor === "None") {
+        console.log(`No.${i} is empty line. Skipped.`);
+        _array.push({"Eng": "None", "Kor": "None", "Ver": "None"});
         continue;
       }
 
