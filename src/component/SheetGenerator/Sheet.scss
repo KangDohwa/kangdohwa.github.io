@@ -1,0 +1,81 @@
+@use "@src/Style.scss";
+
+.Sheet {
+  background-color: Style.$Basic-BG;
+  padding: 2rem;
+  // width: 90%;
+  margin: auto;
+  color: Style.$Basic-Contrast;
+}
+
+.ButtonField {
+  display: flex;
+  align-items: center;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+
+  button {
+    font-size: 1.5rem;
+    margin: auto;
+    border: 0;
+    width: 15rem;
+    height: 3rem;
+    color: Style.$Basic-Contrast;
+    background-color: Style.$Basic-Selected;
+  }
+}
+
+#PreviewUser {
+  display: none;
+}
+
+#R {
+  position: relative;
+  z-index: 1;
+  margin: auto;
+  width: 1350px;
+  height: 1080px;
+  overflow: hidden;
+
+  .ImageInput {
+    position: absolute;
+    z-index: 10;
+    overflow: hidden;
+  
+    .ImgInput {
+      z-index: -1;
+      width: 1350px;
+      height: 1080px;
+      width: fit-content;
+      overflow: hidden;
+    }
+    
+    .ImgNone {
+      height: 100%;
+    }
+  }
+
+  .ImageBackground {
+    position: absolute;
+    z-index: 15;
+
+    img {
+      height: 100%;
+    }
+    
+  }
+  
+  .DisplayContent {
+    position: relative;
+    z-index: 20;
+    // height: 100%;
+    color: Style.$Basic-Contrast;
+    fill: Style.$SG-Unset; // svg use fill to color
+  
+    p {
+      width: 30rem;
+      color: Style.$Basic-Contrast;
+      word-break: break-all;
+    }
+  }
+}

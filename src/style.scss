@@ -1,0 +1,52 @@
+@use "@Fonts/FontLoader"; // import all Fonts
+
+$Basic-Font: "LINESeedKRBold";
+
+$Basic-BG: #505050;
+$Basic-BG-Light: #707070;
+$Basic-Contrast: #f0f0f0;
+$Basic-Test: #9e00ce;
+
+$Basic-Symbol: #0098f0;
+$Basic-Selected: #55aaff;
+$Basic-Input-Underline: #707070;
+$Basic-Link: #4015ff;
+$Basic-Highlight: #ffee00;
+
+$SG-Unset: #303030;
+$SG-Tank: #4d5aa0;
+$SG-Healer: #548644;
+$SG-Dps: #934848;
+$SG-DOH: #5f4592;
+$SG-DOL: #bb9b51;
+$SG-Special: #808080;
+
+* {
+  font-family: $Basic-Font;
+}
+
+body {
+  width: 100%;
+  margin: auto;
+  background-color: $Basic-BG;
+  color: $Basic-Contrast;
+  // overflow-x: hidden; // vertical scrollbar hidden
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.Header {
+  font-size: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.Container {
+  display: flex;
+}
+
+.Footer {
+  position: sticky;
+  font-size: 0.875em;
+  text-align: center;
+}

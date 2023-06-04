@@ -1,0 +1,67 @@
+@use "@src/Style";
+
+.InputLevel {
+  font-size: 0.5rem;
+  color: Style.$Basic-Contrast;
+
+  img {
+    position: absolute;
+    width: 4rem;
+    z-index: 50;
+    opacity: 25%;
+  }
+}
+
+.Group {
+  display: flex;
+  height: 6rem;
+  margin-bottom: 2rem;
+
+  div {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 4rem;
+    margin-left: 0.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  input {
+    z-index: 200;
+    font-size: 1.25rem;
+    background: transparent;
+    text-align: center;
+    width: 3rem;
+    height: 2rem;
+    border: 0;
+    border-bottom: Style.$Basic-Selected 0.125rem solid;
+    color: Style.$Basic-Contrast;
+    outline: none;
+    margin: auto;
+  }
+}
+
+.Tank {
+  background-color: Style.$SG-Tank;
+}
+
+.Healer {
+  background-color: Style.$SG-Healer;
+}
+
+.DPS {
+  background-color: Style.$SG-Dps;
+}
+
+.DOH {
+  background-color: Style.$SG-DOH;
+}
+
+.DOL {
+  background-color: Style.$SG-DOL;
+}
+
+.SPC {
+  background-color: Style.$SG-Special;
+}

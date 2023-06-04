@@ -1,0 +1,37 @@
+@use "@src/Style";
+
+.Glamour {
+  // display: flex;
+  margin: auto;
+
+  input, button {
+    padding: 0rem;
+    margin: 0.25rem;
+    border: 0rem;
+    height: 3rem;
+  }
+
+  input {
+    width: 10rem;
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  button {
+    width: 5rem;
+  }
+  
+  .Spacer {
+    margin: auto;
+  }
+}
+
+.Glamour-List {
+  margin: auto;
+  
+  div {
+    width: 30rem;
+    display: flex;
+    padding: 0.25rem;
+  }
+}
