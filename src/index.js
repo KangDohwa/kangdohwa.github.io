@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 // eslint-disable-next-line no-unused-vars
 import { BrowserRouter } from "react-router-dom";
-import "@src/Style.scss";
+import "@src/style.scss";
 import App from "@src/App";
 import store from "@src/app/store";
 import { Provider } from "react-redux"
